@@ -26,11 +26,8 @@
     --fanchant-bg: rgba(163, 204, 84, 0.15);
     --fanchant-border: #a3cc54;
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     background: var(--bg);
@@ -38,8 +35,6 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
-  /* ── NOISE TEXTURE OVERLAY ── */
   body::before {
     content: '';
     position: fixed;
@@ -49,8 +44,6 @@
     z-index: 0;
     opacity: 0.4;
   }
-
-  /* ── HERO ── */
   .hero {
     position: relative;
     min-height: 100vh;
@@ -62,7 +55,6 @@
     padding: 2rem;
     overflow: hidden;
   }
-
   .hero-bg {
     position: absolute;
     inset: 0;
@@ -71,13 +63,7 @@
       radial-gradient(ellipse 60% 80% at 80% 70%, rgba(73,192,236,0.2) 0%, transparent 60%),
       radial-gradient(ellipse 50% 50% at 50% 10%, rgba(140,121,180,0.2) 0%, transparent 50%);
   }
-
-  .hero-stars {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-  }
-
+  .hero-stars { position: absolute; inset: 0; overflow: hidden; }
   .star {
     position: absolute;
     border-radius: 50%;
@@ -85,12 +71,10 @@
     animation: twinkle var(--dur, 3s) ease-in-out infinite;
     animation-delay: var(--del, 0s);
   }
-
   @keyframes twinkle {
     0%, 100% { opacity: 0.1; transform: scale(1); }
     50% { opacity: 0.8; transform: scale(1.3); }
   }
-
   .hero-eyebrow {
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
@@ -103,17 +87,15 @@
     z-index: 1;
     animation: fadeUp 0.8s ease both;
   }
-
   .hero-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(5rem, 18vw, 14rem);Ffour
+    font-size: clamp(5rem, 18vw, 14rem);
     line-height: 0.88;
     letter-spacing: 0.02em;
     position: relative;
     z-index: 1;
     animation: fadeUp 0.8s 0.15s ease both;
   }
-
   .hero-title .line1 { color: var(--white); }
   .hero-title .line2 {
     background: linear-gradient(90deg, var(--magenta), var(--peach), var(--sky));
@@ -121,7 +103,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
   .hero-subtitle {
     margin-top: 1.5rem;
     font-size: 1rem;
@@ -132,7 +113,6 @@
     z-index: 1;
     animation: fadeUp 0.8s 0.3s ease both;
   }
-
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -148,7 +128,6 @@
     z-index: 1;
     animation: fadeUp 0.8s 0.45s ease both;
   }
-
   .hero-badge::before {
     content: '';
     width: 8px; height: 8px;
@@ -156,12 +135,10 @@
     background: var(--green);
     animation: pulse 1.5s ease-in-out infinite;
   }
-
   @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.4; transform: scale(0.7); }
   }
-
   .scroll-hint {
     position: absolute;
     bottom: 2rem;
@@ -178,25 +155,20 @@
     z-index: 1;
     animation: fadeUp 1s 0.9s ease both;
   }
-
   .scroll-arrow {
     width: 1px;
     height: 40px;
     background: linear-gradient(to bottom, transparent, var(--magenta));
     animation: scrollBounce 1.5s ease-in-out infinite;
   }
-
   @keyframes scrollBounce {
     0%, 100% { transform: scaleY(1); opacity: 0.6; }
     50% { transform: scaleY(0.6); opacity: 1; }
   }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
-  /* ── MEMBER COLORS BAR ── */
   .members-strip {
     display: flex;
     overflow-x: auto;
@@ -205,7 +177,6 @@
     scrollbar-width: none;
   }
   .members-strip::-webkit-scrollbar { display: none; }
-
   .member-chip {
     flex: 1;
     min-width: 80px;
@@ -221,8 +192,6 @@
     white-space: nowrap;
   }
   .member-chip:hover { transform: scaleY(1.15); filter: brightness(1.1); z-index: 2; }
-
-  /* ── LAYOUT ── */
   .main-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
@@ -230,8 +199,6 @@
     position: relative;
     z-index: 1;
   }
-
-  /* ── SIDEBAR ── */
   .sidebar {
     background: var(--surface);
     border-right: 1px solid rgba(255,255,255,0.06);
@@ -244,7 +211,6 @@
     scrollbar-color: var(--purple) transparent;
     padding-bottom: 2rem;
   }
-
   .sidebar-header {
     padding: 1.5rem 1.5rem 1rem;
     border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -253,19 +219,13 @@
     background: var(--surface);
     z-index: 5;
   }
-
   .sidebar-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 0.15em;
     color: var(--muted);
   }
-
-  .search-box {
-    margin-top: 0.75rem;
-    position: relative;
-  }
-
+  .search-box { margin-top: 0.75rem; position: relative; }
   .search-box input {
     width: 100%;
     background: var(--surface2);
@@ -278,10 +238,8 @@
     outline: none;
     transition: border-color 0.2s;
   }
-
   .search-box input::placeholder { color: var(--muted); }
   .search-box input:focus { border-color: var(--magenta); }
-
   .search-box::before {
     content: '🔍';
     position: absolute;
@@ -291,9 +249,7 @@
     font-size: 0.75rem;
     pointer-events: none;
   }
-
   .act-group { margin-top: 0.5rem; }
-
   .act-label {
     padding: 0.6rem 1.5rem 0.3rem;
     font-family: 'Bebas Neue', sans-serif;
@@ -301,7 +257,6 @@
     letter-spacing: 0.2em;
     color: var(--magenta);
   }
-
   .nav-item {
     display: flex;
     align-items: center;
@@ -314,26 +269,22 @@
     transition: all 0.15s;
     text-decoration: none;
   }
-
   .nav-item:hover {
     color: var(--text);
     background: rgba(255,255,255,0.04);
     border-left-color: var(--magenta);
   }
-
   .nav-item.active {
     color: var(--text);
     background: rgba(252, 93, 157, 0.08);
     border-left-color: var(--magenta);
   }
-
   .nav-item .fanchant-dot {
     width: 6px; height: 6px;
     border-radius: 50%;
     background: var(--green);
     flex-shrink: 0;
   }
-
   .nav-item .solo-tag {
     font-size: 0.65rem;
     background: rgba(140,121,180,0.3);
@@ -343,14 +294,7 @@
     margin-left: auto;
     white-space: nowrap;
   }
-
-  /* ── CONTENT ── */
-  .content {
-    padding: 0;
-    overflow-x: hidden;
-  }
-
-  /* ── ACT HEADER ── */
+  .content { padding: 0; overflow-x: hidden; }
   .act-header {
     padding: 3rem 3rem 1.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -358,7 +302,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .act-header::before {
     content: attr(data-act);
     position: absolute;
@@ -370,7 +313,6 @@
     pointer-events: none;
     line-height: 1;
   }
-
   .act-header h2 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3rem;
@@ -380,21 +322,13 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
-  .act-header p {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-top: 0.25rem;
-  }
-
-  /* ── SONG CARD ── */
+  .act-header p { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; }
   .songs-grid {
     padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
-
   .song-card {
     background: var(--surface);
     border: 1px solid rgba(255,255,255,0.06);
@@ -403,12 +337,10 @@
     transition: border-color 0.2s, transform 0.2s;
     scroll-margin-top: 2rem;
   }
-
   .song-card:hover {
     border-color: rgba(252, 93, 157, 0.3);
     transform: translateY(-2px);
   }
-
   .song-card-header {
     display: flex;
     align-items: center;
@@ -417,7 +349,6 @@
     cursor: pointer;
     user-select: none;
   }
-
   .song-number {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.5rem;
@@ -426,9 +357,7 @@
     text-align: center;
     opacity: 0.5;
   }
-
   .song-info { flex: 1; }
-
   .song-title {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.6rem;
@@ -436,14 +365,12 @@
     color: var(--text);
     line-height: 1;
   }
-
   .song-meta {
     display: flex;
     gap: 0.5rem;
     margin-top: 0.3rem;
     flex-wrap: wrap;
   }
-
   .tag {
     display: inline-block;
     font-size: 0.7rem;
@@ -453,31 +380,10 @@
     padding: 0.15rem 0.5rem;
     font-weight: 500;
   }
-
-  .tag-fanchant {
-    background: rgba(163, 204, 84, 0.15);
-    color: var(--green);
-    border: 1px solid rgba(163,204,84,0.3);
-  }
-
-  .tag-solo {
-    background: rgba(140,121,180,0.15);
-    color: var(--purple);
-    border: 1px solid rgba(140,121,180,0.3);
-  }
-
-  .tag-unit {
-    background: rgba(73,192,236,0.15);
-    color: var(--sky);
-    border: 1px solid rgba(73,192,236,0.3);
-  }
-
-  .tag-unconfirmed {
-    background: rgba(249,204,133,0.15);
-    color: var(--gold);
-    border: 1px solid rgba(249,204,133,0.3);
-  }
-
+  .tag-fanchant { background: rgba(163, 204, 84, 0.15); color: var(--green); border: 1px solid rgba(163,204,84,0.3); }
+  .tag-solo { background: rgba(140,121,180,0.15); color: var(--purple); border: 1px solid rgba(140,121,180,0.3); }
+  .tag-unit { background: rgba(73,192,236,0.15); color: var(--sky); border: 1px solid rgba(73,192,236,0.3); }
+  .tag-unconfirmed { background: rgba(249,204,133,0.15); color: var(--gold); border: 1px solid rgba(249,204,133,0.3); }
   .song-toggle {
     width: 32px; height: 32px;
     border-radius: 50%;
@@ -490,30 +396,19 @@
     transition: all 0.2s;
     flex-shrink: 0;
   }
-
   .song-card.open .song-toggle {
     background: var(--magenta);
     color: white;
     transform: rotate(45deg);
   }
-
   .song-body {
     display: none;
     padding: 0 1.5rem 1.5rem;
     border-top: 1px solid rgba(255,255,255,0.05);
   }
-
   .song-card.open .song-body { display: block; }
-
-  /* ── LYRICS DISPLAY ── */
-  .lyrics-container {
-    padding-top: 1.25rem;
-  }
-
-  .lyrics-section {
-    margin-bottom: 1.25rem;
-  }
-
+  .lyrics-container { padding-top: 1.25rem; }
+  .lyrics-section { margin-bottom: 1.25rem; }
   .lyrics-line {
     line-height: 1.9;
     font-size: 0.95rem;
@@ -521,12 +416,7 @@
     opacity: 0.85;
     font-weight: 300;
   }
-
-  .lyrics-line.korean {
-    font-size: 1rem;
-    opacity: 0.9;
-  }
-
+  .lyrics-line.korean { font-size: 1rem; opacity: 0.9; }
   .fanchant-highlight {
     display: inline-block;
     background: var(--fanchant-bg);
@@ -538,21 +428,17 @@
     font-size: 0.9rem;
     margin: 0.1rem 0;
   }
-
   .section-divider {
     height: 1px;
     background: rgba(255,255,255,0.06);
     margin: 1rem 0;
   }
-
   .annotation {
     font-size: 0.78rem;
     color: var(--purple);
     font-style: italic;
     opacity: 0.8;
   }
-
-  /* ── FANCHANT LEGEND ── */
   .fanchant-legend {
     display: flex;
     align-items: center;
@@ -565,8 +451,6 @@
     font-size: 0.8rem;
     color: var(--green);
   }
-
-  /* ── FLOATING TOC BUTTON ── */
   .fab {
     position: fixed;
     bottom: 2rem;
@@ -584,10 +468,7 @@
     box-shadow: 0 8px 32px rgba(252,93,157,0.4);
     transition: transform 0.2s;
   }
-
   .fab:hover { transform: scale(1.1); }
-
-  /* ── PROGRESS BAR ── */
   .progress-bar {
     position: fixed;
     top: 0; left: 0;
@@ -596,8 +477,6 @@
     z-index: 999;
     transition: width 0.1s;
   }
-
-  /* ── BACK TO TOP ── */
   .back-top {
     display: block;
     text-align: center;
@@ -610,8 +489,6 @@
     text-transform: uppercase;
   }
   .back-top:hover { color: var(--magenta); }
-
-  /* ── MOBILE SIDEBAR TOGGLE ── */
   .mobile-nav-toggle {
     display: none;
     position: fixed;
@@ -625,7 +502,6 @@
     cursor: pointer;
     font-size: 1rem;
   }
-
   .sidebar-overlay {
     display: none;
     position: fixed;
@@ -633,11 +509,8 @@
     background: rgba(0,0,0,0.7);
     z-index: 150;
   }
-
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .main-layout { grid-template-columns: 1fr; }
-
     .sidebar {
       position: fixed;
       left: -300px;
@@ -646,18 +519,14 @@
       z-index: 160;
       transition: left 0.3s ease;
     }
-
     .sidebar.open { left: 0; }
     .sidebar-overlay.active { display: block; }
     .mobile-nav-toggle { display: block; }
     .fab { display: flex; }
-
     .songs-grid { padding: 1rem 1.25rem; }
     .act-header { padding: 2rem 1.25rem 1rem; }
     .hero-title { font-size: clamp(4rem, 22vw, 8rem); }
   }
-
-  /* ── HIDDEN (search filter) ── */
   .song-card.hidden { display: none !important; }
   .act-section.hidden { display: none !important; }
 </style>
@@ -666,11 +535,9 @@
 
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-stars" id="stars"></div>
-
   <div class="hero-eyebrow">Ready? Are you ready for the ride?</div>
   <div class="hero-title">
     <div class="line1">TWICE</div>
@@ -678,14 +545,12 @@
   </div>
   <div class="hero-subtitle">6th World Tour · Lyrics & Fanchant Guide</div>
   <div class="hero-badge">Fanchants highlighted throughout · Have fun!</div>
-
   <div class="scroll-hint">
     <span>Explore</span>
     <div class="scroll-arrow"></div>
   </div>
 </section>
 
-<!-- ── MEMBER COLORS ── -->
 <div class="members-strip">
   <div class="member-chip" style="background:#49c0ec">NAYEON</div>
   <div class="member-chip" style="background:#a3cc54">JEONGYEON</div>
@@ -698,14 +563,10 @@
   <div class="member-chip" style="background:#2253a3;color:rgba(255,255,255,0.85)">TZUYU</div>
 </div>
 
-<!-- ── MOBILE TOGGLE ── -->
 <button class="mobile-nav-toggle" onclick="toggleSidebar()">☰</button>
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
 
-<!-- ── MAIN LAYOUT ── -->
 <div class="main-layout">
-
-  <!-- ── SIDEBAR ── -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-title">SET LIST</div>
@@ -713,7 +574,6 @@
         <input type="text" id="searchInput" placeholder="Search songs…" oninput="filterSongs(this.value)">
       </div>
     </div>
-
     <div class="act-group">
       <div class="act-label">Act 1</div>
       <a class="nav-item" href="#four">Four</a>
@@ -725,7 +585,6 @@
       <a class="nav-item" href="#options">Options</a>
       <a class="nav-item" href="#moonlight-sunrise">Moonlight Sunrise</a>
     </div>
-
     <div class="act-group">
       <div class="act-label">Act 2</div>
       <a class="nav-item" href="#mars">Mars</a>
@@ -736,7 +595,6 @@
       <a class="nav-item" href="#hell-in-heaven">Hell In Heaven</a>
       <a class="nav-item" href="#right-hand-girl">Right Hand Girl</a>
     </div>
-
     <div class="act-group">
       <div class="act-label">Act 3 — Solos</div>
       <a class="nav-item" href="#dive-in">Dive In <span class="fanchant-dot"></span><span class="solo-tag">Tzuyu</span></a>
@@ -752,7 +610,6 @@
       <a class="nav-item" href="#decaffeinated">Decaffeinated <span class="fanchant-dot"></span><span class="solo-tag">Sana</span></a>
       <a class="nav-item" href="#move-like-that">Move Like That <span class="fanchant-dot"></span><span class="solo-tag">Momo</span></a>
     </div>
-
     <div class="act-group">
       <div class="act-label">Act 4</div>
       <a class="nav-item" href="#fancy">FANCY <span class="fanchant-dot"></span></a>
@@ -762,7 +619,6 @@
       <a class="nav-item" href="#feel-special">Feel Special <span class="fanchant-dot"></span></a>
       <a class="nav-item" href="#onespark">ONESPARK <span class="fanchant-dot"></span></a>
     </div>
-
     <div class="act-group">
       <div class="act-label">Act 5 — Unconfirmed</div>
       <a class="nav-item" href="#after-moon">After Moon</a>
@@ -772,7 +628,6 @@
     </div>
   </nav>
 
-  <!-- ── CONTENT ── -->
   <main class="content">
 
     <!-- ACT 1 -->
@@ -783,7 +638,7 @@
       </div>
       <div class="songs-grid">
 
-        <!-- Four -->
+        <!-- FOUR -->
         <div class="song-card" id="four">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">01</div>
@@ -815,7 +670,6 @@
               <div class="lyrics-line">You'll madly love us TWICE</div>
               <div class="lyrics-line">Once you see us</div>
               <div class="lyrics-line">You'll madly love us TWICE</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line">TWICE</div>
               <div class="lyrics-line">Once you see us</div>
               <div class="lyrics-line">You'll madly love us TWICE</div>
@@ -823,7 +677,7 @@
           </div>
         </div>
 
-        <!-- This Is For -->
+        <!-- THIS IS FOR -->
         <div class="song-card" id="this-is-for">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">02</div>
@@ -837,54 +691,54 @@
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
               <div class="lyrics-line">This is for all my ladies who don't get hyped enough</div>
-              <div class="lyrics-line">If you've been done wrong, then this your song, so turn it up <span class="fanchant-highlight">(Twice!)</span></div>
-              <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">(Woo!)</span> I wanna go where the baddest girls are from</div>
+              <div class="lyrics-line">If you've been done wrong, then this your song, so turn it up <span class="fanchant-highlight">Twice!</span></div>
+              <div class="lyrics-line">(Wooo!) I wanna go where the baddest girls are from</div>
               <div class="lyrics-line">Might be another planet, maybe that's where Mother Nature made me</div>
-              <div class="lyrics-line">Something about that water tastes like fun <span class="fanchant-highlight">(yeah, yeah)</span></div>
+              <div class="lyrics-line">Something about that water tastes like fun (yeah, yeah)</div>
               <div class="lyrics-line">My girls make it rain confetti, sweet on your tongue</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">(Beep, beep, beep)</span> I'm outside your door, so let's go, don't let that</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">(Beep, beep, beep)</span> have you feeling low, when you're grown, you got the</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">(Key, key, keys)</span> you already know, when it shows tonight</div>
+              <div class="lyrics-line">(Beep, beep, beep) I'm outside your door, so let's go, don't let that</div>
+              <div class="lyrics-line">(Beep, beep, beep) have you feeling low, when you're grown, you got the</div>
+              <div class="lyrics-line">(Key, key, keys), you already know, when it shows tonight</div>
               <div class="lyrics-line">It's you and me, how it should be</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line">This is for <span class="fanchant-highlight">all my ladies</span> who don't get hyped enough</div>
+              <div class="lyrics-line">This is for all my ladies who don't get hyped enough</div>
               <div class="lyrics-line">If you've been done wrong, then this your song, so turn it up</div>
-              <div class="lyrics-line">One time for <span class="fanchant-highlight">all my ladies</span>, you're lookin' <span class="fanchant-highlight">good</span> as what</div>
-              <div class="lyrics-line">So tell 'em, <span class="fanchant-highlight">"Bye, bye"</span>, 'cause it's your time to <span class="fanchant-highlight">turn it up</span></div>
+              <div class="lyrics-line">One time for all my ladies, you're lookin' good as what</div>
+              <div class="lyrics-line">So tell 'em, "Bye, bye", 'cause it's your time to turn it up</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">(Woo!)</span> Thi-thi-this for the girls with that light inside</div>
+              <div class="lyrics-line">(Wooo!) Thi-thi-this for the girls with that light inside</div>
               <div class="lyrics-line">They spin around you like satellite</div>
               <div class="lyrics-line">Yeah, you the baddest, all day and night</div>
-              <div class="lyrics-line">I'll give you flowers 'til the end of time <span class="fanchant-highlight">(Uwuu)</span></div>
-              <div class="lyrics-line">this your moment, go get it <span class="fanchant-highlight">(Uwuu)</span></div>
-              <div class="lyrics-line">forget that boy, and don't sweat it <span class="fanchant-highlight">(Ah ah)</span></div>
-              <div class="lyrics-line">I'll always be your ride or die, so</div>
+              <div class="lyrics-line">I'll give you flowers 'til the end of time</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">(Beep, beep, beep)</span> I'm outside your door, so let's go, don't let that</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">(Beep, beep, beep)</span> have you feeling low, when you're grown, you got the</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">(Key, key, keys)</span> you already know, when it shows tonight</div>
+              <div class="lyrics-line">(Uwuu) this your moment, go get it</div>
+              <div class="lyrics-line">(Uwuu) forget that boy, and don't sweat it</div>
+              <div class="lyrics-line">(Ah ah) I'll always be your ride or die, so</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">(Beep, beep, beep) I'm outside your door, so let's go, don't let that</div>
+              <div class="lyrics-line">(Beep, beep, beep) have you feeling low, when you're grown, you got the</div>
+              <div class="lyrics-line">(Key, key, keys) you already know, when it shows tonight</div>
               <div class="lyrics-line">It's you and me, how it should be</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line">This is for <span class="fanchant-highlight">all my ladies</span> who don't get hyped enough</div>
+              <div class="lyrics-line">This is for all my ladies who don't get hyped enough</div>
               <div class="lyrics-line">If you've been done wrong, then this your song, so turn it up</div>
-              <div class="lyrics-line">One time for <span class="fanchant-highlight">all my ladies</span>, you're lookin' <span class="fanchant-highlight">good</span> as what</div>
-              <div class="lyrics-line">So tell 'em, <span class="fanchant-highlight">"Bye, bye"</span>, 'cause it's your time to <span class="fanchant-highlight">turn it up</span></div>
+              <div class="lyrics-line">One time for all my ladies, you're lookin' good as what</div>
+              <div class="lyrics-line">So tell 'em, "Bye, bye," 'cause it's your time to turn it up</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">All my ladies now, oh oh oh oh,</div>
-              <div class="lyrics-line">Let's get down, <span class="fanchant-highlight">come on, dip your hip into it</span></div>
+              <div class="lyrics-line">Let's get down, come on, dip your hip into it</div>
               <div class="lyrics-line">All my ladies now, oh oh oh oh,</div>
-              <div class="lyrics-line">Let's get down, <span class="fanchant-highlight">come on, dip your hip into it</span></div>
+              <div class="lyrics-line">Let's get down, come on, dip your hip into it</div>
               <div class="lyrics-line">All my ladies now, oh oh oh oh,</div>
-              <div class="lyrics-line">Let's get down, <span class="fanchant-highlight">come on, dip your hip into it</span></div>
+              <div class="lyrics-line">Let's get down, come on, dip your hip into it</div>
               <div class="lyrics-line">All my ladies now, oh oh oh oh,</div>
-              <div class="lyrics-line">Let's get down, <span class="fanchant-highlight">(Too-wai-ee-sue!)</span></div>
+              <div class="lyrics-line">Let's get down, <span class="fanchant-highlight">Too-wai-ee-sue!</span></div>
             </div>
           </div>
         </div>
 
-        <!-- Strategy -->
+        <!-- STRATEGY -->
         <div class="song-card" id="strategy">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">03</div>
@@ -897,105 +751,101 @@
           <div class="song-body">
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
-              <div class="lyrics-line"><span class="fanchant-highlight">(Woo!!!)</span> Hey boy, I'ma get ya</div>
+              <div class="lyrics-line">(Woo!!!) Hey boy, I'ma get ya</div>
               <div class="lyrics-line">I'ma get ya real good and I bet ya</div>
               <div class="lyrics-line">Hey boy, once I get ya</div>
               <div class="lyrics-line">You'll be oh so glad that I met ya</div>
-              <div class="lyrics-line">Ah-oh! <span class="fanchant-highlight">(Too-wai-ee-sue!)</span></div>
+              <div class="lyrics-line">Ah-oh! <span class="fanchant-highlight">Too-wai-ee-sue!</span></div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Step 1 (One!)</span> Do my highlight</div>
+              <div class="lyrics-line">Step 1 <span class="fanchant-highlight">(One!)</span> Do my highlight</div>
               <div class="lyrics-line">Make me shine so bright in the moonlight</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Step 2 (Two!)</span> Silhouette tight</div>
+              <div class="lyrics-line">Step 2 <span class="fanchant-highlight">(Two!)</span> Silhouette tight</div>
               <div class="lyrics-line">Baby even my shadow looks good right?</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Step 3 (Three!)</span> When I arrive</div>
+              <div class="lyrics-line">Step 3 <span class="fanchant-highlight">(Three!)</span> When I arrive</div>
               <div class="lyrics-line">Make you look my way with your heart eyes</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Step 4 (Four!)</span> Get you on the floor</div>
-              <div class="lyrics-line">Make ya say <span class="fanchant-highlight">more more more</span></div>
+              <div class="lyrics-line">Step 4 <span class="fanchant-highlight">(Four!)</span> Get you on the floor</div>
+              <div class="lyrics-line">Make ya say more more more</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">When I say hi~~~</span> I'm feeling all your attention on me</div>
+              <div class="lyrics-line">When I say hi~~~~</div>
+              <div class="lyrics-line">I'm feeling all your attention on me</div>
               <div class="lyrics-line">Hi, no reason to be so shy with me</div>
-              <div class="lyrics-line">I ain't gonna bite come on over <span class="fanchant-highlight">(No)</span></div>
-              <div class="lyrics-line">I know you wanna move a little closer <span class="fanchant-highlight">(Yeah)</span></div>
-              <div class="lyrics-line">I got a plan to get you with me <span class="fanchant-highlight">(Ah?)</span></div>
-              <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">I got you on my radar soon</span></div>
+              <div class="lyrics-line">I ain't gonna bite come on over (No)</div>
+              <div class="lyrics-line">I know you wanna move a little closer (Yeah)</div>
+              <div class="lyrics-line">I got a plan to get you with me (Ah?)</div>
+              <div class="lyrics-line">I got you on my radar soon</div>
               <div class="lyrics-line">You're gonna be with me</div>
-              <div class="lyrics-line">My strategy, strategy, will <span class="fanchant-highlight">get ya, get ya, baby</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">My strategy, strategy, will get ya, get ya, baby</div>
               <div class="lyrics-line">Winning is my trademark soon</div>
               <div class="lyrics-line">You'll never wanna leave</div>
-              <div class="lyrics-line">My strategy, strategy, will <span class="fanchant-highlight">get ya, get ya, baby</span></div>
+              <div class="lyrics-line">My strategy, strategy, will get ya, get ya, baby</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Hey boy, I'ma get ya</span></div>
-              <div class="lyrics-line">I'ma get ya real good and I <span class="fanchant-highlight">bet ya</span></div>
-              <div class="lyrics-line">Hey boy, once I <span class="fanchant-highlight">get ya</span></div>
-              <div class="lyrics-line">You'll be oh so glad that I <span class="fanchant-highlight">met ya</span></div>
+              <div class="lyrics-line">Hey boy, I'ma get ya</div>
+              <div class="lyrics-line">I'ma get ya real good and I bet ya</div>
+              <div class="lyrics-line">Hey boy, once I get ya</div>
+              <div class="lyrics-line">You'll be oh so glad that I met ya</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">When your cheeks go red (That's cute)</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">"I wanna dance," you said (Oh cool)</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">'Til I'm in your head (It's cruel)</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">And you can't forget</span></div>
-              <div class="section-divider"></div>
+              <div class="lyrics-line">When your cheeks go red (That's cute)</div>
+              <div class="lyrics-line">"I wanna dance," you said (Oh cool)</div>
+              <div class="lyrics-line">'Til I'm in your head (It's cruel)</div>
+              <div class="lyrics-line">And you can't forget</div>
               <div class="lyrics-line">You're feeling things now and you're confused</div>
               <div class="lyrics-line">Watching my body getting loose</div>
               <div class="lyrics-line">You don't know what you're gonna do</div>
               <div class="lyrics-line">You're mine</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line">When I say hi~~~ I'm feeling all your attention on me</div>
+              <div class="lyrics-line">When I say hi~~~~</div>
+              <div class="lyrics-line">I'm feeling all your attention on me</div>
               <div class="lyrics-line">Hi, no reason to be so shy with me</div>
               <div class="lyrics-line">I ain't gonna bite come on over (No)</div>
               <div class="lyrics-line">I know you wanna move a little closer (Yeah)</div>
               <div class="lyrics-line">I got a plan to get you with me (Ah?)</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line">I got you on my radar soon</div>
               <div class="lyrics-line">You're gonna be with me</div>
+              <div class="section-divider"></div>
               <div class="lyrics-line">My strategy, strategy, will get ya, get ya, baby</div>
               <div class="lyrics-line">Winning is my trademark soon</div>
               <div class="lyrics-line">You'll never wanna leave</div>
               <div class="lyrics-line">My strategy, strategy, will get ya, get ya, baby</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">My strategy, strategy</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Like gravity, gravity</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">One look at me, look at me</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">I bet ya, bet ya, bet ya, boy</span></div>
+              <div class="lyrics-line">My strategy, strategy</div>
+              <div class="lyrics-line">Like gravity, gravity</div>
+              <div class="lyrics-line">One look at me, look at me</div>
+              <div class="lyrics-line">I bet ya, bet ya, bet ya, boy</div>
               <div class="lyrics-line">You'll be down on your knees</div>
               <div class="lyrics-line">Calling me up, begging me don't leave</div>
               <div class="lyrics-line">My strategy, strategy</div>
-              <div class="lyrics-line">Will get ya, get ya, get ya, boy</div>
-              <div class="lyrics-line">Ah-oh! <span class="fanchant-highlight">(Too-wai-ee-sue!)</span></div>
+              <div class="lyrics-line">Will get ya, get ya, get ya boy</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Ah-oh! <span class="fanchant-highlight">Too-wai-ee-sue!</span></div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Hey boy, I'ma get ya</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">[Na/Sa]</span> I'ma get ya real good and I bet ya</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">[Na/Ji]</span> Hey boy, once I get ya</div>
+              <div class="lyrics-line"><span class="annotation">[Na/Sa]</span> I'ma Get ya real good and I bet ya</div>
+              <div class="lyrics-line"><span class="annotation">[Na/Ji]</span> Hey boy, once I get ya</div>
               <div class="lyrics-line">You'll be oh so glad that I met ya</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line">Hey boy, I'ma get ya</div>
               <div class="lyrics-line">I'ma get ya real good and I bet ya</div>
               <div class="lyrics-line">Hey boy, once I get ya</div>
               <div class="lyrics-line">You'll be oh so glad that I met ya</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line">Hey boy, I'ma get ya</div>
               <div class="lyrics-line">I'ma get ya real good and I bet ya</div>
             </div>
           </div>
         </div>
 
-        <!-- Make Me Go -->
+        <!-- MAKE ME GO -->
         <div class="song-card" id="make-me-go">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">04</div>
-            <div class="song-info">
-              <div class="song-title">MAKE ME GO</div>
-              <div class="song-meta"></div>
-            </div>
+            <div class="song-info"><div class="song-title">MAKE ME GO</div></div>
             <div class="song-toggle">+</div>
           </div>
           <div class="song-body">
             <div class="lyrics-container">
-              <div class="lyrics-line korean">저 멀리 서 있는 녀</div>
+              <div class="lyrics-line korean">저 멀리 서 있는 넌</div>
               <div class="lyrics-line korean">이미 가까워진 듯 느껴져 이 순간</div>
               <div class="lyrics-line korean">날 향해 경계하는 두려움에 찬 그 눈빛</div>
               <div class="lyrics-line korean">괜찮아 걱정 마</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line korean">너의 떨리는 두 손 내가 잡고 싶어져</div>
               <div class="lyrics-line korean">이미 알고 있잖아 나를 원한다는 걸</div>
               <div class="section-divider"></div>
@@ -1005,7 +855,6 @@
               <div class="lyrics-line">Ain't nobody around, do it like you should</div>
               <div class="lyrics-line">Do it do it do it do it</div>
               <div class="lyrics-line">Yeah you make me go</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line">Love me love me now</div>
               <div class="lyrics-line">Love me love me good (you make me go)</div>
               <div class="lyrics-line">Don't need nobody else when it feels this good (you make me go)</div>
@@ -1016,9 +865,8 @@
               <div class="lyrics-line korean">어딜 봐도 나잖아</div>
               <div class="lyrics-line korean">조금 더 조금 더 맘을 열어 내게 더 보여줘</div>
               <div class="lyrics-line korean">들려줘 감춘 진실을</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line korean">너의 떨리는 두 손 내가 잡고 있잖아</div>
-              <div class="lyrics-line korean">이미 알고 있잖아 내가 필요하던 걸</div>
+              <div class="lyrics-line korean">이미 알고 있잖아 내가 필요하단 걸</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Love me love me now</div>
               <div class="lyrics-line">Love me love me good</div>
@@ -1026,7 +874,6 @@
               <div class="lyrics-line">Ain't nobody around, do it like you should</div>
               <div class="lyrics-line">Do it do it do it do it</div>
               <div class="lyrics-line">Yeah you make me go</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line">Love me love me now</div>
               <div class="lyrics-line">Love me love me good (you make me go)</div>
               <div class="lyrics-line">Don't need nobody else when it feels this good (you make me go)</div>
@@ -1038,7 +885,6 @@
               <div class="lyrics-line korean">다시 봐도 나잖아</div>
               <div class="lyrics-line korean">점점 더 시간은 촉박해져 촉박해져 Oh yeah</div>
               <div class="lyrics-line korean">점점 더 심장은 조여올 걸 조여올 걸 Oh yeah</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line korean">너의 떨리는 몸은 [나/지] 점점 굳어갈 거야</div>
               <div class="lyrics-line korean">이미 알고 있잖아 [정/지] 넌 시간이 없는 걸</div>
               <div class="section-divider"></div>
@@ -1047,19 +893,16 @@
               <div class="lyrics-line">Don't need nobody else when it feels this good</div>
               <div class="lyrics-line">Ain't nobody around, do it like you should</div>
               <div class="lyrics-line">Yeah you make me go</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line">Love me love me now</div>
               <div class="lyrics-line">Love me love me good (you make me go)</div>
               <div class="lyrics-line">Don't need nobody else when it feels this good (you make me go)</div>
               <div class="lyrics-line">Ain't nobody around, do it like you should</div>
               <div class="lyrics-line">Do it do it do it do it</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line">Love me love me now</div>
               <div class="lyrics-line">Love me love me good</div>
               <div class="lyrics-line">Don't need nobody else when it feels this good</div>
               <div class="lyrics-line">Ain't nobody around, do it like you should</div>
               <div class="lyrics-line">Yeah you make me go</div>
-              <div class="section-divider"></div>
               <div class="lyrics-line">Love me love me now</div>
               <div class="lyrics-line">Love me love me good (you make me go)</div>
               <div class="lyrics-line">Don't need nobody else when it feels this good (you make me go)</div>
@@ -1068,7 +911,7 @@
           </div>
         </div>
 
-        <!-- Set Me Free -->
+        <!-- SET ME FREE -->
         <div class="song-card" id="set-me-free">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">05</div>
@@ -1081,82 +924,78 @@
           <div class="song-body">
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
-              <div class="lyrics-line"><span class="fanchant-highlight">(Too-wai-ee-sue! Set me fu-ree!)</span></div>
-              <div class="lyrics-line korean">모든 걸 잃어버린대도 상관 없어 <span class="fanchant-highlight">[sanggwan eopso]</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">Too-wai-ee-sue! Set me fu-ree!</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">모든 걸 잃어버린대도 상관 없어 <span class="annotation">[sanggwan eopso]</span></div>
               <div class="lyrics-line korean">지금 이 감정이 순간이라 해도</div>
-              <div class="lyrics-line korean">이제는 더 이상 내 맘 숨기긴 싫어 <span class="fanchant-highlight">[seumgigin sirheo]</span></div>
+              <div class="lyrics-line korean">이제는 더 이상 내 맘 숨기긴 싫어 <span class="annotation">[seumgigin sirheo]</span></div>
               <div class="lyrics-line korean">네 눈빛이 날 자유롭게 만들잖아</div>
+              <div class="lyrics-line korean">No-no-no-no, no</div>
+              <div class="lyrics-line korean">의식하지 말고</div>
+              <div class="lyrics-line korean">날 안아줘 더는 잃을</div>
+              <div class="lyrics-line korean">것도 숨길 것도 없어 (Woo!)</div>
+              <div class="lyrics-line korean">내 모든 걸 걸어 Risk it all</div>
+              <div class="lyrics-line korean">이 사랑 말고는 Fade out</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">No-no-no-no, no</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">의식하지 말고</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">날 안아줘 더는 잃을</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">것도 숨길 것도 없어 (Woo!)</span></div>
-              <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">내 모든 걸 걸어 Risk it all</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">이 사랑 말고는 Fade out</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Gonna set me, set me, set me free</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">내 맘 끝까지 갈 테니</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">넌 그냥 날 안으면 돼</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Come and set me, set me, set me free</span></div>
-              <div class="section-divider"></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">내가 원하던 Best of me</span> <span class="fanchant-highlight">(na jeong mo)</span></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">이제 나는 Ready to be</span> <span class="fanchant-highlight">(sa ji mi)</span></div>
+              <div class="lyrics-line">Gonna set me, set me, set me free</div>
+              <div class="lyrics-line korean">내 맘 끝까지 갈 테니</div>
+              <div class="lyrics-line korean">넌 그냥 날 안으면 돼</div>
+              <div class="lyrics-line">Come and set me, set me, set me free</div>
+              <div class="lyrics-line korean">내가 원하던 Best of me <span class="fanchant-highlight">(na jeong mo)</span></div>
+              <div class="lyrics-line korean">이제 나는 Ready to be <span class="fanchant-highlight">(sa ji mi)</span></div>
               <div class="lyrics-line">Yeah, gonna set me, set me, set me free <span class="fanchant-highlight">(da chae jeu)</span></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">지금 All eyes on me</span></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">나를 안아줘 다 보란듯이</span> <span class="fanchant-highlight">(Too-wai-ee-sue!)</span></div>
+              <div class="lyrics-line korean">지금 All eyes on me</div>
+              <div class="lyrics-line korean">나를 안아줘 다 보란듯이 <span class="fanchant-highlight">(Too-wai-ee-sue!)</span></div>
               <div class="lyrics-line">Yeah, come and set me, set me, set me free</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line korean">어리석은 충동이라 해도 상관 없어 <span class="fanchant-highlight">[sanggwan eopso]</span></div>
+              <div class="lyrics-line korean">어리석은 충동이라 해도 상관 없어 <span class="annotation">[sanggwan eopso]</span></div>
               <div class="lyrics-line korean">날 가두는 시선 따윈 이미 Outta sight (Oh-oh)</div>
-              <div class="lyrics-line korean">지금 우린 내가 꿈꿔왔던 그대로 <span class="fanchant-highlight">[geudaero]</span></div>
+              <div class="lyrics-line korean">지금 우린 내가 꿈꿔왔던 그대로 <span class="annotation">[geudaero]</span></div>
               <div class="lyrics-line korean">눈앞에 그려진 완벽한 Fantasy</div>
+              <div class="lyrics-line korean">[나/다] No-no-no-no, no</div>
+              <div class="lyrics-line korean">신경 쓰지말고</div>
+              <div class="lyrics-line korean">[지/다] 날 안아줘 더는 잃을</div>
+              <div class="lyrics-line korean">[지/다] 것도 숨길 것도 없어 (Woo!)</div>
+              <div class="lyrics-line korean">내 모든 걸 걸어 Risk it all</div>
+              <div class="lyrics-line korean">이 사랑 말고는 Fade out</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">[나/다]</span> <span class="fanchant-highlight">No-no-no-no, no</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">신경 쓰지말고</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">[지/다]</span> <span class="fanchant-highlight">날 안아줘 더는 잃을</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">[지/다]</span> <span class="fanchant-highlight">것도 숨길 것도 없어 (Woo!)</span></div>
-              <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">내 모든 걸 걸어 Risk it all</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">이 사랑 말고는 Fade out</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Gonna set me, set me, set me free</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">내 맘 끝까지 갈 테니</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">넌 그냥 날 안으면 돼</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Come and set me, set me, set me free</span></div>
-              <div class="section-divider"></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">내가 원하던 Best of me</span> <span class="fanchant-highlight">(na jeong mo)</span></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">이제 나는 Ready to be</span> <span class="fanchant-highlight">(sa ji mi)</span></div>
+              <div class="lyrics-line">Gonna set me, set me, set me free</div>
+              <div class="lyrics-line korean">내 맘 끝까지 갈 테니</div>
+              <div class="lyrics-line korean">넌 그냥 날 안으면 돼</div>
+              <div class="lyrics-line">Come and set me, set me, set me free</div>
+              <div class="lyrics-line korean">내가 원하던 Best of me <span class="fanchant-highlight">(na jeong mo)</span></div>
+              <div class="lyrics-line korean">이제 나는 Ready to be <span class="fanchant-highlight">(sa ji mi)</span></div>
               <div class="lyrics-line">Yeah, gonna set me, set me, set me free <span class="fanchant-highlight">(da chae jeu)</span></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">지금 All eyes on me</span></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">나를 안아줘 다 보란듯이</span> <span class="fanchant-highlight">(Twice!)</span></div>
+              <div class="lyrics-line korean">지금 All eyes on me</div>
+              <div class="lyrics-line korean">나를 안아줘 다 보란듯이 <span class="fanchant-highlight">(Twice!)</span></div>
               <div class="lyrics-line">Yeah, come and set me, set me, set me free</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Uh, uh, I'm gonna tell you straight</span></div>
-              <div class="lyrics-line">No matter what they say <span class="fanchant-highlight">(Hey!)</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">두 점을 잇는 Line</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">안 끊겨 All my life Twice</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">부딪히고 넘어져도 일으켜 날</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">두 눈이 맞닿을 땐 Make me feel special</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">너로 인해 완전한 나로 Completed</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">이 말 믿어도 돼 'Cause this is official, uh</span></div>
+              <div class="lyrics-line">Uh, uh, I'm gonna tell you straight</div>
+              <div class="lyrics-line">No matter what they say (Hey!)</div>
+              <div class="lyrics-line korean">두 점을 잇는 Line</div>
+              <div class="lyrics-line korean">안 끊겨 All my life Twice</div>
+              <div class="lyrics-line korean">부딪히고 넘어져도 일으켜 날</div>
+              <div class="lyrics-line korean">두 눈이 맞닿을 땐 Make me feel special</div>
+              <div class="lyrics-line korean">너로 인해 완전한 나로 Completed</div>
+              <div class="lyrics-line">이 말 믿어도 돼 'Cause this is official, uh</div>
+              <div class="lyrics-line korean">내 모든 걸 걸어 Risk it all</div>
+              <div class="lyrics-line korean">이 사랑 말고는 Fade out</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">내 모든 걸 걸어 Risk it all</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">이 사랑 말고는 Fade out</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Gonna set me, set me, set me free</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">내 맘 끝까지 갈 테니</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">넌 그냥 날 안으면 돼</span></div>
-              <div class="lyrics-line"><span class="fanchant-highlight">Come and set me, set me, set me free</span></div>
-              <div class="section-divider"></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">내가 원하던 Best of me</span> <span class="fanchant-highlight">(na jeong mo)</span></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">이제 나는 Ready to be</span> <span class="fanchant-highlight">(sa ji mi)</span></div>
+              <div class="lyrics-line">Gonna set me, set me, set me free</div>
+              <div class="lyrics-line korean">내 맘 끝까지 갈 테니</div>
+              <div class="lyrics-line korean">넌 그냥 날 안으면 돼</div>
+              <div class="lyrics-line">Come and set me, set me, set me free</div>
+              <div class="lyrics-line korean">내가 원하던 Best of me <span class="fanchant-highlight">(na jeong mo)</span></div>
+              <div class="lyrics-line korean">이제 나는 Ready to be <span class="fanchant-highlight">(sa ji mi)</span></div>
               <div class="lyrics-line">Yeah, gonna set me, set me, set me free <span class="fanchant-highlight">(da chae jeu)</span></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">지금 All eyes on me</span></div>
-              <div class="lyrics-line korean"><span class="fanchant-highlight">나를 안아줘 다 보란듯이</span> <span class="fanchant-highlight">(Twice!)</span></div>
+              <div class="lyrics-line korean">지금 All eyes on me</div>
+              <div class="lyrics-line korean">나를 안아줘 다 보란듯이 <span class="fanchant-highlight">(Twice!)</span></div>
               <div class="lyrics-line">Yeah, come and set me, set me, set me free</div>
             </div>
           </div>
         </div>
 
-        <!-- I Can't Stop Me -->
+        <!-- I CAN'T STOP ME -->
         <div class="song-card" id="i-cant-stop-me">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">06</div>
@@ -1171,12 +1010,23 @@
             <div class="lyrics-container">
               <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh</div>
               <div class="lyrics-line korean">알람이 울려대 Ring ring a ling</div>
+              <div class="lyrics-line korean">서로의 눈길이 닿을 때마다</div>
+              <div class="lyrics-line korean">알면서 빙빙 도는데</div>
+              <div class="lyrics-line korean">점점 다가가잖아 I know it's too late</div>
+              <div class="lyrics-line korean">마음속으로는 다 알고 있잖아</div>
+              <div class="lyrics-line korean">결국에는 선을 넘게 될 거라는 걸</div>
+              <div class="lyrics-line">I'm warning to myself</div>
+              <div class="lyrics-line korean">너 그러면 안 돼</div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">매분, 매초, 내 맘이 내 맘을 추월해</div>
               <div class="lyrics-line">Out of control <span class="fanchant-highlight">(TWICE!)</span></div>
-              <div class="section-divider"></div>
+              <div class="lyrics-line korean">나를 감시하는 저 Spot spot spotlight</div>
+              <div class="lyrics-line korean">비출수록 어둠 속으로 빨려 들어</div>
+              <div class="lyrics-line korean">끝이 보이는데 I know it's not right</div>
               <div class="lyrics-line">I can't stop me, can't stop me <span class="fanchant-highlight">(No Oh Oh Hah)</span></div>
               <div class="lyrics-line korean">내 앞에 놓여진 이 Red red red line</div>
+              <div class="lyrics-line korean">건너편의 너와 난 이미 눈을 맞춰</div>
+              <div class="lyrics-line korean">느끼고 싶어 짜릿한 Highlight</div>
               <div class="lyrics-line">I can't stop me, can't stop me <span class="fanchant-highlight">(No Oh Oh Hah)</span></div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh <span class="fanchant-highlight">(na jeong mo)</span></div>
@@ -1184,72 +1034,228 @@
               <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh <span class="fanchant-highlight">(da chae jeu)</span></div>
               <div class="lyrics-line">I can't stop me, can't stop me</div>
               <div class="section-divider"></div>
+              <div class="lyrics-line korean">눈감아 달라구 (Ya ya)</div>
+              <div class="lyrics-line korean">딱 한 번만 No rules (Ah ah)</div>
+              <div class="lyrics-line korean">모른 척해 줘 Lights off (Tonight)</div>
+              <div class="lyrics-line korean">나 참을 수 없을 거 같아 Losing myself (Yeah yeah)</div>
+              <div class="lyrics-line korean">이제는 Turning back</div>
+              <div class="lyrics-line korean">불가능해 난 점점 더 깊은 어둠에</div>
+              <div class="lyrics-line korean">너무나 짜릿해</div>
+              <div class="lyrics-line korean">나 눈을 감을래</div>
+              <div class="lyrics-line korean">다시는 돌아갈 수 없을 것만 같애</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Out of control <span class="fanchant-highlight">(TWICE!)</span></div>
+              <div class="lyrics-line korean">나를 감시하는 저 Spot spot spotlight</div>
+              <div class="lyrics-line korean">비출수록 어둠 속으로 빨려 들어</div>
+              <div class="lyrics-line korean">끝이 보이는데 I know it's not right</div>
+              <div class="lyrics-line">I can't stop me, can't stop me <span class="fanchant-highlight">(No Oh Oh Hah)</span></div>
+              <div class="lyrics-line korean">내 앞에 놓여진 이 Red red red line</div>
+              <div class="lyrics-line korean">건너편의 너와 난 이미 눈을 맞춰</div>
+              <div class="lyrics-line korean">느끼고 싶어 짜릿한 Highlight</div>
+              <div class="lyrics-line">I can't stop me, can't stop me <span class="fanchant-highlight">(No Oh Oh Hah)</span></div>
+              <div class="section-divider"></div>
               <div class="lyrics-line">Risky risky wiggy 위기</div>
               <div class="lyrics-line">This is an emergency</div>
               <div class="lyrics-line">Help me, help me, somebody stop me</div>
               <div class="lyrics-line">Cuz I know I can't stop me</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line annotation">End: Name chanting — Im Nayeon, Momo chan, Sana chan… etc.</div>
+              <div class="lyrics-line korean">답은 알고 있잖아</div>
+              <div class="lyrics-line korean">근데 가고 있잖아</div>
+              <div class="lyrics-line korean">이러고 싶지 않아</div>
+              <div class="lyrics-line korean">내 안에 내가 또 있나 봐</div>
+              <div class="lyrics-line korean">나는 원하는데 (Ah ah)</div>
+              <div class="lyrics-line korean">원하는 게 안돼 (Ooh)</div>
+              <div class="lyrics-line korean">Guilty 난 싫은데</div>
+              <div class="lyrics-line">I can't stop me, can't stop me, can't stop me</div>
+              <div class="lyrics-line"><span class="annotation">(Cheering until end of verse)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">나를 감시하는 저 Spot spot spotlight</div>
+              <div class="lyrics-line korean">비출수록 어둠 속으로 빨려 들어</div>
+              <div class="lyrics-line korean">끝이 보이는데 I know it's not right</div>
+              <div class="lyrics-line">I can't stop me, can't stop me <span class="fanchant-highlight">(No Oh Oh Hah)</span></div>
+              <div class="lyrics-line korean">내 앞에 놓여진 이 Red red red line</div>
+              <div class="lyrics-line korean">건너편의 너와 난 이미 눈을 맞춰</div>
+              <div class="lyrics-line korean">느끼고 싶어 짜릿한 Highlight</div>
+              <div class="lyrics-line">I can't stop me, can't stop me <span class="fanchant-highlight">(No Oh Oh Hah)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh</div>
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh</div>
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh</div>
+              <div class="lyrics-line">I can't stop me, can't stop me</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line annotation">Name chanting: (Im Nayeon, ~, ~, Momo chan, Sana chan)</div>
+              <div class="lyrics-line annotation">(Park Jihyo, Mina chan etc. — name chanting)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh <span class="fanchant-highlight">(na jeong mo)</span></div>
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh <span class="fanchant-highlight">(sa ji mi)</span></div>
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh <span class="fanchant-highlight">(da chae jeu)</span></div>
             </div>
           </div>
         </div>
 
-        <!-- Options -->
+        <!-- OPTIONS -->
         <div class="song-card" id="options">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">07</div>
-            <div class="song-info">
-              <div class="song-title">OPTIONS</div>
-            </div>
+            <div class="song-info"><div class="song-title">OPTIONS</div></div>
             <div class="song-toggle">+</div>
           </div>
           <div class="song-body">
             <div class="lyrics-container">
-              <div class="lyrics-line">Hey — I got all these options</div>
+              <div class="lyrics-line">Hey</div>
+              <div class="lyrics-line">I got all these options</div>
+              <div class="lyrics-line">Okay</div>
               <div class="lyrics-line">Options, oh, options (Oh, oh)</div>
+              <div class="lyrics-line">Say you want my number</div>
+              <div class="lyrics-line">Say you wanna take me out tonight</div>
+              <div class="lyrics-line">Go a little further</div>
+              <div class="lyrics-line">Say you wanna drive until the sunrise</div>
+              <div class="lyrics-line">A sprinkle of me, bit of temptation</div>
+              <div class="lyrics-line">Tight lil' jeans, what a sensation</div>
+              <div class="lyrics-line">If you only knew</div>
+              <div class="lyrics-line">What I could do to you, ah, yeah</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">First guy turned up in a black tie</div>
               <div class="lyrics-line">Second wasn't my type</div>
               <div class="lyrics-line">Third, I let him know, oh</div>
               <div class="lyrics-line">That I'm a little selfish</div>
+              <div class="lyrics-line">I know but I just can't help it, no</div>
+              <div class="lyrics-line">Ego control</div>
+              <div class="lyrics-line">Keep it on the low 'cause I never really know</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Baby, I'm gon' keep my options open, oh</div>
               <div class="lyrics-line">Baby, I'm not bought and I'm not chosen</div>
               <div class="lyrics-line">A, B, C, D, got options, oh</div>
               <div class="lyrics-line">I'm picky when I choose</div>
               <div class="lyrics-line">Voulez-vous? Could be you, oh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Mmm, I might choose this one</div>
+              <div class="lyrics-line">Might put him in a bag in addition to</div>
+              <div class="lyrics-line">This one, this one</div>
+              <div class="lyrics-line">He ain't givin' up, 'cause he got ambition</div>
+              <div class="lyrics-line">One thing that I got, no doubt</div>
+              <div class="lyrics-line">Nothing's gonna tie me down</div>
+              <div class="lyrics-line">Baby boy, can you handle it?</div>
+              <div class="lyrics-line">The way that I move is scandalous</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">First guy turned up in a black tie</div>
+              <div class="lyrics-line">Second wasn't my type</div>
+              <div class="lyrics-line">Third, I let him know, oh</div>
+              <div class="lyrics-line">That I'm a little selfish</div>
+              <div class="lyrics-line">I know but I just can't help it, no</div>
+              <div class="lyrics-line">Ego control</div>
+              <div class="lyrics-line">Keep it on the low 'cause I never really know</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Baby, I'm gon' keep my options open, oh</div>
+              <div class="lyrics-line">Baby, I'm not bought and I'm not chosen</div>
+              <div class="lyrics-line">A, B, C, D, got options, oh</div>
+              <div class="lyrics-line">I'm picky when I choose</div>
+              <div class="lyrics-line">Voulez-vous? Could be you, oh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I, I got them options</div>
+              <div class="lyrics-line">I got them options, I got the time</div>
+              <div class="lyrics-line">Out in the open, swimmin' in oceans, oh</div>
+              <div class="lyrics-line">If you really want, you could be the one</div>
+              <div class="lyrics-line">Don't be overthinkin', little bit of fun</div>
+              <div class="lyrics-line">On one condition, don't get too emotional</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Baby, I'm gon' keep my options open, oh (Keep 'em, babe)</div>
+              <div class="lyrics-line">Baby, I'm not bought and I'm not chosen (Chosen)</div>
+              <div class="lyrics-line">A, B, C, D, got options, oh (I got options, woah)</div>
+              <div class="lyrics-line">I'm picky when I choose</div>
+              <div class="lyrics-line">Voulez-vous? Could be you (Could be you, could be you)</div>
+              <div class="lyrics-line">Baby, I'm gon' keep my options open, oh (I will keep 'em)</div>
+              <div class="lyrics-line">Baby, I'm not bought and I'm not chosen (Baby, I'm, hey, yeah)</div>
+              <div class="lyrics-line">A, B, C, D, got options, oh (I got options, I got options)</div>
+              <div class="lyrics-line">I'm picky when I choose</div>
+              <div class="lyrics-line">Voulez-vous? Could be you (I got these options, oh, oh)</div>
+              <div class="lyrics-line">I got all these options, baby</div>
+              <div class="lyrics-line">Options, oh</div>
             </div>
           </div>
         </div>
 
-        <!-- Moonlight Sunrise -->
+        <!-- MOONLIGHT SUNRISE -->
         <div class="song-card" id="moonlight-sunrise">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">08</div>
-            <div class="song-info">
-              <div class="song-title">MOONLIGHT SUNRISE</div>
-            </div>
+            <div class="song-info"><div class="song-title">MOONLIGHT SUNRISE</div></div>
             <div class="song-toggle">+</div>
           </div>
           <div class="song-body">
             <div class="lyrics-container">
+              <div class="lyrics-line">Oh, yeah</div>
               <div class="lyrics-line">I guarantee I gotcha</div>
               <div class="lyrics-line">I've been craving for your love</div>
               <div class="lyrics-line">Can't see nobody but us</div>
+              <div class="lyrics-line">So I, so I, so I</div>
+              <div class="lyrics-line">See you from across the room</div>
+              <div class="lyrics-line">Make my way over to you</div>
+              <div class="lyrics-line">I'm trippin' over butterflies</div>
+              <div class="lyrics-line">Oh, yeah</div>
+              <div class="lyrics-line">Baby, I don't really mean to rush</div>
+              <div class="lyrics-line">But I'ma really need your touch</div>
+              <div class="lyrics-line">If I'ma make it through the night</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">I got the moonlight</div>
               <div class="lyrics-line">Tequila sunrise</div>
               <div class="lyrics-line">Ha, come take a shot on me, I gotcha</div>
+              <div class="lyrics-line">I don't know how to say this</div>
+              <div class="lyrics-line">I hope this song is on your playlist</div>
+              <div class="lyrics-line">This feeling's so hard to explain</div>
+              <div class="lyrics-line">I don't even know how to talk right now</div>
+              <div class="lyrics-line">It's "I need you" o'clock right now</div>
+              <div class="lyrics-line">I want you to hear me say</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Moonlight sunrise — Baby, come be my starlight</div>
               <div class="lyrics-line">Moonlight sunrise — Oh, baby, just to make you stay</div>
               <div class="lyrics-line">Moonlight sunrise — Baby, let's do it all night</div>
               <div class="lyrics-line">Moonlight sunrise — I guarantee I gotcha</div>
               <div class="section-divider"></div>
+              <div class="lyrics-line">Loving undefeated, on your knees pleading</div>
+              <div class="lyrics-line">Baby, you can hit up my line when you need it</div>
+              <div class="lyrics-line">Said that you tried, baby, you succeeded</div>
+              <div class="lyrics-line">Got a craving, baby, can you feed it? (Hoo)</div>
+              <div class="section-divider"></div>
               <div class="lyrics-line">Took a trip under moonlight</div>
               <div class="lyrics-line">Follow me to the sunrise</div>
               <div class="lyrics-line">Everyday, every night</div>
               <div class="lyrics-line">Ay, come with me, don't think TWICE</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Oh, yeah</div>
+              <div class="lyrics-line">Baby, I don't really mean to rush</div>
+              <div class="lyrics-line">But I'ma really need your touch</div>
+              <div class="lyrics-line">If I'ma make it through the night</div>
+              <div class="lyrics-line">I got the moonlight</div>
+              <div class="lyrics-line">Tequila sunrise</div>
+              <div class="lyrics-line">Ha, come take a shot on me, I gotcha</div>
+              <div class="lyrics-line">I don't know how to say this</div>
+              <div class="lyrics-line">I hope this song is on your playlist</div>
+              <div class="lyrics-line">This feeling's so hard to explain</div>
+              <div class="lyrics-line">I don't even know how to talk right now</div>
+              <div class="lyrics-line">It's "I need you" o'clock right now</div>
+              <div class="lyrics-line">I want you to hear me say</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Moonlight sunrise — Baby, come be my starlight</div>
+              <div class="lyrics-line">Moonlight sunrise — Oh, baby, just to make you stay</div>
+              <div class="lyrics-line">Moonlight sunrise — Baby, let's do it all night</div>
+              <div class="lyrics-line">Moonlight sunrise — I guarantee I gotcha</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Cards out on the table, what you say?</div>
+              <div class="lyrics-line">I need you, you need me, you're mine</div>
+              <div class="lyrics-line">If I'm your moonlight</div>
+              <div class="lyrics-line">You're my sunrise, babe</div>
+              <div class="lyrics-line">I guarantee I gotcha</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Moonlight sunrise (Oh) — Baby, come be my starlight (Oh, yeah)</div>
+              <div class="lyrics-line">Moonlight sunrise — Oh, baby, just to make you stay (Ah, yeah)</div>
+              <div class="lyrics-line">Moonlight sunrise — Baby, let's do it all night</div>
+              <div class="lyrics-line">Moonlight sunrise (Oh, yeah) — I guarantee I gotcha (Oh, oh)</div>
+              <div class="lyrics-line">Moonlight sunrise — Baby, come be my starlight (Hoo)</div>
+              <div class="lyrics-line">Moonlight sunrise (Moonlight sunrise) — I guarantee I gotcha</div>
+              <div class="lyrics-line">Moonlight sunrise (Moonlight) — Baby, let's do it all night (Sunrise)</div>
+              <div class="lyrics-line">Moonlight sunrise (Oh, yeah) — I guarantee I gotcha</div>
+              <div class="lyrics-line">Moonlight sunrise</div>
             </div>
           </div>
         </div>
@@ -1265,7 +1271,7 @@
       </div>
       <div class="songs-grid">
 
-        <!-- Mars -->
+        <!-- MARS -->
         <div class="song-card" id="mars">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">09</div>
@@ -1276,11 +1282,46 @@
             <div class="lyrics-container">
               <div class="lyrics-line korean">손을 잡아 Let's run away</div>
               <div class="lyrics-line korean">함께라면 말이 다르지 Don't hesitate</div>
+              <div class="lyrics-line korean">한 손엔 One-way ticket to anywhere</div>
+              <div class="lyrics-line korean">No matter where I go now, I'm taking you with me</div>
+              <div class="lyrics-line">Me and you</div>
+              <div class="lyrics-line korean">때론 낯선 이방인인 채로 우리</div>
+              <div class="lyrics-line">Ooh</div>
+              <div class="lyrics-line korean">어디에든 숨어보자고</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Do you ever really wonder we are lost on Mars?</div>
               <div class="lyrics-line korean">누군가는 비웃겠지만</div>
+              <div class="lyrics-line korean">나와 같은 얼굴을 하고</div>
+              <div class="lyrics-line korean">눈을 맞추는 너</div>
               <div class="lyrics-line">Do you ever feel like you don't belong in the world?</div>
+              <div class="lyrics-line korean">사라지고 싶을 만큼</div>
+              <div class="lyrics-line korean">빛나는 별들 사이로</div>
+              <div class="lyrics-line korean">멀어진 푸른 점</div>
               <div class="section-divider"></div>
+              <div class="lyrics-line">We are alive</div>
+              <div class="lyrics-line">We are alive</div>
+              <div class="lyrics-line">We are alive</div>
+              <div class="lyrics-line">We are alive, we are alive</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">상상해 본 적 없어</div>
+              <div class="lyrics-line">Somebody picks you up, takes you to where no one knows</div>
+              <div class="lyrics-line">I wanna do that for you, I wanna lose control</div>
+              <div class="lyrics-line korean">고갤 끄덕여 줘 너와 날 위해</div>
+              <div class="lyrics-line">Me and you</div>
+              <div class="lyrics-line korean">때론 낯선 이방인인 채로 우리</div>
+              <div class="lyrics-line">Ooh</div>
+              <div class="lyrics-line korean">어디에든 숨어보자고</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Do you ever really wonder we are lost on Mars?</div>
+              <div class="lyrics-line korean">누군가는 비웃겠지만</div>
+              <div class="lyrics-line korean">나와 같은 얼굴을 하고</div>
+              <div class="lyrics-line korean">눈을 맞추는 너</div>
+              <div class="lyrics-line">Do you ever feel like you don't belong in the world?</div>
+              <div class="lyrics-line korean">사라지고 싶을 만큼</div>
+              <div class="lyrics-line korean">반짝이는 별들 사이로</div>
+              <div class="lyrics-line korean">멀어진 푸른 점</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">We are alive</div>
               <div class="lyrics-line">We are alive</div>
               <div class="lyrics-line">We are alive</div>
               <div class="lyrics-line">We are alive, we are alive</div>
@@ -1288,7 +1329,7 @@
           </div>
         </div>
 
-        <!-- I Got You -->
+        <!-- I GOT YOU -->
         <div class="song-card" id="i-got-you">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">10</div>
@@ -1303,20 +1344,56 @@
             <div class="lyrics-container">
               <div class="lyrics-line">A little reckless around the edges</div>
               <div class="lyrics-line">Call it young, dumb love and it's just enough</div>
+              <div class="lyrics-line">Keep me guessing (Keep me guessing)</div>
+              <div class="lyrics-line">how the story unfolds with you</div>
+              <div class="lyrics-line">When I'm walking into the darkness</div>
+              <div class="lyrics-line">I know you'll be right there, lighting up the flares</div>
+              <div class="lyrics-line">When it's starless (when it's starless)</div>
+              <div class="lyrics-line">I will follow you to the moon</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Ayy, no, we'll never fall apart <span class="fanchant-highlight">(too-wai-ee-su)</span></div>
               <div class="lyrics-line">Even million miles apart <span class="fanchant-highlight">(too-wai-ee-su)</span></div>
               <div class="lyrics-line">We were lightning from the start</div>
+              <div class="lyrics-line">And it keeps me going to know that</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line">Ooh, ooh-ooh-ooh, no matter what you got me, I got you</div>
+              <div class="lyrics-line">Ooh, ooh-ooh-ooh, no matter what you got me, I got you (I got you)</div>
               <div class="lyrics-line">And I wouldn't want it any other way</div>
               <div class="lyrics-line">Ooh, ooh-ooh-ooh, no drop of doubt, I know deep down that</div>
               <div class="lyrics-line">We'll make it through, just like we always do</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Ay, every second, every minute</div>
+              <div class="lyrics-line">Want you close to me, like you're supposed to be</div>
+              <div class="lyrics-line">Ain't no limit to what I would do for you, oh</div>
+              <div class="lyrics-line">And you know you turn my whole world upside down</div>
+              <div class="lyrics-line">Catch me before I ever hit the ground</div>
+              <div class="lyrics-line">And I'd do the same for you, oh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">No, we'll never fall apart <span class="fanchant-highlight">(too-wai-ee-su)</span></div>
+              <div class="lyrics-line">Even million miles apart <span class="fanchant-highlight">(too-wai-ee-su)</span></div>
+              <div class="lyrics-line">We were lightning from the start</div>
+              <div class="lyrics-line">And it keeps me going to know that</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Ooh, ooh-ooh-ooh, no matter what you got me, I got you (I got you)</div>
+              <div class="lyrics-line">And I wouldn't want it any other way</div>
+              <div class="lyrics-line">Ooh, ooh-ooh-ooh, no drop of doubt, I know deep down that</div>
+              <div class="lyrics-line">We'll make it through, just like we always do</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Doo-doo, doo-doo-doo-doo-doo</div>
+              <div class="lyrics-line">Doo-doo, doo-doo-doo-doo-doo</div>
+              <div class="lyrics-line">Doo-doo, doo-doo-doo-doo-doo (Oh, oh)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Ooh, ooh-ooh-ooh, no matter what you got me, I got you (I got you)</div>
+              <div class="lyrics-line">And I wouldn't want it any other way</div>
+              <div class="lyrics-line">Ooh, ooh-ooh-ooh, no drop of doubt, I know deep down that</div>
+              <div class="lyrics-line">We'll make it through, just like we always do (Through)</div>
+              <div class="lyrics-line">Doo-doo, doo-doo-doo-doo-doo (That we do)</div>
+              <div class="lyrics-line">Doo-doo, doo-doo-doo-doo-doo (We do, ooh)</div>
+              <div class="lyrics-line">Doo-doo, doo-doo-doo-doo-doo (Just like we always do, ooh-ooh-ooh-ooh)</div>
             </div>
           </div>
         </div>
 
-        <!-- The Feels -->
+        <!-- THE FEELS -->
         <div class="song-card" id="the-feels">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">11</div>
@@ -1325,15 +1402,72 @@
           </div>
           <div class="song-body">
             <div class="lyrics-container">
-              <div class="lyrics-line">Boy, I, boy, I, boy, I know</div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know (Ahem)</div>
               <div class="lyrics-line">I know you get the feels (Yeah)</div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know</div>
+              <div class="lyrics-line">Uh, I'm so curious</div>
+              <div class="lyrics-line">'Bout ya boy, wanna keep it cool</div>
+              <div class="lyrics-line">But I know, every time you move</div>
+              <div class="lyrics-line">Got me frozen, I</div>
+              <div class="lyrics-line">Get so shy, it's obvious (Yeah, yeah)</div>
+              <div class="lyrics-line">Catching feels like butterflies</div>
+              <div class="lyrics-line">If I say what's on my mind (On my mind)</div>
+              <div class="lyrics-line">Would I hit bullseye? (Woo)</div>
+              <div class="lyrics-line">Shoot! I'm ready, aim and fire</div>
+              <div class="lyrics-line">Baby I, woah (Ow!)</div>
+              <div class="lyrics-line">Feel like cupid's alive</div>
+              <div class="lyrics-line">Alive tonight — Yeah, tonight</div>
+              <div class="lyrics-line">If your heart beats the same way</div>
+              <div class="lyrics-line">Let me know (Yeah, let me know)</div>
+              <div class="lyrics-line">'Cause I'm boom-boom-boom</div>
+              <div class="lyrics-line">From head to toe and I (From head to toe)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I know love</div>
+              <div class="lyrics-line">It is such a funny thing</div>
+              <div class="lyrics-line">A mystery allure</div>
+              <div class="lyrics-line">Gotta get to know you more</div>
+              <div class="lyrics-line">'Cause I, I can feel a real connection</div>
+              <div class="lyrics-line">A supernatural attraction</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">I got the feels for you, yeah, yeah, yeah, yeah</div>
               <div class="lyrics-line">You have stolen my heart, oh, yeah</div>
               <div class="lyrics-line">Never let it go-oh-oh</div>
+              <div class="lyrics-line">No, never let it go-oh, oh-oh, oh-oh, oh</div>
               <div class="lyrics-line">Lightning straight to my heart, oh, yeah</div>
               <div class="lyrics-line">I got all the feels for sure</div>
               <div class="lyrics-line">Yeah, I got all the feels for ya</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know</div>
+              <div class="lyrics-line">I know I get the feels</div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know</div>
+              <div class="lyrics-line">I know you feel it too (Uh, uh)</div>
+              <div class="lyrics-line">Sway in the moonlight, dance in the dark (Yeah, yeah)</div>
+              <div class="lyrics-line">I, I know that I caught your eye (That's right)</div>
+              <div class="lyrics-line">Are we on the same vibe? (Same vibe)</div>
+              <div class="lyrics-line">Wonder what's on your mind</div>
+              <div class="lyrics-line">'Cause you got me good and I wanna be ya boo</div>
+              <div class="lyrics-line">If it's dumb, well, I wanna be a fool (Woo, woo, woo)</div>
+              <div class="lyrics-line">Underneath the neon lights, baby</div>
+              <div class="lyrics-line">Electricity tonight, baby</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I know love — It is such a funny thing (Yeah)</div>
+              <div class="lyrics-line">A mystery allure</div>
+              <div class="lyrics-line">Gotta get to know you more (No)</div>
+              <div class="lyrics-line">[Ji/Chae] 'Cause I, I can feel a real connection</div>
+              <div class="lyrics-line">[Ji/Chae] A supernatural attraction</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I got the feels for you, yeah, yeah, yeah, yeah (Ah)</div>
+              <div class="lyrics-line">You have stolen my heart, oh, yeah (Oh, yeah)</div>
+              <div class="lyrics-line">Never let it go-oh-oh</div>
+              <div class="lyrics-line">No, never let it go-oh, oh-oh, oh-oh, oh</div>
+              <div class="lyrics-line">Lightning straight to my heart, oh, yeah (Oh, yeah)</div>
+              <div class="lyrics-line">I got all the feels for sure</div>
+              <div class="lyrics-line">Yeah, I got all the feels for ya (Oh, yeah)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know</div>
+              <div class="lyrics-line">I know I get the feels</div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know</div>
+              <div class="lyrics-line">I know you feel it too (Feel it too)</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">You got my attention (Oh)</div>
               <div class="lyrics-line">So what's your intention? (Oh)</div>
@@ -1341,11 +1475,26 @@
               <div class="lyrics-line">Oh, one look and I know it</div>
               <div class="lyrics-line">Baby, my eyes reveal</div>
               <div class="lyrics-line">That you, you, you give me the feels, oh, yeah</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">[Na/Jeong] You have stolen my heart, oh, yeah</div>
+              <div class="lyrics-line">Never let it go-oh-oh (No-no, no-no)</div>
+              <div class="lyrics-line">No, never let it go-oh, oh-oh, oh-oh, oh</div>
+              <div class="lyrics-line">Lightning straight to my heart, oh yeah (Oh yeah-ah, I)</div>
+              <div class="lyrics-line">I got all the feels for sure</div>
+              <div class="lyrics-line">Yeah, I got all the feels for ya</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know — I know I get the feels (Oh, yeah)</div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know (Yeah, yeah, yeah)</div>
+              <div class="lyrics-line">I know you feel it too (Yeah, yeah, yeah, oh)</div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know (The feels, come on)</div>
+              <div class="lyrics-line">I know I get the feels</div>
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know</div>
+              <div class="lyrics-line">I know you feel it too (Yeah)</div>
             </div>
           </div>
         </div>
 
-        <!-- Gone -->
+        <!-- GONE -->
         <div class="song-card" id="gone">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">12</div>
@@ -1356,20 +1505,72 @@
             <div class="lyrics-container">
               <div class="lyrics-line korean">순간의 흔들림으로</div>
               <div class="lyrics-line korean">쉽게 질려 떠나버리고</div>
+              <div class="lyrics-line korean">I wonder what else</div>
+              <div class="lyrics-line korean">입술에 침 바른 소리도</div>
+              <div class="lyrics-line korean">No 넌 듣기에 좋은 말들로만</div>
+              <div class="lyrics-line korean">달콤하게 속였지만</div>
+              <div class="lyrics-line korean">앞으론 듣지 않을 거야 Yeah</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">If you see me</div>
+              <div class="lyrics-line">Get away from me, oh</div>
+              <div class="lyrics-line">Far away from me, oh</div>
+              <div class="lyrics-line korean">더 이상의 기회는 없으니까</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">I see the lies on the tip of your tongue</div>
               <div class="lyrics-line korean">널 향했던 믿음 모두 다</div>
               <div class="lyrics-line korean">안개처럼 사라져버려</div>
               <div class="lyrics-line">Gone, gone</div>
+              <div class="lyrics-line korean">어둠 속에 감추던 Your mind</div>
+              <div class="lyrics-line korean">이제라도 알아챘으니</div>
+              <div class="lyrics-line korean">안개처럼 사라져버려</div>
+              <div class="lyrics-line">Gone, gone (Hey, hey)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">이랬다저랬다 하는 너의 변심에</div>
+              <div class="lyrics-line korean">지쳤어 별 의미 없는 짓인데</div>
+              <div class="lyrics-line korean">Oh 결국엔 너로 인해</div>
+              <div class="lyrics-line korean">모든 게 시작된 거야 I'm sure you know (You can't deny it)</div>
+              <div class="lyrics-line korean">처음엔 믿기 힘들었지 (You can't deny it)</div>
+              <div class="lyrics-line korean">그만큼 커져 가는 미움</div>
+              <div class="lyrics-line korean">헛된 희망과 실망까지</div>
+              <div class="lyrics-line korean">등을 돌려 그늘진 마음 Oh, yeah</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">If you see me</div>
+              <div class="lyrics-line">Get away from me, oh</div>
+              <div class="lyrics-line">Far away from me, oh</div>
+              <div class="lyrics-line korean">더 이상의 기회는 없으니까</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I see the lies on the tip of your tongue</div>
+              <div class="lyrics-line korean">널 향했던 믿음 모두 다</div>
+              <div class="lyrics-line korean">안개처럼 사라져버려</div>
+              <div class="lyrics-line">Gone, gone</div>
+              <div class="lyrics-line korean">어둠 속에 감추던 Your mind</div>
+              <div class="lyrics-line korean">이제라도 알아챘으니</div>
+              <div class="lyrics-line korean">안개처럼 사라져버려</div>
+              <div class="lyrics-line">Gone, gone</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">참는 것도 한두 번이라고 My patience, invisible</div>
+              <div class="lyrics-line korean">찾아볼 수 없어 It's all gone</div>
+              <div class="lyrics-line korean">돌이키려고 해도 늦었어</div>
+              <div class="lyrics-line korean">이제와서 소용없어 떠나가 버렸어 It's long gone</div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">변덕스러운 맘 가진 너는 Out (너는 Out)</div>
-              <div class="lyrics-line">I know that you know what I'm talking 'bout</div>
+              <div class="lyrics-line">I know that you know what I'm talking 'bout (Talking 'bout)</div>
               <div class="lyrics-line">Nothing you could say that could turn this around, I'm gone</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">[나/지] I see the lies on the tip of your tongue</div>
+              <div class="lyrics-line korean">널 향했던 믿음 모두 다</div>
+              <div class="lyrics-line korean">안개처럼 사라져버려 (Yeah)</div>
+              <div class="lyrics-line">Gone, gone (Yeah, oh)</div>
+              <div class="lyrics-line korean">어둠 속에 감추던 Your mind (Your mind)</div>
+              <div class="lyrics-line korean">이제라도 알아챘으니 (알아챘어)</div>
+              <div class="lyrics-line korean">안개처럼 사라져버려 (Gone)</div>
+              <div class="lyrics-line">Gone, gone (Eh, eh)</div>
+              <div class="lyrics-line">Gone — I'm gone — I'm gone, gone</div>
             </div>
           </div>
         </div>
 
-        <!-- Cry For Me -->
+        <!-- CRY FOR ME -->
         <div class="song-card" id="cry-for-me">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">13</div>
@@ -1379,6 +1580,17 @@
           <div class="song-body">
             <div class="lyrics-container">
               <div class="lyrics-line korean">I know 고쳐 쓸 가치도 없단 걸</div>
+              <div class="lyrics-line korean">하지만 그녀와 달리 난 널</div>
+              <div class="lyrics-line korean">쉽게 놔줄 맘이 없거든 (Never let go)</div>
+              <div class="lyrics-line">You don't know me</div>
+              <div class="lyrics-line">L-O-V-E or hatred</div>
+              <div class="lyrics-line korean">이별 대신 난 순진한 미소만</div>
+              <div class="lyrics-line korean">오늘도 네 품에 안길래</div>
+              <div class="lyrics-line korean">Oh, 아무것도 모르는 척</div>
+              <div class="lyrics-line">Baby, no more real love</div>
+              <div class="lyrics-line korean">너의 곁에 있어줄게</div>
+              <div class="lyrics-line korean">마지막엔 break your heart</div>
+              <div class="section-divider"></div>
               <div class="lyrics-line">Bad boy, bad boy</div>
               <div class="lyrics-line">Yeah, you really make me</div>
               <div class="lyrics-line">A mad girl mad girl, woah</div>
@@ -1386,15 +1598,59 @@
               <div class="lyrics-line">I want you to cry, cry for me</div>
               <div class="lyrics-line korean">내가 울었던 것처럼 Cry for me</div>
               <div class="lyrics-line">Make your rain fall, cry for me, but again</div>
+              <div class="lyrics-line korean">조금씩 조금씩 또 빠져가</div>
+              <div class="lyrics-line korean">사랑에 내 결심이 또 무너져가</div>
+              <div class="lyrics-line korean">용서할 핑계를 만들어가</div>
+              <div class="lyrics-line">I want you to, I want you to</div>
+              <div class="lyrics-line">I want you to cry for me</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Mmm, mmm (Yeah)</div>
+              <div class="lyrics-line korean">I don't know 너란 놈 미워질 줄 모르고</div>
+              <div class="lyrics-line korean">친구들한텐 또 너를 감싸주는 중</div>
+              <div class="lyrics-line korean">바보가 돼 버렸군 (Mmm, yeah)</div>
+              <div class="lyrics-line korean">Woo 너 왜 자꾸 나를 보며 웃는데</div>
+              <div class="lyrics-line korean">딱 한 번의 눈물이면 되는데 (Ooh)</div>
+              <div class="lyrics-line">Cry for me, let me please forgive you, oh (Yeah, yeah)</div>
+              <div class="lyrics-line korean">아무것도 모르는 척</div>
+              <div class="lyrics-line">[나/다] Baby, just like real love</div>
+              <div class="lyrics-line korean">마지막 기회야 어서</div>
+              <div class="lyrics-line">[나/다] 보여줘봐 Your true love</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Bad boy, bad boy</div>
+              <div class="lyrics-line">Yeah, you really make me</div>
+              <div class="lyrics-line">[나/지] A sad girl sad girl, woah (Oh)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I want you to cry, cry for me (Me)</div>
+              <div class="lyrics-line korean">내가 울었던 것처럼 Cry for me (Me)</div>
+              <div class="lyrics-line">Make your rain fall, cry for me, but again (Me, yeah)</div>
+              <div class="lyrics-line korean">조금씩 조금씩 또 빠져가 (Ooh)</div>
+              <div class="lyrics-line korean">사랑에 내 결심이 또 무너져가 (Ah)</div>
+              <div class="lyrics-line korean">용서할 핑계를 만들어가 (Ah-uh)</div>
+              <div class="lyrics-line">I want you to, I want you to</div>
+              <div class="lyrics-line">I want you to cry for me</div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">사랑이란 게 너무 독해</div>
               <div class="lyrics-line korean">미운 마음도 다 녹아버리게 해</div>
+              <div class="lyrics-line korean">또 다시 원해 (Hoo)</div>
+              <div class="lyrics-line korean">널 내 곁에 Yeah, yeah, yeah (Oh)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I want you to cry, cry for me</div>
+              <div class="lyrics-line korean">너 연기라도 해 빨리 Cry for me</div>
+              <div class="lyrics-line">Make your rain fall — Fall and fall now, yeah</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">[나/정] I want you to cry, cry for me</div>
+              <div class="lyrics-line korean">[나/정] 내가 울었던 것처럼 Cry for me</div>
+              <div class="lyrics-line">[나/정] Make your rain fall, cry for me, but again</div>
+              <div class="lyrics-line korean">조금씩 조금씩 또 빠져가 (Oh, yeah)</div>
+              <div class="lyrics-line korean">[나/지] 사랑에 내 결심이 또 무너져가</div>
+              <div class="lyrics-line korean">용서할 핑계를 만들어가 (만들어가)</div>
+              <div class="lyrics-line">I want you to, I want you to</div>
               <div class="lyrics-line">I want you to die for me</div>
             </div>
           </div>
         </div>
 
-        <!-- Hell In Heaven -->
+        <!-- HELL IN HEAVEN -->
         <div class="song-card" id="hell-in-heaven">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">14</div>
@@ -1403,22 +1659,80 @@
           </div>
           <div class="song-body">
             <div class="lyrics-container">
+              <div class="lyrics-line">Surely you can see that you could never make her happy</div>
+              <div class="lyrics-line korean">네 눈은 가시 박힌 Diamond 같애</div>
               <div class="lyrics-line korean">천사와 악마가 왔다 갔다 해</div>
               <div class="lyrics-line korean">천국과 지옥은 생각보다 멀지 않네</div>
+              <div class="lyrics-line korean">가지려면 하나를 달래</div>
+              <div class="lyrics-line korean">원하면 기회를 준대</div>
+              <div class="lyrics-line korean">어쩌겠어 내가 못 잃을 걸</div>
+              <div class="lyrics-line">I know and you know</div>
+              <div class="lyrics-line korean">저 태양이 멈추고</div>
+              <div class="lyrics-line">Can't wait, I can't wait</div>
+              <div class="lyrics-line korean">온 세상이 불을 끄면</div>
+              <div class="lyrics-line">Oh, oh, oh-oh-oh-oh</div>
+              <div class="lyrics-line korean">시작되는 Deal with the devil</div>
+              <div class="lyrics-line">Ay-ya-ya, uh</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Take me to your paradise</div>
               <div class="lyrics-line korean">천국 문이 닫힌다</div>
               <div class="lyrics-line korean">별이 쏟아지는 밤</div>
               <div class="lyrics-line">Kiss me in the blue moonlight</div>
-              <div class="lyrics-line korean">빨리 꺼내줘 — 나를 데려가줘</div>
+              <div class="lyrics-line korean">빨리 꺼내줘</div>
+              <div class="lyrics-line korean">나를 데려가줘</div>
               <div class="lyrics-line">My hope in hell</div>
+              <div class="lyrics-line">Take me to your paradise</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line">Oh-eh-oh, oh-eh-oh — Paradise</div>
+              <div class="lyrics-line korean">한 번만 Mmm (Hoo)</div>
+              <div class="lyrics-line korean">한 번 더 Mmm (Hoo)</div>
+              <div class="lyrics-line korean">마지막 Mmm (Hoo)</div>
+              <div class="lyrics-line korean">자꾸 너를 원해</div>
+              <div class="lyrics-line korean">보기만 해도 (Woah)</div>
+              <div class="lyrics-line korean">닿기만 해도 (Woah)</div>
+              <div class="lyrics-line korean">천국 지옥 아니 그 어디쯤</div>
+              <div class="lyrics-line korean">널 뜨겁게 원하고</div>
+              <div class="lyrics-line">Can't wait, I can't wait</div>
+              <div class="lyrics-line korean">더 간절히 원할수록</div>
+              <div class="lyrics-line">Oh, oh, oh-oh-oh-oh</div>
+              <div class="lyrics-line korean">불리해지는 Deal with the devil</div>
+              <div class="lyrics-line">Ay-ya-ya, ooh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Take me to your paradise</div>
+              <div class="lyrics-line korean">천국 문이 닫힌다</div>
+              <div class="lyrics-line korean">별이 쏟아지는 밤</div>
+              <div class="lyrics-line">Kiss me in the blue moonlight</div>
+              <div class="lyrics-line korean">빨리 꺼내줘</div>
+              <div class="lyrics-line korean">나를 데려가줘</div>
+              <div class="lyrics-line">My hope in hell</div>
+              <div class="lyrics-line">Take me to your paradise</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">천국 문을 열어줘 Let me</div>
+              <div class="lyrics-line korean">구름 위를 걸어줘 Can we?</div>
+              <div class="lyrics-line korean">너에게 갇힌 날</div>
+              <div class="lyrics-line">구해줘 Hold me tight</div>
+              <div class="lyrics-line korean">점점 빠르게 무너져 가</div>
+              <div class="lyrics-line korean">더더 까맣게 물들어 가</div>
+              <div class="lyrics-line">Ooh, hell in heaven</div>
+              <div class="lyrics-line">Oh, oh, oh, oh, oh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Take me to your paradise</div>
+              <div class="lyrics-line korean">천국 문이 닫힌다</div>
+              <div class="lyrics-line korean">별이 쏟아지는 밤</div>
+              <div class="lyrics-line">Kiss me in the blue moonlight</div>
+              <div class="lyrics-line korean">빨리 꺼내줘</div>
+              <div class="lyrics-line korean">나를 데려가줘</div>
+              <div class="lyrics-line">My hope in hell</div>
+              <div class="lyrics-line">Take me to your paradise</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">[지/All] Oh-eh-oh, oh-eh-oh, ah</div>
+              <div class="lyrics-line">[지/All] Oh-eh-oh, oh-eh-oh</div>
+              <div class="lyrics-line">[지/All] Oh-eh-oh, oh-eh-oh, ah</div>
+              <div class="lyrics-line">[지/All] Oh-eh-oh, oh-eh-oh — Paradise</div>
             </div>
           </div>
         </div>
 
-        <!-- Right Hand Girl -->
+        <!-- RIGHT HAND GIRL -->
         <div class="song-card" id="right-hand-girl">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">15</div>
@@ -1427,15 +1741,63 @@
           </div>
           <div class="song-body">
             <div class="lyrics-container">
+              <div class="lyrics-line">I said I'm on my way, but I'm already outside</div>
+              <div class="lyrics-line">Girl, come and hop up in a big ride</div>
+              <div class="lyrics-line">Don't be messing up your eyeliner</div>
+              <div class="lyrics-line">For somebody who's a part-timer</div>
+              <div class="lyrics-line">Let's go heavy on the mood, fired up</div>
+              <div class="lyrics-line">Trust me, it'll make you feel lighter</div>
+              <div class="lyrics-line">Get the rhythm in your mind and make your body whine, whine (Yeah, yeah)</div>
+              <div class="lyrics-line">Mm, yeah, the rhythm got you high</div>
+              <div class="lyrics-line">You dancing all night, night</div>
+              <div class="section-divider"></div>
               <div class="lyrics-line">Take it, take it, take it all, baby</div>
               <div class="lyrics-line">Get, get it, yeah, we can worry later</div>
               <div class="lyrics-line">Bend it, break it, on your worst behavior</div>
               <div class="lyrics-line">Don't need nobody but your right-hand girl, oh</div>
+              <div class="lyrics-line">Take it, take it, take it all, baby (Oh)</div>
+              <div class="lyrics-line">Get, get it, yeah, we can worry later (Oh)</div>
+              <div class="lyrics-line">Bend it, break it, on your worst behavior (Oh)</div>
+              <div class="lyrics-line">Don't need nobody but your right-hand girl</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">In the meantime, you need time for me-time, na-na-na</div>
+              <div class="lyrics-line">Time to breathe and step aside, na-na-na (Oh)</div>
+              <div class="lyrics-line">That melody a remedy, drowning out</div>
+              <div class="lyrics-line">Every memory is what you need, na-na-na (Yeah, yeah)</div>
+              <div class="lyrics-line">And when I drop my, my behind (Yeah)</div>
+              <div class="lyrics-line">Know you gon' follow, let your hips unwind, girl (Ooh, yeah)</div>
+              <div class="lyrics-line">Ain't leaving your, your side</div>
+              <div class="lyrics-line">Till you dance that boy right outta your life (I)</div>
+              <div class="lyrics-line">Get the rhythm in your mind and make your body whine, whine</div>
+              <div class="lyrics-line">Mm, yeah, the rhythm got you high</div>
+              <div class="lyrics-line">You dancing all night, night</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Take it, take it, take it all, baby (Yeah, yeah)</div>
+              <div class="lyrics-line">Get, get it, yeah, we can worry later (Ooh, woah)</div>
+              <div class="lyrics-line">Bend it, break it, on your worst behavior</div>
+              <div class="lyrics-line">Don't need nobody but your right-hand girl, oh (Yeah)</div>
+              <div class="lyrics-line">Take it, take it, take it all, baby (Oh, oh)</div>
+              <div class="lyrics-line">Get, get it, yeah, we can worry later (Oh, ooh-ooh)</div>
+              <div class="lyrics-line">Bend it, break it, on your worst behavior (Oh)</div>
+              <div class="lyrics-line">Don't need nobody but your right-hand girl</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Who's gonna be there when the tears come running?</div>
               <div class="lyrics-line">Who gonna be there when there ain't no fun and</div>
               <div class="lyrics-line">Who gonna love you through the thick and the thin?</div>
               <div class="lyrics-line">Uh-huh, your right-hand girl</div>
+              <div class="lyrics-line">Who's gonna be there when the tears come running?</div>
+              <div class="lyrics-line">Who gonna be there when there ain't no fun and</div>
+              <div class="lyrics-line">Who gonna love you through the thick and the thin?</div>
+              <div class="lyrics-line">Uh-huh, your right-hand girl (Right-hand girl)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Take it, take it, take it all, baby</div>
+              <div class="lyrics-line">Get, get it, yeah, we can worry later</div>
+              <div class="lyrics-line">Bend it, break it, on your worst behavior (Oh)</div>
+              <div class="lyrics-line">Don't need nobody but your right-hand girl, oh (Right-hand girl)</div>
+              <div class="lyrics-line">Take it, take it, take it all, baby (Oh)</div>
+              <div class="lyrics-line">Get, get it, yeah, we can worry later (Oh)</div>
+              <div class="lyrics-line">Bend it, break it, on your worst behavior (Oh)</div>
+              <div class="lyrics-line">Don't need nobody but your right-hand girl</div>
             </div>
           </div>
         </div>
@@ -1451,7 +1813,7 @@
       </div>
       <div class="songs-grid">
 
-        <!-- Dive In -->
+        <!-- DIVE IN -->
         <div class="song-card" id="dive-in">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">16</div>
@@ -1464,19 +1826,47 @@
           <div class="song-body">
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
+              <div class="lyrics-line">Let's evaluate this situation</div>
+              <div class="lyrics-line">Let's communicate with conversation</div>
+              <div class="lyrics-line">I don't wanna wait, I'm too impatient</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span> Oh</div>
+              <div class="lyrics-line">Boy, you way too loud, I had to check that</div>
+              <div class="lyrics-line">Quit runnin' your mouth or you'll never get that</div>
+              <div class="lyrics-line">I don't play around, already did that</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">You won't hurt my feelings</div>
+              <div class="lyrics-line">Tell me straight to my face</div>
+              <div class="lyrics-line">You can lie to me</div>
+              <div class="lyrics-line">If you try, you'll be wasting your time, your time, yeah</div>
+              <div class="lyrics-line">It ain't hard for me, I just level right up</div>
+              <div class="lyrics-line">Need a privacy, keep it lock, keep it shut</div>
+              <div class="lyrics-line">Every time</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="section-divider"></div>
               <div class="lyrics-line">Who do you love? Who do you love?</div>
               <div class="lyrics-line">It's me or the thought of getting off</div>
               <div class="lyrics-line">Can't dive in <span class="fanchant-highlight">(Chou Jeu ee)</span></div>
               <div class="lyrics-line">Can't dive in <span class="fanchant-highlight">(Chou Jeu ee)</span></div>
+              <div class="lyrics-line">Who do you love? Who do you love?</div>
+              <div class="lyrics-line">Is it me or am I just a moment crush?</div>
+              <div class="lyrics-line">Can't dive in <span class="fanchant-highlight">(Chou Jeu ee)</span></div>
+              <div class="lyrics-line">Can't dive in <span class="fanchant-highlight">(Chou Jeu ee)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Put your phone away on the other side</div>
+              <div class="lyrics-line">Keep looking straight at me, need them butterflies</div>
+              <div class="lyrics-line">We party private, yeah, you know the vibe, vibe</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">If you want to dive in, yeah <span class="fanchant-highlight">(I! Love! Tzu!)</span></div>
               <div class="lyrics-line">If you wanna dive, if you wanna dive, dive, yeah</div>
-              <div class="lyrics-line">So if you wanna dive, oh, no~ <span class="fanchant-highlight">(Yes! I! Wanna!)</span></div>
+              <div class="lyrics-line">So if you wanna dive, if you wanna dive, dive</div>
+              <div class="lyrics-line">If you wanna dive, oh, no~ <span class="fanchant-highlight">(Yes! I! Wanna!)</span></div>
+              <div class="lyrics-line">If you wanna dive in, yeah</div>
             </div>
           </div>
         </div>
 
-        <!-- Stone Cold -->
+        <!-- STONE COLD -->
         <div class="song-card" id="stone-cold">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">17</div>
@@ -1491,7 +1881,27 @@
             <div class="lyrics-container">
               <div class="lyrics-line">Hey, eh, hey</div>
               <div class="lyrics-line">Why you being stone cold?</div>
-              <div class="lyrics-line"><span class="fanchant-highlight">(Stone cold Mina chan)</span> × 3</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Stone cold Mina chan)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Stone cold Mina chan)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Stone cold Mina chan)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Used to make me happy clappy</div>
+              <div class="lyrics-line">Baby, you were flirty</div>
+              <div class="lyrics-line">Now you're acting super wacky</div>
+              <div class="lyrics-line">Love has gone dirty</div>
+              <div class="lyrics-line">E-e-everyday is like a rainy Monday</div>
+              <div class="lyrics-line">Where are all the fun days? <span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I want you to know</div>
+              <div class="lyrics-line">I don't cry myself to sleep</div>
+              <div class="lyrics-line">I want you to know</div>
+              <div class="lyrics-line">That I'm over you in two weeks</div>
+              <div class="lyrics-line">We should blow it off</div>
+              <div class="lyrics-line">Look at me</div>
+              <div class="lyrics-line">I'm praying for a miracle</div>
+              <div class="lyrics-line">Wanna be happy and not too cynical</div>
+              <div class="lyrics-line">'Cause it feels that we are not compatible</div>
+              <div class="lyrics-line">I guess you are putting our love on hold (Show)</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Every shade of you was pure gold</div>
               <div class="lyrics-line">Now your heart is getting ice cold</div>
@@ -1501,6 +1911,11 @@
               <div class="lyrics-line">Baby, why you're stone cold? (Ah-ah)</div>
               <div class="lyrics-line">Someone else is your gold (Ah-ah)</div>
               <div class="lyrics-line">Heart is getting stone cold, stone cold</div>
+              <div class="lyrics-line">Baby, why you're stone cold?</div>
+              <div class="lyrics-line">Baby, why you're stone cold?</div>
+              <div class="lyrics-line">Someone else is your gold (Ah-ah)</div>
+              <div class="lyrics-line">Heart is getting cold, cold</div>
+              <div class="lyrics-line">Baby, why you're stone cold?</div>
             </div>
           </div>
         </div>
@@ -1521,17 +1936,56 @@
               <div class="lyrics-line">(Don't play with a girl, don't play with a girl)</div>
               <div class="lyrics-line">Don't cook but I got good taste (Taste)</div>
               <div class="lyrics-line">Don't drive but I love the chase (Chase)</div>
+              <div class="lyrics-line">Soft touch when I use my teeth (teeth)</div>
+              <div class="lyrics-line">Don't play with a girl like me (me)</div>
+              <div class="lyrics-line">Stay close but I need my space (Space)</div>
+              <div class="lyrics-line">One kiss that's all it takes (takes)</div>
+              <div class="lyrics-line">You're in way, way, way deep</div>
+              <div class="lyrics-line">Don't play with a girl, don't play with a girl like</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Meeeeee <span class="fanchant-highlight">(Im Nayeon)</span>, Meeeeee</div>
               <div class="lyrics-line">Don't play with a girl, don't play with a girl like</div>
               <div class="lyrics-line">Meeeeee <span class="fanchant-highlight">(Im Nayeon)</span>, Meeeeee</div>
+              <div class="lyrics-line">Don't play with a girl, don't play with a girl like</div>
               <div class="section-divider"></div>
+              <div class="lyrics-line">Woah, wait a minute</div>
+              <div class="lyrics-line">I might just let you</div>
+              <div class="lyrics-line">Oh, do you get it?</div>
+              <div class="lyrics-line">I might just let you</div>
+              <div class="lyrics-line">Hit it sideways</div>
+              <div class="lyrics-line">Leave you by the end of the days</div>
+              <div class="lyrics-line">Treat you like a holiday</div>
+              <div class="lyrics-line">We ain't going no place fast</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering!)</span> I'm a summer day</div>
+              <div class="lyrics-line">Sip on me like a lemonade</div>
+              <div class="lyrics-line">So hot, you gonna pray for rain</div>
+              <div class="lyrics-line">You ain't going no place fast</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Don't cook but I got good taste (Taste)</div>
+              <div class="lyrics-line">Don't drive but I love the chase (Chase)</div>
+              <div class="lyrics-line">Soft touch when I use my teeth (teeth)</div>
+              <div class="lyrics-line">Don't play with a girl like me (me)</div>
+              <div class="lyrics-line">Stay close but I need my space (Space)</div>
+              <div class="lyrics-line">One kiss that's all it takes (takes)</div>
+              <div class="lyrics-line">You're in way, way, way deep</div>
+              <div class="lyrics-line">Don't play with a girl, don't play with a girl like</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Meeeeee <span class="fanchant-highlight">(Im Nayeon)</span>, Meeeeee</div>
+              <div class="lyrics-line">Don't play with a girl, don't play with a girl like</div>
+              <div class="lyrics-line">Meeeeee <span class="fanchant-highlight">(Im Nayeon)</span>, Meeeeee</div>
+              <div class="lyrics-line">Don't play with a girl, don't play with a girl like</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Like me, like me, like me, like me, like me, like me, like me)</span></div>
+              <div class="lyrics-line">Don't play with a girl, don't play with a girl like</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Like me, like me, like me, like me, like me, like me, like me)</span></div>
+              <div class="lyrics-line">Don't play with a girl, don't play with a girl like</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Like me, Im Nayeon)</span> × 4</div>
               <div class="lyrics-line"><span class="fanchant-highlight">(Like me, Im Nayeon)</span> × 4</div>
             </div>
           </div>
         </div>
 
-        <!-- Fix A Drink -->
+        <!-- FIX A DRINK -->
         <div class="song-card" id="fix-a-drink">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">19</div>
@@ -1546,16 +2000,34 @@
             <div class="lyrics-container">
               <div class="lyrics-line korean">오늘 밤 같이 cheers to good times</div>
               <div class="lyrics-line korean">가끔 모든 걸 잊고 싶은 밤 (Ooh)</div>
+              <div class="lyrics-line korean">무거운 마음의 짐을 내려놔</div>
               <div class="lyrics-line korean">잔을 들어봐, hm <span class="fanchant-highlight">(Yu Jeongyeon)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">처진 분위기, 지루한 기분 yeah</div>
+              <div class="lyrics-line korean">가볍게 바꿔줄 신나는 rhythm (Rhythm)</div>
+              <div class="lyrics-line korean">너를 흔드는 음악에 취해</div>
+              <div class="lyrics-line">I can't fix a heart, but I'll take off the edge <span class="fanchant-highlight">(Yu Jeongyeon)</span></div>
               <div class="section-divider"></div>
               <div class="lyrics-line">I've got shots for jealousy</div>
               <div class="lyrics-line">And a bottle for your pain</div>
-              <div class="lyrics-line">I can't fix a heart, but I sure know how to fix a drink</div>
+              <div class="lyrics-line">I've got this, remedy</div>
+              <div class="lyrics-line korean">금방 잊게 될 heartbreak</div>
+              <div class="lyrics-line">Caught between two stools</div>
+              <div class="lyrics-line korean">너를 위한 taste</div>
+              <div class="lyrics-line">I can't fix a heart but I sure know how to fix a drink</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I've got shots for jealousy</div>
+              <div class="lyrics-line">And a bottle for your pain</div>
+              <div class="lyrics-line">I've got this, remedy</div>
+              <div class="lyrics-line korean">금방 잊게 될 heartbreak</div>
+              <div class="lyrics-line">Caught between two stools</div>
+              <div class="lyrics-line korean">너를 위한 taste</div>
+              <div class="lyrics-line">I can't fix a heart but I sure know how to fix a drink</div>
             </div>
           </div>
         </div>
 
-        <!-- DAT AHH -->
+        <!-- DAT AHH DAT OOH -->
         <div class="song-card" id="dat-ahh">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">20</div>
@@ -1567,16 +2039,61 @@
           </div>
           <div class="song-body">
             <div class="lyrics-container">
-              <div class="lyrics-line">Baby, that's that ahh, that's that ooh</div>
+              <div class="lyrics-line">Yeah — It's that ahh — That ooh, uh-huh</div>
+              <div class="lyrics-line">I'ma work that, yeah, I'm good on the help</div>
+              <div class="lyrics-line">I keep all of them hooked like a belt</div>
+              <div class="lyrics-line">Skirt so short, it look like a belt</div>
+              <div class="lyrics-line">Don't need you, I do it for myself</div>
+              <div class="lyrics-line">I'm that, that, that, that, that</div>
+              <div class="lyrics-line">And they double tap-tap 'cause I'm so cutesy</div>
+              <div class="lyrics-line">I'm that, that, that, that, that</div>
+              <div class="lyrics-line">Had to say it twice, I don't use the term loosely</div>
+              <div class="lyrics-line">It's just the lifestyle, babe, can't replicate, I been that girl</div>
+              <div class="lyrics-line">They want the tea on me, don't worry 'bout it</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Baby, that's that ahh, that's that ooh (Ooh, ooh)</div>
               <div class="lyrics-line">It don't really matter what I do</div>
-              <div class="lyrics-line">'Cause I got that ahh, got that ooh</div>
+              <div class="lyrics-line">'Cause I got that ahh, got that ooh (Ooh, ooh)</div>
               <div class="lyrics-line">Everytime I step up in the room</div>
               <div class="lyrics-line">They say, "Ah, can't nobody do it like you"</div>
               <div class="lyrics-line">Ooh, better take notes</div>
-              <div class="lyrics-line">'Cause I got that ahh, got that ooh</div>
+              <div class="lyrics-line">'Cause I got that ahh, got that ooh (Ooh, ooh)</div>
+              <div class="lyrics-line">From the tippy to the hippy to the shoes — Yeah, I got that</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Um, tell me, can you match that?</div>
+              <div class="lyrics-line">Baby, I can throw it, but you'll never ever catch that (Uh; Purr)</div>
+              <div class="lyrics-line">Ah, kitty-kitty, cat-cat</div>
+              <div class="lyrics-line">If your cameras on, bet' not lemme see no flashback</div>
+              <div class="lyrics-line">I usher that pressure, they're like "Oh my god" (Oh my god)</div>
+              <div class="lyrics-line">One look at my aura, they say, "Ooh-la-la"</div>
+              <div class="lyrics-line">I got it, they like it, that je ne sais quoi (Je ne sais quoi)</div>
+              <div class="lyrics-line">You do what you told, and I do what I want</div>
+              <div class="lyrics-line">It's just the lifestyle, babe, can't replicate, I been that girl</div>
+              <div class="lyrics-line">They want the tea on me, don't worry 'bout it</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Baby, that's that ahh, that's that ooh (Baby, that's that ah, that ooh; Ooh, ooh)</div>
+              <div class="lyrics-line">It don't really matter what I do (Ooh)</div>
+              <div class="lyrics-line">'Cause I got that ahh, got that ooh (That ooh; Ooh, ooh)</div>
+              <div class="lyrics-line">Everytime I step up in the room (Ooh-ooh)</div>
+              <div class="lyrics-line">They say, "Ah, can't nobody do it like you" (Ah-ah-ah)</div>
+              <div class="lyrics-line">Ooh, better take notes (Ooh-ooh-ooh)</div>
+              <div class="lyrics-line">'Cause I got that ahh, got that ooh (Yeah, that ooh; Ooh, ooh)</div>
+              <div class="lyrics-line">From the tippy to the hippy to the shoes — Yeah, I got that</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Baby, I got something that you can't buy</div>
               <div class="lyrics-line">And you couldn't do it like me, not if you tried</div>
+              <div class="lyrics-line">Just remain in awe of what I do</div>
+              <div class="lyrics-line">'Cause I got that ahh, and I got that ooh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Baby, that's that ahh, that's that ooh (Ooh, ooh)</div>
+              <div class="lyrics-line">It don't really matter what I do (Ooh)</div>
+              <div class="lyrics-line">'Cause I got that ahh, got that ooh (Ooh, ooh)</div>
+              <div class="lyrics-line">Everytime I step up in the room (Ooh-ooh)</div>
+              <div class="lyrics-line">They say, "Ah, can't nobody do it like you" (Ah-ah-ah)</div>
+              <div class="lyrics-line">Ooh, better take notes (Ooh-ooh-ooh)</div>
+              <div class="lyrics-line">'Cause I got that ahh, got that ooh (Yeah, that ooh; Ooh, ooh)</div>
+              <div class="lyrics-line">From the tippy to the hippy to the shoes — Yeah, I got that</div>
+              <div class="lyrics-line">It's that ooh (Hehe)</div>
             </div>
           </div>
         </div>
@@ -1593,20 +2110,67 @@
           </div>
           <div class="song-body">
             <div class="lyrics-container">
+              <div class="lyrics-line">Say it loud, make it work — Uh</div>
               <div class="lyrics-line">[All] Say you wanna do some things, better do some things (Yeah)</div>
+              <div class="lyrics-line">Baddie</div>
+              <div class="lyrics-line">[All] Say you wanna do some things, better do some things</div>
+              <div class="lyrics-line">Yeah</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">With my girls and we on a mission</div>
+              <div class="lyrics-line">Do what we want, we don't need permission</div>
+              <div class="lyrics-line">Stop and pose, it's the intermission</div>
+              <div class="lyrics-line">I'ma need a, I'ma need a, I'ma need a minute (Woo)</div>
+              <div class="lyrics-line">In one ear and out the other</div>
+              <div class="lyrics-line">Got a complaint, better call your mother</div>
+              <div class="lyrics-line">We come through and bring the thunder</div>
+              <div class="lyrics-line">Think it's 'bout you, but you just don't get it</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Woah, what's that?</div>
+              <div class="lyrics-line">Them girls don't know how to act</div>
+              <div class="lyrics-line">Anyway, got the speakers on blast, top down in the back, gonna make a good girl go bad</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">So what? I got it big with the big, big attitude</div>
               <div class="lyrics-line">You know I got it big with the big, big attitude</div>
               <div class="lyrics-line">Yeah, we shake the room when we coming through</div>
+              <div class="lyrics-line">Baby, I'm not even mad at you (It's my attitude)</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">[All] Nah, nah, nah, nah (What?)</div>
               <div class="lyrics-line">[All] Nah, nah, nah, nah (What you looking at?)</div>
+              <div class="lyrics-line">[All] Nah, nah, nah, nah (What?)</div>
               <div class="lyrics-line">[All] Nah, nah, nah, nah (Attitude)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">[All] Say you wanna do some things, better do some things</div>
+              <div class="lyrics-line">You, you wish, now I got you reading my lips</div>
+              <div class="lyrics-line">Your eyes locked in on my hips (Hips)</div>
+              <div class="lyrics-line">Left to the right (Right), we can do this thing all night (Night)</div>
+              <div class="lyrics-line">I don't even bite but I might (Might)</div>
+              <div class="lyrics-line">Don't be scared, I know you wanna</div>
+              <div class="lyrics-line">Bring it on, bring it on, bring it on over here</div>
+              <div class="lyrics-line">I know you wanna — Feel this heat</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Woah, what's that?</div>
+              <div class="lyrics-line">Them girls don't know how to act</div>
+              <div class="lyrics-line">Anyway, got the speakers on blast, top down in the back, gonna make a good girl go bad</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">So what? I got it big with the big, big attitude</div>
+              <div class="lyrics-line">You know I got it big with the big, big attitude</div>
+              <div class="lyrics-line">Yeah, we shake the room when we coming through</div>
+              <div class="lyrics-line">Baby, I'm not even mad at you (It's my attitude)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">[All] Nah, nah, nah, nah (What?)</div>
+              <div class="lyrics-line">[All] Nah, nah, nah, nah (What you looking at?)</div>
+              <div class="lyrics-line">[All] Nah, nah, nah, nah (What?)</div>
+              <div class="lyrics-line">[All] Nah, nah, nah, nah (Attitude)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">[All] Say you wanna do some things, better do some things (Baddie)</div>
+              <div class="lyrics-line">[All] Say you wanna do some things, better do some things</div>
+              <div class="lyrics-line">[All] Say you wanna do some things, better do some things</div>
+              <div class="lyrics-line">[All] Say you wanna do some things, better do some things</div>
             </div>
           </div>
         </div>
 
-        <!-- Chess -->
+        <!-- CHESS -->
         <div class="song-card" id="chess">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">22</div>
@@ -1622,17 +2186,47 @@
               <div class="lyrics-line"><span class="fanchant-highlight">(Kim Dahyun, Kim Dahyun, Kim Dahyun)</span></div>
               <div class="lyrics-line"><span class="fanchant-highlight">(Kim Dahyun, Kim Dahyun)</span> (Du!)</div>
               <div class="section-divider"></div>
+              <div class="lyrics-line">Oh, I used to be unskilled and naive</div>
+              <div class="lyrics-line">You deceived me for your own benefit</div>
+              <div class="lyrics-line">With a cunning trick more than anything</div>
+              <div class="lyrics-line">Now completely I realize everything</div>
+              <div class="lyrics-line">Calculated, educated</div>
+              <div class="lyrics-line">I'm the monster you created</div>
+              <div class="lyrics-line">So you changed me, I've upgraded</div>
+              <div class="lyrics-line">I'ma tell ya</div>
+              <div class="section-divider"></div>
               <div class="lyrics-line">I ain't playin checkers, I play chess <span class="fanchant-highlight">(I make 'em sweat)</span></div>
               <div class="lyrics-line">Became the best <span class="fanchant-highlight">(I make a mess)</span> and nothing less <span class="fanchant-highlight">(I must confess)</span></div>
-              <div class="lyrics-line">Yeah, that's what I do, I'm making moves</div>
+              <div class="lyrics-line">Yeah, that's what I do, I'm making moves <span class="fanchant-highlight">(I bet ya knew)</span></div>
+              <div class="lyrics-line">I never lose <span class="fanchant-highlight">(I never do)</span>, and that's on you <span class="fanchant-highlight">(And that's on you, ya~)</span></div>
               <div class="section-divider"></div>
+              <div class="lyrics-line">Because of you, I've become stronger</div>
+              <div class="lyrics-line">And I can go with the flow</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(cheering)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Uh, better without you, better now</div>
+              <div class="lyrics-line">With or without you, ain't no doubt</div>
+              <div class="lyrics-line">You know you gotta, you gotta</div>
+              <div class="lyrics-line">Show me your manners, bow down</div>
               <div class="lyrics-line">Better without you, better now</div>
               <div class="lyrics-line">Want me to lose? I don't know how <span class="fanchant-highlight">(Kim Dahyun)</span></div>
+              <div class="lyrics-line">You know you gotta, you gotta</div>
+              <div class="lyrics-line">You gotta, uh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Let you shoot your shot</div>
+              <div class="lyrics-line">Now that's on you <span class="fanchant-highlight">(Kim Dahyun)</span></div>
+              <div class="lyrics-line">Shoulda done it better</div>
+              <div class="lyrics-line">When you had it all together, what now?</div>
+              <div class="lyrics-line">Now you're really running out of moves <span class="fanchant-highlight">(cheering)</span></div>
+              <div class="lyrics-line">Ha-ha</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Yeah, that's what I do, I'm making moves <span class="fanchant-highlight">(I bet ya knew)</span></div>
+              <div class="lyrics-line">I never lose <span class="fanchant-highlight">(I never do)</span>, and that's on you <span class="fanchant-highlight">(And that's on you)</span></div>
             </div>
           </div>
         </div>
 
-        <!-- In My Room -->
+        <!-- IN MY ROOM -->
         <div class="song-card" id="in-my-room">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">23</div>
@@ -1645,18 +2239,38 @@
           <div class="song-body">
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
+              <div class="lyrics-line">You're on my mind, All of the time, I like it, like it</div>
+              <div class="lyrics-line">Head in the clouds, Not coming down, Exciting, exciting</div>
+              <div class="lyrics-line">They see how I'm acting, And they tellin' me I'm crazy</div>
+              <div class="lyrics-line">I can taste you on my tongue, A cotton candy daydream</div>
+              <div class="section-divider"></div>
               <div class="lyrics-line">Anything can happen in my room</div>
               <div class="lyrics-line">In my room, room, room, In my room</div>
               <div class="lyrics-line">I can be whoever I want to</div>
               <div class="lyrics-line">In my room, room, room — Just me and you</div>
+              <div class="lyrics-line">Anything can happen anything</div>
+              <div class="lyrics-line">Room room room</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">I don't think that what we got is just a fling <span class="fanchant-highlight">(Son Chaeyoung)</span></div>
               <div class="lyrics-line">I know you got more than just a crush on me <span class="fanchant-highlight">(Son Chaeyoung)</span></div>
+              <div class="lyrics-line">I don't think that what we got is just a fling <span class="fanchant-highlight">(Son Chaeyoung)</span></div>
+              <div class="lyrics-line">I know you got more than just a crush on me</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Anything can happen in my room</div>
+              <div class="lyrics-line">In my room, room, room, In my room</div>
+              <div class="lyrics-line">I can be whoever I want to</div>
+              <div class="lyrics-line">In my room, room, room — Just me and you</div>
+              <div class="lyrics-line">Anything can happen in my room</div>
+              <div class="lyrics-line">In my room, room, room, In my room</div>
+              <div class="lyrics-line">I can be whoever I want to</div>
+              <div class="lyrics-line">In my room, room, room — Just me and you</div>
+              <div class="lyrics-line">Anything can happen anything</div>
+              <div class="lyrics-line">Anything can happen in my room</div>
             </div>
           </div>
         </div>
 
-        <!-- Shoot -->
+        <!-- SHOOT -->
         <div class="song-card" id="shoot">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">24</div>
@@ -1669,14 +2283,35 @@
           <div class="song-body">
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
-              <div class="lyrics-line">Just shoot from my heart, Shoot from the,</div>
-              <div class="lyrics-line">Salute from the heart <span class="fanchant-highlight">(Son Chae Young)</span></div>
-              <div class="lyrics-line">Just shoot from my heart, Shoot from the,</div>
-              <div class="lyrics-line">Salute from the heart <span class="fanchant-highlight">(Shoot! from! my! heart!)</span></div>
-              <div class="section-divider"></div>
+              <div class="lyrics-line">I know that you're waiting for this tonight (Lil Fantasy Volume One)</div>
+              <div class="lyrics-line">I can't wait 'til the sun turns to light (Son Chaeyoung, Saranghae)</div>
               <div class="lyrics-line">Fireflies, they color my eyes</div>
               <div class="lyrics-line">Feel a void without the fire, Ignite it</div>
-              <div class="lyrics-line">Don't say goodbye there's a new beginning</div>
+              <div class="lyrics-line">Butterflies, come, promised to me</div>
+              <div class="lyrics-line">That you'll shine along the way <span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the, Salute from the heart <span class="fanchant-highlight">(Son Chae Young)</span></div>
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the, Salute from the heart <span class="fanchant-highlight">(Son Chae Young)</span></div>
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the, Salute from the heart <span class="fanchant-highlight">(Son Chae Young)</span></div>
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the, Salute from the heart <span class="fanchant-highlight">(Shoot! from! my! heart!)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I know that you're waiting for this tonight (Lil Fantasy Volume One)</div>
+              <div class="lyrics-line">I can't wait 'til the sun turns to light (Son Chaeyoung, Saranghae)</div>
+              <div class="lyrics-line">I can't help myself when it's you and I</div>
+              <div class="lyrics-line">Oh, mmm</div>
+              <div class="lyrics-line">But I've been hurt before</div>
+              <div class="lyrics-line">I know how to hold on</div>
+              <div class="lyrics-line">I've traveled the world, But my room is perfect</div>
+              <div class="lyrics-line">Love is within why are we still searching</div>
+              <div class="lyrics-line">Can we let go of the world so judging</div>
+              <div class="lyrics-line">Don't say goodbye there's a new beginning <span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the, Salute from the heart <span class="fanchant-highlight">(Son Chae Young)</span></div>
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the, Salute from the heart <span class="fanchant-highlight">(Son Chae Young)</span></div>
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the, Salute from the heart <span class="fanchant-highlight">(Shoot! from! my! heart!)</span></div>
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the, Salute from the heart</div>
+              <div class="lyrics-line">Shoot from my heart, Shoot from the, Salute from the heart</div>
+              <div class="lyrics-line">Shoot from my heart, Shoot from the, Salute from the heart (Lil Fantasy Volume One)</div>
             </div>
           </div>
         </div>
@@ -1694,19 +2329,37 @@
           <div class="song-body">
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
+              <div class="lyrics-line">Bos' goin' crazy</div>
+              <div class="lyrics-line">Mm-mm, mm-mm, mm-mm, mm-mm</div>
+              <div class="lyrics-line">Mm-mm, mm-mm, mm-mm, mm-mm</div>
+              <div class="lyrics-line">Mm-mm, mm-mm, mm-mm, mm-mm</div>
               <div class="lyrics-line">Mm-mm, mm-mm, mm-mm, mm-mm <span class="fanchant-highlight">(Park Jihyo)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">All the way up (up), no one does it like we do</div>
+              <div class="lyrics-line">All in my bag (bag), throw it in the back</div>
+              <div class="lyrics-line">On top, we the best, don't stop</div>
+              <div class="lyrics-line">Keep it comin' with that lovin'</div>
+              <div class="lyrics-line">They all love that I'm classy, they all love that I do</div>
+              <div class="lyrics-line">Friends in every country, number off the roof</div>
+              <div class="lyrics-line">You'll be good for a good life if I'm next to you</div>
+              <div class="lyrics-line">We go another round 'cause they can't get enough</div>
+              <div class="lyrics-line">Comin' back for more, oh, oh, oh</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Addicted to me, yeah, ATM</div>
               <div class="lyrics-line">Flawless when we glow, oh, oh, oh</div>
               <div class="lyrics-line">Shine like all that marquee, ATM (Yeah, yeah)</div>
               <div class="section-divider"></div>
+              <div class="lyrics-line">I've been keepin' my eye, eye, eyes on you</div>
+              <div class="lyrics-line">Know you got eye, eyes on me too</div>
+              <div class="lyrics-line">I got, I got all the moves</div>
               <div class="lyrics-line">Midas touch, got you coming back for more</div>
               <div class="lyrics-line">Addicted to me, ATM</div>
+              <div class="lyrics-line">You — Do — Coming back for more — Me</div>
             </div>
           </div>
         </div>
 
-        <!-- Decaffeinated -->
+        <!-- DECAFFEINATED -->
         <div class="song-card" id="decaffeinated">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">26</div>
@@ -1720,20 +2373,44 @@
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
               <div class="lyrics-line">Say, na-na-na, na-na-na</div>
+              <div class="lyrics-line">Na-na-na, na-na-na</div>
+              <div class="lyrics-line">Na-na-na, na-na-na</div>
               <div class="lyrics-line">De-caffeine, get high <span class="fanchant-highlight">(Sana chan)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">내 전부를 이해하려 하지 마 (Uh-huh)</div>
+              <div class="lyrics-line korean">이미 제 정신일 리 없잖아 (Ooh-ooh)</div>
+              <div class="lyrics-line korean">깊어진 이 감정, can't control it (Uh-huh)</div>
+              <div class="lyrics-line">Want you to take me to heaven, take me to heaven</div>
+              <div class="lyrics-line">Take, take, take <span class="fanchant-highlight">(cheering)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">No need to stay awake (So, don't mess it up)</div>
+              <div class="lyrics-line korean">중독될수록 이건 위험해</div>
+              <div class="lyrics-line">Don't need no caffeine for ya</div>
+              <div class="lyrics-line korean">지금 있는 그대로</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">We goin' crazy, crazy, can't stop it</div>
               <div class="lyrics-line">Takin' in all the love</div>
               <div class="lyrics-line">Trippin', trippin' on your lust</div>
+              <div class="lyrics-line korean">날 절대 깨우지 말아 줘</div>
+              <div class="lyrics-line korean">더 빠져들 수 있게</div>
+              <div class="lyrics-line">I need you with all the love</div>
+              <div class="lyrics-line">Trippin', trippin' on your lust</div>
+              <div class="lyrics-line korean">맨정신으로는 감당 못해</div>
+              <div class="lyrics-line">Love is all that you need</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Gimme that, gimme de-caffeine</div>
               <div class="lyrics-line">Gimme that, gimme that</div>
               <div class="lyrics-line">Say, na-na-na, na-na-na</div>
+              <div class="lyrics-line">Na-na-na, na-na-na (Drip it)</div>
+              <div class="lyrics-line">Gimme that, gimme de-caffeine</div>
+              <div class="lyrics-line">Gimme that, gimme that</div>
+              <div class="lyrics-line">Say, na-na-na, na-na-na</div>
+              <div class="lyrics-line">Na-na-na, na-na-na</div>
             </div>
           </div>
         </div>
 
-        <!-- Move Like That -->
+        <!-- MOVE LIKE THAT -->
         <div class="song-card" id="move-like-that">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">27</div>
@@ -1746,11 +2423,27 @@
           <div class="song-body">
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span></div>
               <div class="lyrics-line">Move to the bassline, pull me in tight</div>
               <div class="lyrics-line">Give me, give me a taste, taste of your eyes</div>
+              <div class="lyrics-line">Step to the left, take it back to the right</div>
+              <div class="lyrics-line">Uh, we can do it all night</div>
+              <div class="lyrics-line">Move to the bassline, pull me in tight</div>
+              <div class="lyrics-line">Give me, give me a taste, taste of your eyes</div>
+              <div class="lyrics-line">Step to the left, take it back to the right</div>
+              <div class="lyrics-line">Uh, we can do it all night</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span></div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">It's a ghost town, 주변의 소음조차 멎은 이 밤 <span class="fanchant-highlight">(Momo chan)</span></div>
+              <div class="lyrics-line korean">Just you and me 우리만의 이 순간</div>
               <div class="lyrics-line korean">It's so wild <span class="fanchant-highlight">(Momo chan)</span>, 심장이 널 따라 가</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">느낌이 느낌이 lit [neukkimi neukkimi lit], feeling that beat in my chest</div>
+              <div class="lyrics-line">(Yeah, yeah, yeah)</div>
+              <div class="lyrics-line korean">감춰진 나를 꺼내, letting my hips do the rest</div>
+              <div class="lyrics-line">(Yeah, yeah, yeah)</div>
+              <div class="lyrics-line korean">느낌이 느낌이 lit [neukkimi neukkimi lit], feeling that beat in my chest</div>
+              <div class="lyrics-line korean">한 순간 hypnotized</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">There's something in the way that you move</div>
               <div class="lyrics-line">Yeah, there's something in the way that you move</div>
@@ -1787,20 +2480,74 @@
               <div class="lyrics-line"><span class="fanchant-highlight">(Jigeum neoegero Gallae, FANCY, TWICE)</span></div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">지금 하늘 구름 색은 Tropical, yeah</div>
-              <div class="lyrics-line">I fancy you, I fancy you, fancy you</div>
+              <div class="lyrics-line korean">저 태양 빨간빛 네 두 볼 같아</div>
+              <div class="lyrics-line">Oh, tell me I'm the only one, babe</div>
+              <div class="lyrics-line">I fancy you (fancy you), I fancy you, fancy you</div>
               <div class="lyrics-line"><span class="fanchant-highlight">TWICE!</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">It's dangerous 따끔해 넌 장미 같아</div>
+              <div class="lyrics-line korean">괜찮아 조금도 난 겁나지 않아</div>
+              <div class="lyrics-line korean">더 세게 꼭 잡아 Take my hand</div>
+              <div class="lyrics-line korean">좀 위험할거야 더 위험할거야 Baby</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">달콤한 (Hey!) 초콜릿 아이스크림처럼</div>
+              <div class="lyrics-line korean">녹아버리는 지금 내 기분 So lovely</div>
+              <div class="lyrics-line korean">깜깜한 (Hey!) 우주 속 가장 반짝이는</div>
+              <div class="lyrics-line korean">저 별 저 별 그 옆에 큰 네 별</div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">거기 너 I fancy you</div>
               <div class="lyrics-line korean">아무나 원하지 않아</div>
               <div class="lyrics-line">Hey, I love you</div>
               <div class="lyrics-line korean">그래 너 I fancy you</div>
-              <div class="lyrics-line">Fancy you, ooh — 지금 너에게로 갈래</div>
+              <div class="lyrics-line korean">꿈처럼 행복해도 돼</div>
+              <div class="lyrics-line">'Cause I need you (What?)</div>
+              <div class="lyrics-line korean">Fancy you, ooh — 누가 먼저 좋아하면 어때</div>
+              <div class="lyrics-line korean">Fancy you, ooh — 지금 너에게로 갈래</div>
+              <div class="lyrics-line">Fancy, ooh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">매일매일 난 정말 아무것도 못하네</div>
+              <div class="lyrics-line korean">Oh my, mayday 이러다 큰일 낼 것 같은데</div>
+              <div class="lyrics-line korean">Bang, bang 머리가 홀린 듯 Reset이 돼 어쩌면 좋아</div>
+              <div class="lyrics-line korean">이게 맞는건지 몰라 S-O-S</div>
+              <div class="lyrics-line korean">Swim, swim 너란 바다에 잠수함이 돼</div>
+              <div class="lyrics-line korean">매일이 Birthday 달콤해 너와 나의 Fantasy</div>
+              <div class="lyrics-line korean">Dream, dream 마치 꿈같아 볼 꼬집어봐</div>
+              <div class="lyrics-line korean">요즘 나의 상태 — 메세진 랄랄라 Baby</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">달콤한 (Hey!) 초콜릿 아이스크림처럼</div>
+              <div class="lyrics-line korean">녹아버리는 지금 내 기분 So lovely</div>
+              <div class="lyrics-line korean">깜깜한 (Hey!) 우주 속 가장 반짝이는</div>
+              <div class="lyrics-line korean">저 별 저 별 그 옆에 큰 네 별</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">거기 너 I fancy you</div>
+              <div class="lyrics-line korean">아무나 원하지 않아</div>
+              <div class="lyrics-line">Hey, I love you</div>
+              <div class="lyrics-line korean">그래 너 I fancy you</div>
+              <div class="lyrics-line korean">꿈처럼 행복해도 돼</div>
+              <div class="lyrics-line">'Cause I need you (What?)</div>
+              <div class="lyrics-line korean">Fancy you, ooh — 누가 먼저 좋아하면 어때</div>
+              <div class="lyrics-line korean">Fancy you, ooh — 지금 너에게로 갈래</div>
+              <div class="lyrics-line">Fancy, ooh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean"><span class="fanchant-highlight">(Cheering!)</span> 연기처럼 훅 사라질까</div>
+              <div class="lyrics-line korean">늘 가득히 담아 널 두 눈에 담아</div>
+              <div class="lyrics-line korean"><span class="fanchant-highlight">(Cheering!)</span> 생각만으로 포근해져</div>
+              <div class="lyrics-line korean">몰래 뒤에서 안아 널 놓지 않을래</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">거기 너 I fancy you</div>
+              <div class="lyrics-line korean">아무나 원하지 않아</div>
+              <div class="lyrics-line">Hey, I love you</div>
+              <div class="lyrics-line korean">그래 너 I fancy you</div>
+              <div class="lyrics-line korean">꿈처럼 행복해도 돼</div>
+              <div class="lyrics-line">'Cause I need you (What?)</div>
+              <div class="lyrics-line korean">Fancy you, ooh — 누가 먼저 좋아하면 어때</div>
+              <div class="lyrics-line korean">Fancy you, ooh — 지금 너에게로 갈래</div>
               <div class="lyrics-line">Fancy <span class="fanchant-highlight">(TWICE!)</span>, ooh</div>
             </div>
           </div>
         </div>
 
-        <!-- What Is Love -->
+        <!-- WHAT IS LOVE -->
         <div class="song-card" id="what-is-love">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">29</div>
@@ -1816,23 +2563,82 @@
               <div class="lyrics-line"><span class="fanchant-highlight">TWICE!</span></div>
               <div class="lyrics-line">What is love?</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line">I wanna know — 사탕처럼 달콤하다는데</div>
-              <div class="lyrics-line">I wanna know — 하늘을 나는 것 같다는데</div>
-              <div class="lyrics-line">I wanna know, know, know, know</div>
-              <div class="lyrics-line">What is love? 사랑이 어떤 느낌인지</div>
+              <div class="lyrics-line korean">매일같이 영화 속에서나</div>
+              <div class="lyrics-line korean">책 속에서나 드라마 속에서 사랑을 느껴</div>
+              <div class="lyrics-line korean">Mmm 사랑을 배워</div>
+              <div class="lyrics-line korean">내 일처럼 자꾸 가슴이 뛰어</div>
+              <div class="lyrics-line korean">두근두근거려 설레임에 부풀어 올라</div>
+              <div class="lyrics-line korean">Mmm 궁금해서 미칠 것만 같아</div>
+              <div class="lyrics-line korean">Ooh 언젠간 내게도</div>
+              <div class="lyrics-line korean">이런 일이 실제로 일어날까</div>
+              <div class="lyrics-line korean">그게 언제쯤일까? 어떤 사람일까?</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line">I wanna know</div>
-              <div class="lyrics-line">What is love?</div>
+              <div class="lyrics-line korean">I wanna know 사탕처럼 달콤하다는데</div>
+              <div class="lyrics-line korean">I wanna know 하늘을 나는 것 같다는데</div>
+              <div class="lyrics-line">I wanna know, know, know, know</div>
+              <div class="lyrics-line korean">What is love? 사랑이 어떤 느낌인지</div>
+              <div class="lyrics-line korean">I wanna know 하루 종일 웃고 있다는데</div>
+              <div class="lyrics-line korean">I wanna know 세상이 다 아름답다는데</div>
+              <div class="lyrics-line">I wanna know, know, know, know</div>
+              <div class="lyrics-line korean">What is love? 언젠간 나에게도 사랑이 올까</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">지금 이런 상상만으로도</div>
+              <div class="lyrics-line korean">떠올려만 봐도 가슴이 터질 것 같은데</div>
+              <div class="lyrics-line korean">Mmm 이렇게 좋은데</div>
+              <div class="lyrics-line korean">만일 언젠가 진짜로 내게</div>
+              <div class="lyrics-line korean">사랑이 올 때 난 울어버릴지도 몰라</div>
+              <div class="lyrics-line korean">Mmm 정말 궁금해 미칠 것만 같아</div>
+              <div class="lyrics-line korean">Ooh 언젠간 내게도</div>
+              <div class="lyrics-line korean">이런 일이 실제로 일어날까</div>
+              <div class="lyrics-line korean">그게 언제쯤일까? 어떤 사람일까?</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">I wanna know 사탕처럼 달콤하다는데</div>
+              <div class="lyrics-line korean">I wanna know 하늘을 나는 것 같다는데</div>
+              <div class="lyrics-line">I wanna know, know, know, know</div>
+              <div class="lyrics-line korean">What is love? 사랑이 어떤 느낌인지</div>
+              <div class="lyrics-line korean">I wanna know 하루 종일 웃고 있다는데</div>
+              <div class="lyrics-line korean">I wanna know 세상이 다 아름답다는데</div>
+              <div class="lyrics-line">I wanna know, know, know, know</div>
+              <div class="lyrics-line korean">What is love? 언젠간 나에게도 사랑이 올까</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">지금 세상 어느 곳에 살고 있는지</div>
+              <div class="lyrics-line korean">도대체 언제쯤 나와 만나게 될는지</div>
+              <div class="lyrics-line korean">언제 어떻게 우리의 인연은</div>
+              <div class="lyrics-line korean">시작될는지 모르지만 느낌이 어쩐지</div>
+              <div class="lyrics-line korean">진짜 좋을 것 같아 왠지</div>
+              <div class="lyrics-line korean">영화 드라마보다도 더 멋진</div>
+              <div class="lyrics-line korean">사랑이 올 거야 내 예감 언제나 맞지</div>
+              <div class="lyrics-line korean">어서 나타나봐</div>
+              <div class="lyrics-line korean">나는 다 준비가 됐지 Ready</div>
+              <div class="lyrics-line korean">어디 있을까, 찾아낼 거야</div>
+              <div class="lyrics-line korean">어디 있을까, 보고 싶어 죽겠어</div>
+              <div class="lyrics-line korean">더 이상 참을 수 없을 것만 같아</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">사탕처럼 달콤하다는데</div>
+              <div class="lyrics-line korean">하늘을 나는 것 같다는데</div>
+              <div class="lyrics-line">I wanna know, know, know, know</div>
+              <div class="lyrics-line korean">What is love? 사랑이 어떤 느낌인지</div>
+              <div class="lyrics-line korean">하루 종일 웃고 있다는데</div>
+              <div class="lyrics-line korean">세상이 다 아름답다는데</div>
+              <div class="lyrics-line">I wanna know, know, know, know</div>
+              <div class="lyrics-line korean">What is love? 언젠간 나에게도 사랑이 올까</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I wanna know (Woo) — I wanna know (What is love?)</div>
+              <div class="lyrics-line">I wanna know, know, know, know (I wanna know)</div>
+              <div class="lyrics-line">What is love? (I wanna know) — I wanna know (What is love?)</div>
+              <div class="lyrics-line">I wanna know — I wanna know, know, know, know</div>
+              <div class="lyrics-line">What is love? — I wanna know</div>
               <div class="section-divider"></div>
               <div class="lyrics-line annotation">Ending roll call:</div>
               <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon, Momo chan, Sana chan, Park Jihyo, Mina chan, Kim Dahyun, Son Chaeyoung, Chou Jeu ee)</span></div>
               <div class="lyrics-line"><span class="fanchant-highlight">(Won-su, Sarang-eun, teudong-i)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon, Momo chan, Sana chan, Park Jihyo, Mina chan, Kim Dahyun, Son Chaeyoung, Chou Jeu ee)</span></div>
               <div class="lyrics-line"><span class="fanchant-highlight">(Saranghae, What is love)</span></div>
             </div>
           </div>
         </div>
 
-        <!-- YES or YES -->
+        <!-- YES OR YES -->
         <div class="song-card" id="yes-or-yes">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">30</div>
@@ -1847,21 +2653,107 @@
             <div class="lyrics-container">
               <div class="lyrics-line">Hey, boy <span class="fanchant-highlight">(Cheering!)</span></div>
               <div class="lyrics-line">Look, I'm gonna make this simple for you</div>
-              <div class="lyrics-line">You got two choices — YES or YES? <span class="fanchant-highlight">(Y, E, S, TWICE)</span></div>
+              <div class="lyrics-line">You got two choices</div>
+              <div class="lyrics-line">YES or YES? <span class="fanchant-highlight">(Y, E, S, TWICE)</span></div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">둘 중에 하나만 골라</div>
+              <div class="lyrics-line">YES or YES?</div>
+              <div class="lyrics-line korean">Ah-ah — 하나만 선택해 어서</div>
               <div class="lyrics-line">YES or YES?</div>
               <div class="section-divider"></div>
               <div class="lyrics-line annotation">Opening roll call:</div>
               <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon, Momo chan, Sana chan, Park Jihyo, Mina chan, Kim Dahyun, Son Chaeyoung, Chou Jeu ee)</span></div>
               <div class="section-divider"></div>
+              <div class="lyrics-line korean">내가 이렇게도 이기적이었던가</div>
+              <div class="lyrics-line korean">뭔가 이렇게 갖고 싶던 적 있었나 (있었나)</div>
+              <div class="lyrics-line korean">다 놀라 (다 놀라) — 내 뻔뻔함에</div>
+              <div class="lyrics-line">Come on and tell me YES</div>
+              <div class="lyrics-line korean">생각보다 과감해진 나의 시나리오</div>
+              <div class="lyrics-line korean">이 정도 plan이면 완벽해 만족해 (만족해)</div>
+              <div class="lyrics-line">I don't care (I don't care)</div>
+              <div class="lyrics-line korean">누가 뭐래도 (Hoo-ooh)</div>
+              <div class="lyrics-line">You better tell me YES</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">내 맘은 정했어 YES</div>
+              <div class="lyrics-line korean">그럼 이제 네 대답을 들을 차례</div>
+              <div class="lyrics-line korean">힘들면 보기를 줄게 넌 고르기만 해</div>
+              <div class="lyrics-line korean">고민할 필요도 없게 해줄게</div>
+              <div class="lyrics-line korean">뭘 고를지 몰라 준비해봤어</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">둘 중에 하나만 골라</div>
+              <div class="lyrics-line">YES or YES?</div>
+              <div class="lyrics-line korean">네 마음을 몰라 준비해봤어</div>
+              <div class="lyrics-line korean">하나만 선택해 어서</div>
+              <div class="lyrics-line">YES or YES?</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">싫어는 싫어 나 아니면 우리?</div>
+              <div class="lyrics-line korean">선택을 존중해 거절은 거절해</div>
+              <div class="lyrics-line korean">선택지는 하나 자 선택은 네 맘</div>
+              <div class="lyrics-line">It's all up to you</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">진심일까? Do not guess</div>
+              <div class="lyrics-line korean">진심이니? Do not ask</div>
+              <div class="lyrics-line korean">애매한 좌우 말고 확실히 위아래로</div>
+              <div class="lyrics-line">There's no letters N and O</div>
+              <div class="lyrics-line korean">지워버릴래 오늘부로 (No more)</div>
+              <div class="lyrics-line korean">복잡하게 고민할 필요</div>
+              <div class="lyrics-line korean">없어 정답은 YES, YES, yo (Oh, oh)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">없던 이기심도 자극하는 너의 눈과</div>
+              <div class="lyrics-line korean">널 향한 호기심이 만나서</div>
+              <div class="lyrics-line korean">타올라 (올라) — 타오른다 (른다)</div>
+              <div class="lyrics-line">My heart burn, burn, burn</div>
+              <div class="lyrics-line">You better hurry up</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">조금 쉽게 말하자면</div>
+              <div class="lyrics-line korean">넌 뭘 골라도 날 만나게 될 거야</div>
+              <div class="lyrics-line korean">뭐 좀 황당하긴 해도 (Waiting for you)</div>
+              <div class="lyrics-line korean">억지라고 해도 (Oh)</div>
+              <div class="lyrics-line korean">절대 후회하지 않게 해줄게</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">뭘 고를지 몰라 준비해봤어</div>
+              <div class="lyrics-line korean">둘 중에 하나만 골라</div>
+              <div class="lyrics-line">YES or YES?</div>
+              <div class="lyrics-line korean">네 마음을 몰라 준비해봤어</div>
+              <div class="lyrics-line korean">하나만 선택해 어서</div>
+              <div class="lyrics-line">YES or YES?</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">싫어는 싫어 — 나 아니면 우리?</div>
+              <div class="lyrics-line korean">선택을 존중해 — 거절은 거절해</div>
+              <div class="lyrics-line korean">선택지는 하나 자 선택은 네 맘</div>
+              <div class="lyrics-line">Now, it's all up to you</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Maybe not (No, no) — Maybe YES (No, no)</div>
+              <div class="lyrics-line korean">좀 더 선명하게 네 맘을 내게 보여봐</div>
+              <div class="lyrics-line korean">귀 기울여봐 무슨 소리가 들리지 않니?</div>
               <div class="lyrics-line">It's! Simple! Y! E! S! Hey!</div>
-              <div class="lyrics-line korean">하나 더 보태서 YES or YES or YES</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">둘 중에 하나만 골라</div>
+              <div class="lyrics-line">YES or YES?</div>
+              <div class="lyrics-line korean">하나만 선택해 어서</div>
+              <div class="lyrics-line">YES or YES? (Oh)</div>
+              <div class="lyrics-line korean">하나 더 보태서</div>
+              <div class="lyrics-line">YES or YES or YES</div>
+              <div class="lyrics-line korean">골라봐 자 선택은 네 맘</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">뭘 고를지 몰라 준비해봤어 (Oh)</div>
+              <div class="lyrics-line korean">둘 중에 하나만 골라</div>
+              <div class="lyrics-line">YES or YES? (Oh-oh)</div>
+              <div class="lyrics-line korean">네 마음을 몰라 준비해봤어 (준비해봤어 Babe)</div>
+              <div class="lyrics-line korean">하나만 선택해 어서</div>
+              <div class="lyrics-line">YES or YES? (Oh, woah)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">싫어는 싫어 — 나 아니면 우리?</div>
+              <div class="lyrics-line korean">선택을 존중해 — 거절은 거절해 (Oh, oh)</div>
+              <div class="lyrics-line korean">선택지는 하나 자 선택은 네 맘</div>
+              <div class="lyrics-line">It's all up to you (It's all up to you)</div>
+              <div class="lyrics-line korean">둘 중에 하나만 골라</div>
+              <div class="lyrics-line">YES or YES?</div>
             </div>
           </div>
         </div>
 
-        <!-- Dance The Night Away -->
+        <!-- DANCE THE NIGHT AWAY -->
         <div class="song-card" id="dance-the-night-away">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">31</div>
@@ -1874,14 +2766,62 @@
           <div class="song-body">
             <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
             <div class="lyrics-container">
-              <div class="lyrics-line">라라라라라라라 라라라라라라라</div>
+              <div class="lyrics-line korean">라라라라라라라 라라라라라라라</div>
+              <div class="lyrics-line korean">라라라라라라라 라라라라라라라</div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">You and me in the moonlight, (ah ah ah ah)</div>
-              <div class="lyrics-line korean">별 꽃 축제 열린 밤 (ah ah ah ah ah)</div>
+              <div class="lyrics-line korean">별 꽃 축제 열린 밤, (ah ah ah ah ah)</div>
+              <div class="lyrics-line korean">파도 소리를 틀고 — 춤을 추는 이 순간</div>
+              <div class="lyrics-line korean">이 느낌 정말 딱이야</div>
+              <div class="lyrics-line korean">바다야 우리와 같이 놀아 (ah~)</div>
+              <div class="lyrics-line korean">바람아 너도 이쪽으로 와 (wah~)</div>
+              <div class="lyrics-line korean">달빛 조명 아래서 — 너와 나와 세상과</div>
+              <div class="lyrics-line">다 같이 Party all night long Yeah, it's good</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span> If you wanna have some fun</div>
+              <div class="lyrics-line korean">짭짤한 공기처럼 — 이 순간의 특별한</div>
+              <div class="lyrics-line korean">행복을 놓치지 마</div>
+              <div class="lyrics-line">One, two, three, let's go</div>
+              <div class="lyrics-line korean">저 우주 위로 — 날아갈 듯 춤추러 가 Hey</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Let's dance the night away <span class="fanchant-highlight">(Cheering)</span></div>
-              <div class="lyrics-line">Yeah, one, two, three, let's go</div>
               <div class="lyrics-line">Let's dance the night away</div>
+              <div class="lyrics-line">Yeah, one, two, three, let's go</div>
+              <div class="lyrics-line korean">저 바다 건너 들릴 듯 소리 질러</div>
+              <div class="lyrics-line">Let's dance the night away</div>
+              <div class="lyrics-line">Dance the night away</div>
+              <div class="lyrics-line">Let's dance the night away (Woo!)</div>
+              <div class="lyrics-line">Dance the night away</div>
+              <div class="lyrics-line">Let's dance the night away</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">You and me in this cool night, (ah ah ah ah)</div>
+              <div class="lyrics-line korean">미소 짓는 반쪽 달, (ah ah ah ah ah)</div>
+              <div class="lyrics-line korean">그 언젠가 너와 나, 저 달 뒷면으로 가</div>
+              <div class="lyrics-line">파티를 열기로 약속, Yeah, it's good</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span> If you wanna have some fun</div>
+              <div class="lyrics-line korean">은빛 모래알처럼 — 이 순간의 특별한</div>
+              <div class="lyrics-line korean">행복을 놓치지 마</div>
+              <div class="lyrics-line">One, two, three, let's go</div>
+              <div class="lyrics-line korean">저 우주 위로 — 날아갈 듯 춤추러 가 Hey</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Let's dance the night away <span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="lyrics-line">Let's dance the night away</div>
+              <div class="lyrics-line">Yeah, one, two, three, let's go</div>
+              <div class="lyrics-line korean">저 바다 건너 들릴 듯 소리 질러 (Yeah!)</div>
+              <div class="lyrics-line">Let's dance the night away</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">오늘이 마지막인 듯, 소리 질러 저 멀리</div>
+              <div class="lyrics-line korean">끝없이 날아오를 듯 힘껏 뛰어 더 높이</div>
+              <div class="lyrics-line korean">오늘이 마지막인 듯 소리 질러 저 멀리</div>
+              <div class="lyrics-line korean">쏟아지는 별빛과</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Oh, let's dance the night away (Yeah, yeah, yeah)</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span> Let's dance the night away</div>
+              <div class="lyrics-line">Yeah, one, two, three, let's go</div>
+              <div class="lyrics-line korean">저 바다 건너 들릴 듯 소리 질러 (Yeah!)</div>
+              <div class="lyrics-line">Let's dance the night away</div>
+              <div class="lyrics-line">Yeah, yeah, yeah × 3 — Let's dance the night away × 4</div>
               <div class="section-divider"></div>
               <div class="lyrics-line annotation">Ending roll call:</div>
               <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon)</span></div>
@@ -1893,7 +2833,7 @@
           </div>
         </div>
 
-        <!-- Feel Special -->
+        <!-- FEEL SPECIAL -->
         <div class="song-card" id="feel-special">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">32</div>
@@ -1908,12 +2848,67 @@
             <div class="lyrics-container">
               <div class="lyrics-line"><span class="fanchant-highlight">(You make me feel special)</span></div>
               <div class="section-divider"></div>
+              <div class="lyrics-line korean">그런 날이 있어</div>
+              <div class="lyrics-line korean">갑자기 혼자인 것만 같은 날</div>
+              <div class="lyrics-line korean">어딜 가도 내 자리가 아닌 것만 같고</div>
+              <div class="lyrics-line korean">고갠 떨궈지는 날</div>
+              <div class="lyrics-line korean">그럴 때마다 내게</div>
+              <div class="lyrics-line korean">얼마나 내가 소중한지</div>
+              <div class="lyrics-line korean">말해주는 너의 그 한마디에</div>
+              <div class="lyrics-line">Everything's alright</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">초라한 nobody 에서 다시 somebody</div>
+              <div class="lyrics-line korean">특별한 나로 변해</div>
+              <div class="section-divider"></div>
               <div class="lyrics-line">You make me feel special</div>
               <div class="lyrics-line korean">세상이 아무리 날 주저앉혀도 (앉혀도)</div>
-              <div class="lyrics-line">네가 있어 난 다시 웃어 — That's what you do</div>
+              <div class="lyrics-line korean">아프고 아픈 말들이 날 찔러도</div>
+              <div class="lyrics-line korean">네가 있어 난 다시 웃어 — That's what you do</div>
               <div class="lyrics-line">Again, I feel special</div>
+              <div class="lyrics-line korean">아무것도 아닌 존재 같다가도</div>
+              <div class="lyrics-line korean">사라져도 모를 사람 같다가도</div>
+              <div class="lyrics-line korean">날 부르는 네 목소리에</div>
+              <div class="lyrics-line">I feel loved, I feel so special</div>
               <div class="section-divider"></div>
+              <div class="lyrics-line korean">자꾸 숨고만 싶어서</div>
+              <div class="lyrics-line korean">마주 하기가 싫어서</div>
+              <div class="lyrics-line korean">모든 게 의미를 잃은 듯이</div>
+              <div class="lyrics-line korean">내가 의미를 잃은 듯이</div>
+              <div class="lyrics-line korean">가만히 주저앉아 있을 때 (Oh)</div>
+              <div class="lyrics-line korean">그때 내 앞에 나타난 너의</div>
+              <div class="lyrics-line korean">따뜻한 미소와 손길에</div>
+              <div class="lyrics-line">Everything's alright</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">초라한 nobody 에서 다시 somebody</div>
+              <div class="lyrics-line korean">특별한 나로 변해</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">You make me feel special</div>
+              <div class="lyrics-line korean">세상이 아무리 날 주저앉혀도</div>
+              <div class="lyrics-line korean">아프고 아픈 말들이 날 찔러도</div>
+              <div class="lyrics-line korean">네가 있어 난 다시 웃어 — That's what you do</div>
+              <div class="lyrics-line">Again, I feel special</div>
+              <div class="lyrics-line korean">아무것도 아닌 존재 같다가도</div>
+              <div class="lyrics-line korean">사라져도 모를 사람 같다가도</div>
+              <div class="lyrics-line korean">날 부르는 네 목소리에</div>
+              <div class="lyrics-line">I feel loved, I feel so special</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Uh, you make everything alright</div>
+              <div class="lyrics-line korean">구름이 쫙 낀 햇살 한 줌 없는 날</div>
+              <div class="lyrics-line korean">네가 바로 나의 shining light (Hey~)</div>
+              <div class="lyrics-line">That's what you do</div>
+              <div class="lyrics-line korean">아무리 어두운 밤도 다시 낮 (Oh~)</div>
+              <div class="lyrics-line">I owe it to you</div>
               <div class="lyrics-line">Because you make me feel <span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">You make me feel special</div>
+              <div class="lyrics-line korean">세상이 아무리 날 주저앉혀도 (앉혀도)</div>
+              <div class="lyrics-line korean">아프고 아픈 말들이 날 찔러도</div>
+              <div class="lyrics-line korean">네가 있어 난 다시 웃어 (다시 웃어) — That's what you do</div>
+              <div class="lyrics-line">Again, I feel special</div>
+              <div class="lyrics-line korean">아무것도 아닌 존재 같다가도</div>
+              <div class="lyrics-line korean">사라져도 모를 사람 같다가도</div>
+              <div class="lyrics-line korean">날 부르는 네 목소리에</div>
+              <div class="lyrics-line">I feel loved, I feel so special</div>
               <div class="section-divider"></div>
               <div class="lyrics-line annotation">Ending roll call:</div>
               <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon)</span></div>
@@ -1940,17 +2935,71 @@
             <div class="lyrics-container">
               <div class="lyrics-line">One spark, baby</div>
               <div class="lyrics-line">Everybody wants that endless flame</div>
+              <div class="lyrics-line korean">식지 않을 Everlasting blast</div>
+              <div class="lyrics-line korean">영원한 걸 염원해 그래 영원히</div>
+              <div class="lyrics-line">We're sparkling beautifully</div>
+              <div class="lyrics-line korean">아름다울 걸 난 확신해</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span></div>
               <div class="section-divider"></div>
-              <div class="lyrics-line">Bring me the spark in my veins</div>
+              <div class="lyrics-line korean">너의 숨결에 온기를 데워</div>
+              <div class="lyrics-line korean">계속 타오르는 Energy</div>
+              <div class="lyrics-line">If I lose my rhythm</div>
+              <div class="lyrics-line">Then your beat goes on and on</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Bring me the, bring me the spark in my veins</div>
               <div class="lyrics-line">Gimme the freedom, the freedom to chase</div>
+              <div class="lyrics-line">You know it's all ours</div>
+              <div class="lyrics-line korean">이대로 Make this moment last</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line">'Cuz my heart is burning (burning), burning (burning)</div>
-              <div class="lyrics-line">So good that it's hurting (hurting), hurting (hurting)</div>
+              <div class="lyrics-line">'Cuz my heart is burning (burning), burning (burning), burning (burning)</div>
+              <div class="lyrics-line">So good that it's hurting (hurting), hurting (hurting), hurting (hurting)</div>
               <div class="lyrics-line korean">눈부시게 아름답고 아프다 해도</div>
               <div class="lyrics-line">It's our golden days <span class="fanchant-highlight">(Too-wai-ee-su)</span></div>
+              <div class="lyrics-line">Yeah, my heart is burning (burning), burning (burning), burning (burning)</div>
+              <div class="lyrics-line">Don't lose this spark, baby</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">너와 누워본 Coral 빛 Heaven</div>
+              <div class="lyrics-line korean">붉은 두 뺨이 식지 않도록</div>
+              <div class="lyrics-line korean">더 세게 끌어안고</div>
+              <div class="lyrics-line korean">더 크게 불러줄게</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">너의 숨결에 온기를 데워</div>
+              <div class="lyrics-line korean">계속 타오르는 Energy</div>
+              <div class="lyrics-line">If I lose my rhythm</div>
+              <div class="lyrics-line">Then your beat goes on and on</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Bring me the, bring me the spark in my veins</div>
+              <div class="lyrics-line">Gimme the freedom, the freedom to chase</div>
+              <div class="lyrics-line">You know it's all ours</div>
+              <div class="lyrics-line korean">이대로 Make this moment last (Yeah)</div>
+              <div class="lyrics-line">Baby</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">'Cuz my heart is burning (burning), burning (burning), burning (burning)</div>
+              <div class="lyrics-line">So good that it's hurting (hurting), hurting (hurting), hurting (hurting)</div>
+              <div class="lyrics-line korean">눈부시게 아름답고 아프다 해도</div>
+              <div class="lyrics-line">It's our golden days <span class="fanchant-highlight">(Too-wai-ee-su)</span></div>
+              <div class="lyrics-line">Yeah, my heart is burning (burning), burning (burning), burning (burning)</div>
+              <div class="lyrics-line">Don't lose this spark, baby</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="lyrics-line">Lighting it up</div>
+              <div class="lyrics-line korean">빛이 나는 시간을 건너 (빛의 시간을 건너)</div>
+              <div class="lyrics-line">Glowing so bright</div>
+              <div class="lyrics-line korean">찬란한 환상쯤에 이르러</div>
+              <div class="lyrics-line">This is the time of our lives (lives)</div>
+              <div class="lyrics-line">Carved into our minds (minds)</div>
+              <div class="lyrics-line korean">저물지 않아 There ain't no sundown</div>
+              <div class="lyrics-line">An everlasting spark to an everlasting fire</div>
               <div class="section-divider"></div>
               <div class="lyrics-line">Don't let this fire die</div>
-              <div class="lyrics-line">'Cuz my heart is burning, burning, burning <span class="fanchant-highlight">(cheering!)</span></div>
+              <div class="lyrics-line">'Cuz my heart is burning (burning), burning (burning), burning (burning)</div>
+              <div class="lyrics-line">So good that it's hurting (hurting), hurting (hurting), hurting (hurting)</div>
+              <div class="lyrics-line korean">눈부시게 아름답고 아프다 해도</div>
+              <div class="lyrics-line">It's our golden days <span class="fanchant-highlight">(Too-wai-ee-su)</span></div>
+              <div class="lyrics-line">Yeah, my heart is burning (burning), burning (burning), burning (burning)</div>
+              <div class="lyrics-line">Don't lose this spark, baby</div>
+              <div class="lyrics-line">'Cuz my heart is burning (burning), burning (burning), burning <span class="fanchant-highlight">(cheering!)</span></div>
             </div>
           </div>
         </div>
@@ -1966,7 +3015,7 @@
       </div>
       <div class="songs-grid">
 
-        <!-- After Moon -->
+        <!-- AFTER MOON -->
         <div class="song-card" id="after-moon">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">34</div>
@@ -1981,6 +3030,10 @@
               <div class="lyrics-line korean">두근대는 그때 기억이</div>
               <div class="lyrics-line korean">이제는 아련해지고</div>
               <div class="lyrics-line korean">추억이 달처럼 벅차올라서</div>
+              <div class="lyrics-line korean">오늘도 나를 웃게 해</div>
+              <div class="lyrics-line korean">내 마음을 톡톡톡</div>
+              <div class="lyrics-line korean">두드려요 똑똑똑</div>
+              <div class="lyrics-line korean">이 노랠 듣고 있다면</div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">하늘의 해와 달처럼</div>
               <div class="lyrics-line korean">우린 만날 수 없지만</div>
@@ -1991,11 +3044,44 @@
               <div class="lyrics-line korean">낮에 떠 있는 저 달처럼</div>
               <div class="lyrics-line">You and I, you and I, you and I</div>
               <div class="lyrics-line korean">언제나 곁에 있을게</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">무심코 올려본 하늘에 넌</div>
+              <div class="lyrics-line korean">아직 빛나고 있어</div>
+              <div class="lyrics-line korean">혹시 너도 지금 내 생각할까</div>
+              <div class="lyrics-line korean">괜히 눈물이 나게 해</div>
+              <div class="lyrics-line korean">내 마음에 톡톡톡</div>
+              <div class="lyrics-line korean">흘러내려 똑똑똑</div>
+              <div class="lyrics-line korean">가만히 눈을 감으면</div>
+              <div class="lyrics-line korean">함께한 계절이 또다시 돌아와</div>
+              <div class="lyrics-line korean">날 감싸 안아 줄 것 같아</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">하늘의 해와 달처럼</div>
+              <div class="lyrics-line korean">우린 만날 수 없지만</div>
+              <div class="lyrics-line">You and I, you and I, you and I</div>
+              <div class="lyrics-line korean">함께란걸 잊지마요</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">밤이 지나가도 하늘 위에 보이는 듯한</div>
+              <div class="lyrics-line korean">낮에 떠 있는 저 달처럼</div>
+              <div class="lyrics-line">You and I, you and I, you and I</div>
+              <div class="lyrics-line korean">언제나 곁에 있을게</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">낮과 밤이 지나고</div>
+              <div class="lyrics-line korean">시간이 흘러도</div>
+              <div class="lyrics-line korean">언제나 네 곁에 내가 있었단 걸 기억해</div>
+              <div class="lyrics-line korean">간절히 바래왔잖아 (Ooh)</div>
+              <div class="lyrics-line korean">언젠가는 만날 거야</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">[나/사] You and I, you and I, you and I</div>
+              <div class="lyrics-line korean">깨고 싶지 않은 꿈처럼 (않은 꿈처럼)</div>
+              <div class="lyrics-line korean">밤이 지나가도 하늘 위에 보이는 듯한 (듯한)</div>
+              <div class="lyrics-line korean">낮에 떠 있는 저 달처럼</div>
+              <div class="lyrics-line">You and I, you and I, you and I</div>
+              <div class="lyrics-line korean">언제나 곁에 있을게 — 곁에 있을게</div>
             </div>
           </div>
         </div>
 
-        <!-- You In My Heart -->
+        <!-- YOU IN MY HEART -->
         <div class="song-card" id="you-in-my-heart">
           <div class="song-card-header" onclick="toggleCard(this)">
             <div class="song-number">35</div>
@@ -2010,76 +3096,75 @@
               <div class="lyrics-line korean">잠이 오지 않는 오늘 밤에</div>
               <div class="lyrics-line korean">나 우두커니 앉아</div>
               <div class="lyrics-line korean">반짝이는 저 하늘 보며</div>
+              <div class="lyrics-line korean">하나 둘 씩 별 헤는</div>
+              <div class="lyrics-line korean">이 밤에 And all day</div>
+              <div class="lyrics-line korean">바람결에 스륵 눈 감아</div>
+              <div class="lyrics-line korean">사랑스런 네 숨결</div>
+              <div class="lyrics-line korean">부드러운 목소리로 내 맘에</div>
+              <div class="lyrics-line korean">스며들어 날 비춰주는 너</div>
+              <div class="lyrics-line korean">내 맘이 꼭 이런 걸</div>
+              <div class="lyrics-line korean">포근히 내 품 안에 담고 싶은 너야</div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">내 눈을 바라봐</div>
               <div class="lyrics-line korean">네게만 다 보여줄게</div>
               <div class="lyrics-line korean">두 눈에 비친 세상을</div>
               <div class="lyrics-line korean">예쁜 네 마음에 담을 수 있게 영원히</div>
+              <div class="lyrics-line korean">같은 시간 속에서</div>
+              <div class="lyrics-line korean">너와 나 단둘이서</div>
+              <div class="lyrics-line korean">내가 널 감싸줄게</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">내 눈을 바라봐</div>
+              <div class="lyrics-line korean">네게만 다 보여줄게</div>
+              <div class="lyrics-line korean">두 눈에 비친 세상을</div>
+              <div class="lyrics-line korean">널 혼자 두지는 않을 거야 알잖아</div>
+              <div class="lyrics-line korean">같은 시간 속에서</div>
+              <div class="lyrics-line korean">너와 나 단둘이서</div>
+              <div class="lyrics-line korean">내가 널 감싸줄게 — 널 내게 담아</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">같은 시간에 — 우리 단둘이 같은 얘기를 하고</div>
+              <div class="lyrics-line korean">같은 곳에서 숨을 쉬며</div>
+              <div class="lyrics-line korean">하나 둘 씩 — 추억이 닮아가 And all day</div>
+              <div class="lyrics-line korean">하루의 끝에 네가 있어</div>
+              <div class="lyrics-line korean">내 옆에 있다는 것</div>
+              <div class="lyrics-line korean">그것만으로도 너무 충분해</div>
+              <div class="lyrics-line korean">이유 없이 내 맘이 편해져</div>
+              <div class="lyrics-line korean">숨을 쉴 때마다 꼭</div>
+              <div class="lyrics-line korean">[지/미] 포근히 내 품 안에 담고 싶은 너야</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">내 눈을 바라봐</div>
+              <div class="lyrics-line korean">네게만 다 보여줄게</div>
+              <div class="lyrics-line korean">두 눈에 비친 세상을</div>
+              <div class="lyrics-line korean">예쁜 네 마음에 담을 수 있게 영원히</div>
+              <div class="lyrics-line korean">같은 시간 속에서</div>
+              <div class="lyrics-line korean">너와 나 단둘이서</div>
+              <div class="lyrics-line korean">내가 널 감싸줄게 — 널 내게 담아</div>
               <div class="section-divider"></div>
               <div class="lyrics-line korean">저 반짝이는 별이 돼줄게</div>
               <div class="lyrics-line korean">어디서든 널 비추는</div>
               <div class="lyrics-line korean">언제나 널 밝혀주는</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Me+You -->
-        <div class="song-card" id="me-plus-you">
-          <div class="song-card-header" onclick="toggleCard(this)">
-            <div class="song-number">36</div>
-            <div class="song-info">
-              <div class="song-title">ME+YOU</div>
-              <div class="song-meta"><span class="tag tag-unconfirmed">Unconfirmed</span><span class="tag tag-fanchant">Fanchant</span></div>
-            </div>
-            <div class="song-toggle">+</div>
-          </div>
-          <div class="song-body">
-            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
-            <div class="lyrics-container">
-              <div class="lyrics-line">All I need is you <span class="fanchant-highlight">(Twice!)</span>, just you <span class="fanchant-highlight">(Twice!)</span></div>
-              <div class="lyrics-line">For everything we've been through</div>
-              <div class="lyrics-line">I'm grateful that you're my best friends until the end</div>
-              <div class="lyrics-line">I'll stick by your side like glue</div>
-              <div class="lyrics-line">It's true — Nothing's ever gonna come between us</div>
-              <div class="lyrics-line">Ain't no way, we can't lose</div>
-              <div class="lyrics-line">Always Me + You</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Likey -->
-        <div class="song-card" id="likey">
-          <div class="song-card-header" onclick="toggleCard(this)">
-            <div class="song-number">37</div>
-            <div class="song-info">
-              <div class="song-title">LIKEY</div>
-              <div class="song-meta"><span class="tag tag-unconfirmed">Unconfirmed</span></div>
-            </div>
-            <div class="song-toggle">+</div>
-          </div>
-          <div class="song-body">
-            <div class="lyrics-container">
-              <div class="lyrics-line korean">설렌다 Me likey</div>
-              <div class="lyrics-line">Me likey likey likey</div>
-              <div class="lyrics-line">Me likey likey likey</div>
-              <div class="lyrics-line korean">두근 두근 두근 (Heart heart)</div>
+              <div class="lyrics-line korean">너와 나 꼭 단둘이 늘 함께인걸 우리</div>
+              <div class="lyrics-line korean">[나/지] 언제나 네 옆에만</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line korean">자꾸 드러내고 싶지 자꾸만</div>
-              <div class="lyrics-line korean">사소한 것 하나까지 전부다</div>
-              <div class="lyrics-line korean">작은 화면 속에 내가 제일 예뻐 보이고파</div>
+              <div class="lyrics-line korean">내 눈을 바라봐</div>
+              <div class="lyrics-line korean">[나/지] 네게만 다 보여줄게 (Ooh, ooh-hoo)</div>
+              <div class="lyrics-line korean">[지/채] 두 눈에 비친 세상을</div>
+              <div class="lyrics-line korean">[지/채] 예쁜 네 마음에 담을 수 있게 영원히</div>
+              <div class="lyrics-line korean">같은 시간 속에서</div>
+              <div class="lyrics-line korean">너와 나 단둘이서</div>
+              <div class="lyrics-line korean">[지/쯔] 내가 널 감싸줄게</div>
               <div class="section-divider"></div>
-              <div class="lyrics-line korean">BB크림 파파파</div>
-              <div class="lyrics-line korean">립스틱을 맘맘마</div>
-              <div class="lyrics-line korean">카메라에 담아볼까 예쁘게</div>
-              <div class="lyrics-line korean">이거 보면 웃어 줘</div>
-              <div class="lyrics-line korean">그리고 꼭 눌러 줘</div>
+              <div class="lyrics-line korean">[나/모/지] 내 눈을 바라봐</div>
+              <div class="lyrics-line korean">네게만 다 보여줄게</div>
+              <div class="lyrics-line korean">두 눈에 비친 세상을</div>
+              <div class="lyrics-line korean">널 혼자 두지는 않을 거야 알잖아</div>
+              <div class="lyrics-line korean">같은 시간 속에서</div>
+              <div class="lyrics-line korean">너와 나 단둘이서</div>
+              <div class="lyrics-line korean">내가 널 감싸줄게 — 널 
             </div>
           </div>
         </div>
-
-      </div>
-
-      <div class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</div>
+          
+<div class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</div>
     </section>
 
   </main>
