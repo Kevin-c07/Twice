@@ -1,0 +1,1960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TWICE 6th World Tour — Fanchant & Lyrics Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --magenta: #fc5d9d;
+    --peach: #f9c596;
+    --sky: #49c0ec;
+    --mint: #71c7d4;
+    --gold: #f9cc85;
+    --green: #a3cc54;
+    --pink-soft: #e67ea3;
+    --purple: #8c79b4;
+    --red: #e62722;
+    --navy: #2253a3;
+    --white: #fefefe;
+    --bg: #0d0a14;
+    --surface: #15101f;
+    --surface2: #1e1630;
+    --text: #f0eaf8;
+    --muted: #9986bb;
+    --fanchant-bg: rgba(163, 204, 84, 0.15);
+    --fanchant-border: #a3cc54;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, rgba(252,93,157,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 70%, rgba(73,192,236,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 50% 10%, rgba(140,121,180,0.2) 0%, transparent 50%);
+  }
+
+  .hero-stars {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    animation: twinkle var(--dur, 3s) ease-in-out infinite;
+    animation-delay: var(--del, 0s);
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.3); }
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 18vw, 14rem);
+    line-height: 0.88;
+    letter-spacing: 0.02em;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+
+  .hero-title .line1 { color: var(--white); }
+  .hero-title .line2 {
+    background: linear-gradient(90deg, var(--magenta), var(--peach), var(--sky));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(163, 204, 84, 0.15);
+    border: 1px solid var(--fanchant-border);
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    color: var(--green);
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 0.8s 0.45s ease both;
+  }
+
+  .hero-badge::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    z-index: 1;
+    animation: fadeUp 1s 0.9s ease both;
+  }
+
+  .scroll-arrow {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, transparent, var(--magenta));
+    animation: scrollBounce 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: scaleY(1); opacity: 0.6; }
+    50% { transform: scaleY(0.6); opacity: 1; }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── MEMBER COLORS BAR ── */
+  .members-strip {
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    padding: 0;
+    scrollbar-width: none;
+  }
+  .members-strip::-webkit-scrollbar { display: none; }
+
+  .member-chip {
+    flex: 1;
+    min-width: 80px;
+    padding: 0.7rem 0.5rem;
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    color: rgba(0,0,0,0.75);
+    font-weight: 400;
+    transition: transform 0.2s, filter 0.2s;
+    cursor: default;
+    white-space: nowrap;
+  }
+  .member-chip:hover { transform: scaleY(1.15); filter: brightness(1.1); z-index: 2; }
+
+  /* ── LAYOUT ── */
+  .main-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    background: var(--surface);
+    border-right: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple) transparent;
+    padding-bottom: 2rem;
+  }
+
+  .sidebar-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: sticky;
+    top: 0;
+    background: var(--surface);
+    z-index: 5;
+  }
+
+  .sidebar-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+
+  .search-box {
+    margin-top: 0.75rem;
+    position: relative;
+  }
+
+  .search-box input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem 0.5rem 2.2rem;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-box input::placeholder { color: var(--muted); }
+  .search-box input:focus { border-color: var(--magenta); }
+
+  .search-box::before {
+    content: '🔍';
+    position: absolute;
+    left: 0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.75rem;
+    pointer-events: none;
+  }
+
+  .act-group { margin-top: 0.5rem; }
+
+  .act-label {
+    padding: 0.6rem 1.5rem 0.3rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    color: var(--magenta);
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.45rem 1.5rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: all 0.15s;
+    text-decoration: none;
+  }
+
+  .nav-item:hover {
+    color: var(--text);
+    background: rgba(255,255,255,0.04);
+    border-left-color: var(--magenta);
+  }
+
+  .nav-item.active {
+    color: var(--text);
+    background: rgba(252, 93, 157, 0.08);
+    border-left-color: var(--magenta);
+  }
+
+  .nav-item .fanchant-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+  }
+
+  .nav-item .solo-tag {
+    font-size: 0.65rem;
+    background: rgba(140,121,180,0.3);
+    color: var(--purple);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  /* ── CONTENT ── */
+  .content {
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* ── ACT HEADER ── */
+  .act-header {
+    padding: 3rem 3rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .act-header::before {
+    content: attr(data-act);
+    position: absolute;
+    right: -0.5rem;
+    top: -1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 10rem;
+    color: rgba(255,255,255,0.03);
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .act-header h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+    background: linear-gradient(90deg, var(--magenta), var(--peach));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .act-header p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  /* ── SONG CARD ── */
+  .songs-grid {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .song-card {
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s;
+    scroll-margin-top: 2rem;
+  }
+
+  .song-card:hover {
+    border-color: rgba(252, 93, 157, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .song-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .song-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: var(--muted);
+    min-width: 2rem;
+    text-align: center;
+    opacity: 0.5;
+  }
+
+  .song-info { flex: 1; }
+
+  .song-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 0.04em;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .song-meta {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    font-weight: 500;
+  }
+
+  .tag-fanchant {
+    background: rgba(163, 204, 84, 0.15);
+    color: var(--green);
+    border: 1px solid rgba(163,204,84,0.3);
+  }
+
+  .tag-solo {
+    background: rgba(140,121,180,0.15);
+    color: var(--purple);
+    border: 1px solid rgba(140,121,180,0.3);
+  }
+
+  .tag-unit {
+    background: rgba(73,192,236,0.15);
+    color: var(--sky);
+    border: 1px solid rgba(73,192,236,0.3);
+  }
+
+  .tag-unconfirmed {
+    background: rgba(249,204,133,0.15);
+    color: var(--gold);
+    border: 1px solid rgba(249,204,133,0.3);
+  }
+
+  .song-toggle {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 1rem;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+
+  .song-card.open .song-toggle {
+    background: var(--magenta);
+    color: white;
+    transform: rotate(45deg);
+  }
+
+  .song-body {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .song-card.open .song-body { display: block; }
+
+  /* ── LYRICS DISPLAY ── */
+  .lyrics-container {
+    padding-top: 1.25rem;
+  }
+
+  .lyrics-section {
+    margin-bottom: 1.25rem;
+  }
+
+  .lyrics-line {
+    line-height: 1.9;
+    font-size: 0.95rem;
+    color: var(--text);
+    opacity: 0.85;
+    font-weight: 300;
+  }
+
+  .lyrics-line.korean {
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .fanchant-highlight {
+    display: inline-block;
+    background: var(--fanchant-bg);
+    border: 1px solid rgba(163,204,84,0.35);
+    border-radius: 6px;
+    padding: 0.1rem 0.6rem;
+    color: var(--green);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 0.1rem 0;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 1rem 0;
+  }
+
+  .annotation {
+    font-size: 0.78rem;
+    color: var(--purple);
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  /* ── FANCHANT LEGEND ── */
+  .fanchant-legend {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(163,204,84,0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(163,204,84,0.2);
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    color: var(--green);
+  }
+
+  /* ── FLOATING TOC BUTTON ── */
+  .fab {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--magenta), var(--purple));
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 32px rgba(252,93,157,0.4);
+    transition: transform 0.2s;
+  }
+
+  .fab:hover { transform: scale(1.1); }
+
+  /* ── PROGRESS BAR ── */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--magenta), var(--sky));
+    z-index: 999;
+    transition: width 0.1s;
+  }
+
+  /* ── BACK TO TOP ── */
+  .back-top {
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .back-top:hover { color: var(--magenta); }
+
+  /* ── MOBILE SIDEBAR TOGGLE ── */
+  .mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem; left: 1rem;
+    z-index: 200;
+    background: var(--surface);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .sidebar-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 150;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .main-layout { grid-template-columns: 1fr; }
+
+    .sidebar {
+      position: fixed;
+      left: -300px;
+      top: 0; bottom: 0;
+      width: 280px;
+      z-index: 160;
+      transition: left 0.3s ease;
+    }
+
+    .sidebar.open { left: 0; }
+    .sidebar-overlay.active { display: block; }
+    .mobile-nav-toggle { display: block; }
+    .fab { display: flex; }
+
+    .songs-grid { padding: 1rem 1.25rem; }
+    .act-header { padding: 2rem 1.25rem 1rem; }
+    .hero-title { font-size: clamp(4rem, 22vw, 8rem); }
+  }
+
+  /* ── HIDDEN (search filter) ── */
+  .song-card.hidden { display: none !important; }
+  .act-section.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-stars" id="stars"></div>
+
+  <div class="hero-eyebrow">Ready? Are you ready for the ride?</div>
+  <div class="hero-title">
+    <div class="line1">TWICE</div>
+    <div class="line2">WORLD TOUR</div>
+  </div>
+  <div class="hero-subtitle">6th World Tour · Lyrics & Fanchant Guide</div>
+  <div class="hero-badge">Fanchants highlighted throughout · Have fun!</div>
+
+  <div class="scroll-hint">
+    <span>Explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ── MEMBER COLORS ── -->
+<div class="members-strip">
+  <div class="member-chip" style="background:#49c0ec">NAYEON</div>
+  <div class="member-chip" style="background:#a3cc54">JEONGYEON</div>
+  <div class="member-chip" style="background:#e67ea3">MOMO</div>
+  <div class="member-chip" style="background:#8c79b4;color:rgba(255,255,255,0.8)">SANA</div>
+  <div class="member-chip" style="background:#f9cc85">JIHYO</div>
+  <div class="member-chip" style="background:#71c7d4">MINA</div>
+  <div class="member-chip" style="background:#fefefe">DAHYUN</div>
+  <div class="member-chip" style="background:#e62722;color:rgba(255,255,255,0.9)">CHAEYOUNG</div>
+  <div class="member-chip" style="background:#2253a3;color:rgba(255,255,255,0.85)">TZUYU</div>
+</div>
+
+<!-- ── MOBILE TOGGLE ── -->
+<button class="mobile-nav-toggle" onclick="toggleSidebar()">☰</button>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<!-- ── MAIN LAYOUT ── -->
+<div class="main-layout">
+
+  <!-- ── SIDEBAR ── -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-title">SET LIST</div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search songs…" oninput="filterSongs(this.value)">
+      </div>
+    </div>
+
+    <div class="act-group">
+      <div class="act-label">Act 1</div>
+      <a class="nav-item" href="#four">Four</a>
+      <a class="nav-item" href="#this-is-for">This Is For <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#strategy">Strategy <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#make-me-go">Make Me Go</a>
+      <a class="nav-item" href="#set-me-free">Set Me Free <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#i-cant-stop-me">I Can't Stop Me <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#options">Options</a>
+      <a class="nav-item" href="#moonlight-sunrise">Moonlight Sunrise</a>
+    </div>
+
+    <div class="act-group">
+      <div class="act-label">Act 2</div>
+      <a class="nav-item" href="#mars">Mars</a>
+      <a class="nav-item" href="#i-got-you">I Got You <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#the-feels">The Feels</a>
+      <a class="nav-item" href="#gone">Gone</a>
+      <a class="nav-item" href="#cry-for-me">Cry For Me</a>
+      <a class="nav-item" href="#hell-in-heaven">Hell In Heaven</a>
+      <a class="nav-item" href="#right-hand-girl">Right Hand Girl</a>
+    </div>
+
+    <div class="act-group">
+      <div class="act-label">Act 3 — Solos</div>
+      <a class="nav-item" href="#dive-in">Dive In <span class="fanchant-dot"></span><span class="solo-tag">Tzuyu</span></a>
+      <a class="nav-item" href="#stone-cold">Stone Cold <span class="fanchant-dot"></span><span class="solo-tag">Mina</span></a>
+      <a class="nav-item" href="#meeeeee">MEEEEEE <span class="fanchant-dot"></span><span class="solo-tag">Nayeon</span></a>
+      <a class="nav-item" href="#fix-a-drink">Fix A Drink <span class="fanchant-dot"></span><span class="solo-tag">Jeongyeon</span></a>
+      <a class="nav-item" href="#dat-ahh">DAT AHH DAT OOH<span class="solo-tag">Unit</span></a>
+      <a class="nav-item" href="#battitude">BATTITUDE <span class="solo-tag">Unit</span></a>
+      <a class="nav-item" href="#chess">Chess <span class="fanchant-dot"></span><span class="solo-tag">Dahyun</span></a>
+      <a class="nav-item" href="#in-my-room">In My Room <span class="fanchant-dot"></span><span class="solo-tag">Chaeyoung</span></a>
+      <a class="nav-item" href="#shoot">Shoot <span class="fanchant-dot"></span><span class="solo-tag">Chaeyoung</span></a>
+      <a class="nav-item" href="#atm">ATM <span class="fanchant-dot"></span><span class="solo-tag">Jihyo</span></a>
+      <a class="nav-item" href="#decaffeinated">Decaffeinated <span class="fanchant-dot"></span><span class="solo-tag">Sana</span></a>
+      <a class="nav-item" href="#move-like-that">Move Like That <span class="fanchant-dot"></span><span class="solo-tag">Momo</span></a>
+    </div>
+
+    <div class="act-group">
+      <div class="act-label">Act 4</div>
+      <a class="nav-item" href="#fancy">FANCY <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#what-is-love">What Is Love? <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#yes-or-yes">YES or YES <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#dance-the-night-away">Dance The Night Away <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#feel-special">Feel Special <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#onespark">ONESPARK <span class="fanchant-dot"></span></a>
+    </div>
+
+    <div class="act-group">
+      <div class="act-label">Act 5 — Unconfirmed</div>
+      <a class="nav-item" href="#after-moon">After Moon</a>
+      <a class="nav-item" href="#you-in-my-heart">You In My Heart</a>
+      <a class="nav-item" href="#me-plus-you">Me+You <span class="fanchant-dot"></span></a>
+      <a class="nav-item" href="#likey">Likey</a>
+    </div>
+  </nav>
+
+  <!-- ── CONTENT ── -->
+  <main class="content">
+
+    <!-- ACT 1 -->
+    <section class="act-section" id="act1">
+      <div class="act-header" data-act="ACT 1">
+        <h2>ACT 1</h2>
+        <p>Opening the night — 8 songs</p>
+      </div>
+      <div class="songs-grid">
+
+        <!-- Four -->
+        <div class="song-card" id="four">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">01</div>
+            <div class="song-info">
+              <div class="song-title">FOUR</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Opening Track</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line">Are you ready for the ride?</div>
+              <div class="lyrics-line">Are you ready for the ride?</div>
+              <div class="lyrics-line">Are you ready for the ride, ride, ride, r-ride?</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Mm, mm-mm, mm-mm, mm-mm, mm</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Once you see us</div>
+              <div class="lyrics-line">You'll madly love us TWICE</div>
+              <div class="lyrics-line">Once you see us</div>
+              <div class="lyrics-line">You'll madly love us TWICE, TWICE</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- This Is For -->
+        <div class="song-card" id="this-is-for">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">02</div>
+            <div class="song-info">
+              <div class="song-title">THIS IS FOR</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">This is for all my ladies who don't get hyped enough</div>
+              <div class="lyrics-line">If you've been done wrong, then this your song, so turn it up <span class="fanchant-highlight">Twice!</span></div>
+              <div class="lyrics-line">(Wooo!) I wanna go where the baddest girls are from</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">(Beep, beep, beep) I'm outside your door, so let's go, don't let that</div>
+              <div class="lyrics-line">(Beep, beep, beep) have you feeling low, when you're grown, you got the</div>
+              <div class="lyrics-line">(Key, key, keys), you already know, when it shows tonight</div>
+              <div class="lyrics-line">It's you and me, how it should be</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">All my ladies now, oh oh oh oh,</div>
+              <div class="lyrics-line">Let's get down, come on, dip your hip into it</div>
+              <div class="lyrics-line">All my ladies now, oh oh oh oh,</div>
+              <div class="lyrics-line">Let's get down, <span class="fanchant-highlight">Too-wai-ee-sue!</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Strategy -->
+        <div class="song-card" id="strategy">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">03</div>
+            <div class="song-info">
+              <div class="song-title">STRATEGY</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">(Woo!!!) Hey boy, I'ma get ya</div>
+              <div class="lyrics-line">I'ma get ya real good and I bet ya</div>
+              <div class="lyrics-line">Hey boy, once I get ya</div>
+              <div class="lyrics-line">You'll be oh so glad that I met ya</div>
+              <div class="lyrics-line">Ah-oh! <span class="fanchant-highlight">Too-wai-ee-sue!</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Step 1 <span class="fanchant-highlight">(One!)</span> Do my highlight</div>
+              <div class="lyrics-line">Make me shine so bright in the moonlight</div>
+              <div class="lyrics-line">Step 2 <span class="fanchant-highlight">(Two!)</span> Silhouette tight</div>
+              <div class="lyrics-line">Baby even my shadow looks good right?</div>
+              <div class="lyrics-line">Step 3 <span class="fanchant-highlight">(Three!)</span> When I arrive</div>
+              <div class="lyrics-line">Make you look my way with your heart eyes</div>
+              <div class="lyrics-line">Step 4 <span class="fanchant-highlight">(Four!)</span> Get you on the floor</div>
+              <div class="lyrics-line">Make ya say more more more</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">My strategy, strategy, will get ya, get ya, baby</div>
+              <div class="lyrics-line">Winning is my trademark soon</div>
+              <div class="lyrics-line">You'll never wanna leave</div>
+              <div class="lyrics-line">My strategy, strategy, will get ya, get ya, baby</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line annotation">[Na/Sa] lines — member cues in brackets</div>
+              <div class="lyrics-line">Ah-oh! <span class="fanchant-highlight">Too-wai-ee-sue!</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Make Me Go -->
+        <div class="song-card" id="make-me-go">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">04</div>
+            <div class="song-info">
+              <div class="song-title">MAKE ME GO</div>
+              <div class="song-meta"></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line korean">저 멀리 서 있는 넌</div>
+              <div class="lyrics-line korean">이미 가까워진 듯 느껴져 이 순간</div>
+              <div class="lyrics-line korean">날 향해 경계하는 두려움에 찬 그 눈빛</div>
+              <div class="lyrics-line korean">괜찮아 걱정 마</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Love me love me now</div>
+              <div class="lyrics-line">Love me love me good</div>
+              <div class="lyrics-line">Don't need nobody else when it feels this good</div>
+              <div class="lyrics-line">Ain't nobody around, do it like you should</div>
+              <div class="lyrics-line">Do it do it do it do it</div>
+              <div class="lyrics-line">Yeah you make me go</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">여길 봐 난 해치지 않아 다가와도 괜찮아</div>
+              <div class="lyrics-line korean">고갤 들어 주위를 둘러봐</div>
+              <div class="lyrics-line korean">어딜 봐도 나잖아</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Set Me Free -->
+        <div class="song-card" id="set-me-free">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">05</div>
+            <div class="song-info">
+              <div class="song-title">SET ME FREE</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line"><span class="fanchant-highlight">Too-wai-ee-sue! Set me fu-ree!</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">모든 걸 잃어버린대도 상관 없어 <span class="annotation">[sanggwan eopso]</span></div>
+              <div class="lyrics-line korean">지금 이 감정이 순간이라 해도</div>
+              <div class="lyrics-line korean">이제는 더 이상 내 맘 숨기긴 싫어 <span class="annotation">[seumgigin sirheo]</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Gonna set me, set me, set me free</div>
+              <div class="lyrics-line korean">내 맘 끝까지 갈 테니</div>
+              <div class="lyrics-line korean">넌 그냥 날 안으면 돼</div>
+              <div class="lyrics-line">Come and set me, set me, set me free</div>
+              <div class="lyrics-line korean">내가 원하던 Best of me <span class="fanchant-highlight">(na jeong mo)</span></div>
+              <div class="lyrics-line korean">이제 나는 Ready to be <span class="fanchant-highlight">(sa ji mi)</span></div>
+              <div class="lyrics-line">Yeah, gonna set me, set me, set me free <span class="fanchant-highlight">(da chae jeu)</span></div>
+              <div class="lyrics-line korean">지금 All eyes on me</div>
+              <div class="lyrics-line korean">나를 안아줘 다 보란듯이 <span class="fanchant-highlight">(Too-wai-ee-sue!)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- I Can't Stop Me -->
+        <div class="song-card" id="i-cant-stop-me">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">06</div>
+            <div class="song-info">
+              <div class="song-title">I CAN'T STOP ME</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh</div>
+              <div class="lyrics-line korean">알람이 울려대 Ring ring a ling</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">매분, 매초, 내 맘이 내 맘을 추월해</div>
+              <div class="lyrics-line">Out of control <span class="fanchant-highlight">(TWICE!)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I can't stop me, can't stop me <span class="fanchant-highlight">(No Oh Oh Hah)</span></div>
+              <div class="lyrics-line korean">내 앞에 놓여진 이 Red red red line</div>
+              <div class="lyrics-line">I can't stop me, can't stop me <span class="fanchant-highlight">(No Oh Oh Hah)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh <span class="fanchant-highlight">(na jeong mo)</span></div>
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh <span class="fanchant-highlight">(sa ji mi)</span></div>
+              <div class="lyrics-line">Ooh ooh ooh ooh ooh ooh <span class="fanchant-highlight">(da chae jeu)</span></div>
+              <div class="lyrics-line">I can't stop me, can't stop me</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Risky risky wiggy 위기</div>
+              <div class="lyrics-line">This is an emergency</div>
+              <div class="lyrics-line">Help me, help me, somebody stop me</div>
+              <div class="lyrics-line">Cuz I know I can't stop me</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line annotation">End: Name chanting — Im Nayeon, Momo chan, Sana chan… etc.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Options -->
+        <div class="song-card" id="options">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">07</div>
+            <div class="song-info">
+              <div class="song-title">OPTIONS</div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line">Hey — I got all these options</div>
+              <div class="lyrics-line">Options, oh, options (Oh, oh)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">First guy turned up in a black tie</div>
+              <div class="lyrics-line">Second wasn't my type</div>
+              <div class="lyrics-line">Third, I let him know, oh</div>
+              <div class="lyrics-line">That I'm a little selfish</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Baby, I'm gon' keep my options open, oh</div>
+              <div class="lyrics-line">Baby, I'm not bought and I'm not chosen</div>
+              <div class="lyrics-line">A, B, C, D, got options, oh</div>
+              <div class="lyrics-line">I'm picky when I choose</div>
+              <div class="lyrics-line">Voulez-vous? Could be you, oh</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Moonlight Sunrise -->
+        <div class="song-card" id="moonlight-sunrise">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">08</div>
+            <div class="song-info">
+              <div class="song-title">MOONLIGHT SUNRISE</div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line">I guarantee I gotcha</div>
+              <div class="lyrics-line">I've been craving for your love</div>
+              <div class="lyrics-line">Can't see nobody but us</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I got the moonlight</div>
+              <div class="lyrics-line">Tequila sunrise</div>
+              <div class="lyrics-line">Ha, come take a shot on me, I gotcha</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Moonlight sunrise — Baby, come be my starlight</div>
+              <div class="lyrics-line">Moonlight sunrise — Oh, baby, just to make you stay</div>
+              <div class="lyrics-line">Moonlight sunrise — Baby, let's do it all night</div>
+              <div class="lyrics-line">Moonlight sunrise — I guarantee I gotcha</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Took a trip under moonlight</div>
+              <div class="lyrics-line">Follow me to the sunrise</div>
+              <div class="lyrics-line">Everyday, every night</div>
+              <div class="lyrics-line">Ay, come with me, don't think TWICE</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACT 2 -->
+    <section class="act-section" id="act2">
+      <div class="act-header" data-act="ACT 2">
+        <h2>ACT 2</h2>
+        <p>Mid-show energy — 7 songs</p>
+      </div>
+      <div class="songs-grid">
+
+        <!-- Mars -->
+        <div class="song-card" id="mars">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">09</div>
+            <div class="song-info"><div class="song-title">MARS</div></div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line korean">손을 잡아 Let's run away</div>
+              <div class="lyrics-line korean">함께라면 말이 다르지 Don't hesitate</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Do you ever really wonder we are lost on Mars?</div>
+              <div class="lyrics-line korean">누군가는 비웃겠지만</div>
+              <div class="lyrics-line">Do you ever feel like you don't belong in the world?</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">We are alive</div>
+              <div class="lyrics-line">We are alive</div>
+              <div class="lyrics-line">We are alive, we are alive</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- I Got You -->
+        <div class="song-card" id="i-got-you">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">10</div>
+            <div class="song-info">
+              <div class="song-title">I GOT YOU</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">A little reckless around the edges</div>
+              <div class="lyrics-line">Call it young, dumb love and it's just enough</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Ayy, no, we'll never fall apart <span class="fanchant-highlight">(too-wai-ee-su)</span></div>
+              <div class="lyrics-line">Even million miles apart <span class="fanchant-highlight">(too-wai-ee-su)</span></div>
+              <div class="lyrics-line">We were lightning from the start</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Ooh, ooh-ooh-ooh, no matter what you got me, I got you</div>
+              <div class="lyrics-line">And I wouldn't want it any other way</div>
+              <div class="lyrics-line">Ooh, ooh-ooh-ooh, no drop of doubt, I know deep down that</div>
+              <div class="lyrics-line">We'll make it through, just like we always do</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Feels -->
+        <div class="song-card" id="the-feels">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">11</div>
+            <div class="song-info"><div class="song-title">THE FEELS</div></div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line">Boy, I, boy, I, boy, I know</div>
+              <div class="lyrics-line">I know you get the feels (Yeah)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I got the feels for you, yeah, yeah, yeah, yeah</div>
+              <div class="lyrics-line">You have stolen my heart, oh, yeah</div>
+              <div class="lyrics-line">Never let it go-oh-oh</div>
+              <div class="lyrics-line">Lightning straight to my heart, oh, yeah</div>
+              <div class="lyrics-line">I got all the feels for sure</div>
+              <div class="lyrics-line">Yeah, I got all the feels for ya</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">You got my attention (Oh)</div>
+              <div class="lyrics-line">So what's your intention? (Oh)</div>
+              <div class="lyrics-line">Yeah, tell me, baby, what's the deal?</div>
+              <div class="lyrics-line">Oh, one look and I know it</div>
+              <div class="lyrics-line">Baby, my eyes reveal</div>
+              <div class="lyrics-line">That you, you, you give me the feels, oh, yeah</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gone -->
+        <div class="song-card" id="gone">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">12</div>
+            <div class="song-info"><div class="song-title">GONE</div></div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line korean">순간의 흔들림으로</div>
+              <div class="lyrics-line korean">쉽게 질려 떠나버리고</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I see the lies on the tip of your tongue</div>
+              <div class="lyrics-line korean">널 향했던 믿음 모두 다</div>
+              <div class="lyrics-line korean">안개처럼 사라져버려</div>
+              <div class="lyrics-line">Gone, gone</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">변덕스러운 맘 가진 너는 Out (너는 Out)</div>
+              <div class="lyrics-line">I know that you know what I'm talking 'bout</div>
+              <div class="lyrics-line">Nothing you could say that could turn this around, I'm gone</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cry For Me -->
+        <div class="song-card" id="cry-for-me">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">13</div>
+            <div class="song-info"><div class="song-title">CRY FOR ME</div></div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line korean">I know 고쳐 쓸 가치도 없단 걸</div>
+              <div class="lyrics-line">Bad boy, bad boy</div>
+              <div class="lyrics-line">Yeah, you really make me</div>
+              <div class="lyrics-line">A mad girl mad girl, woah</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I want you to cry, cry for me</div>
+              <div class="lyrics-line korean">내가 울었던 것처럼 Cry for me</div>
+              <div class="lyrics-line">Make your rain fall, cry for me, but again</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">사랑이란 게 너무 독해</div>
+              <div class="lyrics-line korean">미운 마음도 다 녹아버리게 해</div>
+              <div class="lyrics-line">I want you to die for me</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hell In Heaven -->
+        <div class="song-card" id="hell-in-heaven">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">14</div>
+            <div class="song-info"><div class="song-title">HELL IN HEAVEN</div></div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line korean">천사와 악마가 왔다 갔다 해</div>
+              <div class="lyrics-line korean">천국과 지옥은 생각보다 멀지 않네</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Take me to your paradise</div>
+              <div class="lyrics-line korean">천국 문이 닫힌다</div>
+              <div class="lyrics-line korean">별이 쏟아지는 밤</div>
+              <div class="lyrics-line">Kiss me in the blue moonlight</div>
+              <div class="lyrics-line korean">빨리 꺼내줘 — 나를 데려가줘</div>
+              <div class="lyrics-line">My hope in hell</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Oh-eh-oh, oh-eh-oh — Paradise</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hand Girl -->
+        <div class="song-card" id="right-hand-girl">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">15</div>
+            <div class="song-info"><div class="song-title">RIGHT HAND GIRL</div></div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line">Take it, take it, take it all, baby</div>
+              <div class="lyrics-line">Get, get it, yeah, we can worry later</div>
+              <div class="lyrics-line">Bend it, break it, on your worst behavior</div>
+              <div class="lyrics-line">Don't need nobody but your right-hand girl, oh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Who's gonna be there when the tears come running?</div>
+              <div class="lyrics-line">Who gonna be there when there ain't no fun and</div>
+              <div class="lyrics-line">Who gonna love you through the thick and the thin?</div>
+              <div class="lyrics-line">Uh-huh, your right-hand girl</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACT 3 -->
+    <section class="act-section" id="act3">
+      <div class="act-header" data-act="ACT 3">
+        <h2>ACT 3 — Solos & Sub-Units</h2>
+        <p>Individual member moments — 12 performances</p>
+      </div>
+      <div class="songs-grid">
+
+        <!-- Dive In -->
+        <div class="song-card" id="dive-in">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">16</div>
+            <div class="song-info">
+              <div class="song-title">DIVE IN</div>
+              <div class="song-meta"><span class="tag tag-solo">Tzuyu</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">Who do you love? Who do you love?</div>
+              <div class="lyrics-line">It's me or the thought of getting off</div>
+              <div class="lyrics-line">Can't dive in <span class="fanchant-highlight">(Chou Jeu ee)</span></div>
+              <div class="lyrics-line">Can't dive in <span class="fanchant-highlight">(Chou Jeu ee)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">If you want to dive in, yeah <span class="fanchant-highlight">(I! Love! Tzu!)</span></div>
+              <div class="lyrics-line">If you wanna dive, if you wanna dive, dive, yeah</div>
+              <div class="lyrics-line">So if you wanna dive, oh, no~ <span class="fanchant-highlight">(Yes! I! Wanna!)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stone Cold -->
+        <div class="song-card" id="stone-cold">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">17</div>
+            <div class="song-info">
+              <div class="song-title">STONE COLD</div>
+              <div class="song-meta"><span class="tag tag-solo">Mina</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">Hey, eh, hey</div>
+              <div class="lyrics-line">Why you being stone cold?</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Stone cold Mina chan)</span> × 3</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Every shade of you was pure gold</div>
+              <div class="lyrics-line">Now your heart is getting ice cold</div>
+              <div class="lyrics-line">And you're breaking down my walls</div>
+              <div class="lyrics-line">One by one, you're stone cold <span class="fanchant-highlight">(Cheering!)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Baby, why you're stone cold? (Ah-ah)</div>
+              <div class="lyrics-line">Someone else is your gold (Ah-ah)</div>
+              <div class="lyrics-line">Heart is getting stone cold, stone cold</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MEEEEEE -->
+        <div class="song-card" id="meeeeee">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">18</div>
+            <div class="song-info">
+              <div class="song-title">MEEEEEE</div>
+              <div class="song-meta"><span class="tag tag-solo">Nayeon</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">(Don't play with a girl, don't play with a girl)</div>
+              <div class="lyrics-line">Don't cook but I got good taste (Taste)</div>
+              <div class="lyrics-line">Don't drive but I love the chase (Chase)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Meeeeee <span class="fanchant-highlight">(Im Nayeon)</span>, Meeeeee</div>
+              <div class="lyrics-line">Don't play with a girl, don't play with a girl like</div>
+              <div class="lyrics-line">Meeeeee <span class="fanchant-highlight">(Im Nayeon)</span>, Meeeeee</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Like me, Im Nayeon)</span> × 4</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fix A Drink -->
+        <div class="song-card" id="fix-a-drink">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">19</div>
+            <div class="song-info">
+              <div class="song-title">FIX A DRINK</div>
+              <div class="song-meta"><span class="tag tag-solo">Jeongyeon</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line korean">오늘 밤 같이 cheers to good times</div>
+              <div class="lyrics-line korean">가끔 모든 걸 잊고 싶은 밤 (Ooh)</div>
+              <div class="lyrics-line korean">잔을 들어봐, hm <span class="fanchant-highlight">(Yu Jeongyeon)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I've got shots for jealousy</div>
+              <div class="lyrics-line">And a bottle for your pain</div>
+              <div class="lyrics-line">I can't fix a heart, but I sure know how to fix a drink</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAT AHH -->
+        <div class="song-card" id="dat-ahh">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">20</div>
+            <div class="song-info">
+              <div class="song-title">DAT AHH DAT OOH</div>
+              <div class="song-meta"><span class="tag tag-unit">Sub-Unit</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line">Baby, that's that ahh, that's that ooh</div>
+              <div class="lyrics-line">It don't really matter what I do</div>
+              <div class="lyrics-line">'Cause I got that ahh, got that ooh</div>
+              <div class="lyrics-line">Everytime I step up in the room</div>
+              <div class="lyrics-line">They say, "Ah, can't nobody do it like you"</div>
+              <div class="lyrics-line">Ooh, better take notes</div>
+              <div class="lyrics-line">'Cause I got that ahh, got that ooh</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Baby, I got something that you can't buy</div>
+              <div class="lyrics-line">And you couldn't do it like me, not if you tried</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BATTITUDE -->
+        <div class="song-card" id="battitude">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">21</div>
+            <div class="song-info">
+              <div class="song-title">BATTITUDE</div>
+              <div class="song-meta"><span class="tag tag-unit">Sub-Unit</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line">[All] Say you wanna do some things, better do some things (Yeah)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">So what? I got it big with the big, big attitude</div>
+              <div class="lyrics-line">You know I got it big with the big, big attitude</div>
+              <div class="lyrics-line">Yeah, we shake the room when we coming through</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">[All] Nah, nah, nah, nah (What?)</div>
+              <div class="lyrics-line">[All] Nah, nah, nah, nah (What you looking at?)</div>
+              <div class="lyrics-line">[All] Nah, nah, nah, nah (Attitude)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chess -->
+        <div class="song-card" id="chess">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">22</div>
+            <div class="song-info">
+              <div class="song-title">CHESS</div>
+              <div class="song-meta"><span class="tag tag-solo">Dahyun</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line"><span class="fanchant-highlight">(Kim Dahyun, Kim Dahyun, Kim Dahyun)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Kim Dahyun, Kim Dahyun)</span> (Du!)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I ain't playin checkers, I play chess <span class="fanchant-highlight">(I make 'em sweat)</span></div>
+              <div class="lyrics-line">Became the best <span class="fanchant-highlight">(I make a mess)</span> and nothing less <span class="fanchant-highlight">(I must confess)</span></div>
+              <div class="lyrics-line">Yeah, that's what I do, I'm making moves</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Better without you, better now</div>
+              <div class="lyrics-line">Want me to lose? I don't know how <span class="fanchant-highlight">(Kim Dahyun)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- In My Room -->
+        <div class="song-card" id="in-my-room">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">23</div>
+            <div class="song-info">
+              <div class="song-title">IN MY ROOM</div>
+              <div class="song-meta"><span class="tag tag-solo">Chaeyoung</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">Anything can happen in my room</div>
+              <div class="lyrics-line">In my room, room, room, In my room</div>
+              <div class="lyrics-line">I can be whoever I want to</div>
+              <div class="lyrics-line">In my room, room, room — Just me and you</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I don't think that what we got is just a fling <span class="fanchant-highlight">(Son Chaeyoung)</span></div>
+              <div class="lyrics-line">I know you got more than just a crush on me <span class="fanchant-highlight">(Son Chaeyoung)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shoot -->
+        <div class="song-card" id="shoot">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">24</div>
+            <div class="song-info">
+              <div class="song-title">SHOOT</div>
+              <div class="song-meta"><span class="tag tag-solo">Chaeyoung</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the,</div>
+              <div class="lyrics-line">Salute from the heart <span class="fanchant-highlight">(Son Chae Young)</span></div>
+              <div class="lyrics-line">Just shoot from my heart, Shoot from the,</div>
+              <div class="lyrics-line">Salute from the heart <span class="fanchant-highlight">(Shoot! from! my! heart!)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Fireflies, they color my eyes</div>
+              <div class="lyrics-line">Feel a void without the fire, Ignite it</div>
+              <div class="lyrics-line">Don't say goodbye there's a new beginning</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ATM -->
+        <div class="song-card" id="atm">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">25</div>
+            <div class="song-info">
+              <div class="song-title">ATM</div>
+              <div class="song-meta"><span class="tag tag-solo">Jihyo</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">Mm-mm, mm-mm, mm-mm, mm-mm <span class="fanchant-highlight">(Park Jihyo)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Addicted to me, yeah, ATM</div>
+              <div class="lyrics-line">Flawless when we glow, oh, oh, oh</div>
+              <div class="lyrics-line">Shine like all that marquee, ATM (Yeah, yeah)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Midas touch, got you coming back for more</div>
+              <div class="lyrics-line">Addicted to me, ATM</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decaffeinated -->
+        <div class="song-card" id="decaffeinated">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">26</div>
+            <div class="song-info">
+              <div class="song-title">DECAFFEINATED</div>
+              <div class="song-meta"><span class="tag tag-solo">Sana</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">Say, na-na-na, na-na-na</div>
+              <div class="lyrics-line">De-caffeine, get high <span class="fanchant-highlight">(Sana chan)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">We goin' crazy, crazy, can't stop it</div>
+              <div class="lyrics-line">Takin' in all the love</div>
+              <div class="lyrics-line">Trippin', trippin' on your lust</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Gimme that, gimme de-caffeine</div>
+              <div class="lyrics-line">Gimme that, gimme that</div>
+              <div class="lyrics-line">Say, na-na-na, na-na-na</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Move Like That -->
+        <div class="song-card" id="move-like-that">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">27</div>
+            <div class="song-info">
+              <div class="song-title">MOVE LIKE THAT</div>
+              <div class="song-meta"><span class="tag tag-solo">Momo</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">Move to the bassline, pull me in tight</div>
+              <div class="lyrics-line">Give me, give me a taste, taste of your eyes</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">It's a ghost town, 주변의 소음조차 멎은 이 밤 <span class="fanchant-highlight">(Momo chan)</span></div>
+              <div class="lyrics-line korean">It's so wild <span class="fanchant-highlight">(Momo chan)</span>, 심장이 널 따라 가</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">There's something in the way that you move</div>
+              <div class="lyrics-line">Yeah, there's something in the way that you move</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACT 4 -->
+    <section class="act-section" id="act4">
+      <div class="act-header" data-act="ACT 4">
+        <h2>ACT 4</h2>
+        <p>Fan favorites & classics — 6 songs</p>
+      </div>
+      <div class="songs-grid">
+
+        <!-- FANCY -->
+        <div class="song-card" id="fancy">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">28</div>
+            <div class="song-info">
+              <div class="song-title">FANCY</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line annotation">Opening roll call:</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon, Momo chan, Sana chan, Park Jihyo, Mina chan, Kim Dahyun, Son Chaeyoung, Chou Jeu ee)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Jigeum neoegero Gallae, FANCY, TWICE)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">지금 하늘 구름 색은 Tropical, yeah</div>
+              <div class="lyrics-line">I fancy you, I fancy you, fancy you</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">TWICE!</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">거기 너 I fancy you</div>
+              <div class="lyrics-line korean">아무나 원하지 않아</div>
+              <div class="lyrics-line">Hey, I love you</div>
+              <div class="lyrics-line korean">그래 너 I fancy you</div>
+              <div class="lyrics-line">Fancy you, ooh — 지금 너에게로 갈래</div>
+              <div class="lyrics-line">Fancy <span class="fanchant-highlight">(TWICE!)</span>, ooh</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What Is Love -->
+        <div class="song-card" id="what-is-love">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">29</div>
+            <div class="song-info">
+              <div class="song-title">WHAT IS LOVE?</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line"><span class="fanchant-highlight">TWICE!</span></div>
+              <div class="lyrics-line">What is love?</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I wanna know — 사탕처럼 달콤하다는데</div>
+              <div class="lyrics-line">I wanna know — 하늘을 나는 것 같다는데</div>
+              <div class="lyrics-line">I wanna know, know, know, know</div>
+              <div class="lyrics-line">What is love? 사랑이 어떤 느낌인지</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">I wanna know</div>
+              <div class="lyrics-line">What is love?</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line annotation">Ending roll call:</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon, Momo chan, Sana chan, Park Jihyo, Mina chan, Kim Dahyun, Son Chaeyoung, Chou Jeu ee)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Won-su, Sarang-eun, teudong-i)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Saranghae, What is love)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- YES or YES -->
+        <div class="song-card" id="yes-or-yes">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">30</div>
+            <div class="song-info">
+              <div class="song-title">YES OR YES</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">Hey, boy <span class="fanchant-highlight">(Cheering!)</span></div>
+              <div class="lyrics-line">Look, I'm gonna make this simple for you</div>
+              <div class="lyrics-line">You got two choices — YES or YES? <span class="fanchant-highlight">(Y, E, S, TWICE)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">둘 중에 하나만 골라</div>
+              <div class="lyrics-line">YES or YES?</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line annotation">Opening roll call:</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon, Momo chan, Sana chan, Park Jihyo, Mina chan, Kim Dahyun, Son Chaeyoung, Chou Jeu ee)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">It's! Simple! Y! E! S! Hey!</div>
+              <div class="lyrics-line korean">하나 더 보태서 YES or YES or YES</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dance The Night Away -->
+        <div class="song-card" id="dance-the-night-away">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">31</div>
+            <div class="song-info">
+              <div class="song-title">DANCE THE NIGHT AWAY</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">라라라라라라라 라라라라라라라</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">You and me in the moonlight, (ah ah ah ah)</div>
+              <div class="lyrics-line korean">별 꽃 축제 열린 밤 (ah ah ah ah ah)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Let's dance the night away <span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="lyrics-line">Yeah, one, two, three, let's go</div>
+              <div class="lyrics-line">Let's dance the night away</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line annotation">Ending roll call:</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Momo chan, Sana chan)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Park Jihyo, Mina chan)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Kim Dahyun, Son Chaeyoung)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Chou Jeu ee)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feel Special -->
+        <div class="song-card" id="feel-special">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">32</div>
+            <div class="song-info">
+              <div class="song-title">FEEL SPECIAL</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line"><span class="fanchant-highlight">(You make me feel special)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">You make me feel special</div>
+              <div class="lyrics-line korean">세상이 아무리 날 주저앉혀도 (앉혀도)</div>
+              <div class="lyrics-line">네가 있어 난 다시 웃어 — That's what you do</div>
+              <div class="lyrics-line">Again, I feel special</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Because you make me feel <span class="fanchant-highlight">(Cheering)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line annotation">Ending roll call:</div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Im Nayeon, Yoo Jeongyeon)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Momo chan, Sana chan)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Park Jihyo, Mina chan)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Kim Dahyun, Son Chaeyoung)</span></div>
+              <div class="lyrics-line"><span class="fanchant-highlight">(Chou Jeu ee)</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ONESPARK -->
+        <div class="song-card" id="onespark">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">33</div>
+            <div class="song-info">
+              <div class="song-title">ONESPARK</div>
+              <div class="song-meta"><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">One spark, baby</div>
+              <div class="lyrics-line">Everybody wants that endless flame</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Bring me the spark in my veins</div>
+              <div class="lyrics-line">Gimme the freedom, the freedom to chase</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">'Cuz my heart is burning (burning), burning (burning)</div>
+              <div class="lyrics-line">So good that it's hurting (hurting), hurting (hurting)</div>
+              <div class="lyrics-line korean">눈부시게 아름답고 아프다 해도</div>
+              <div class="lyrics-line">It's our golden days <span class="fanchant-highlight">(Too-wai-ee-su)</span></div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line">Don't let this fire die</div>
+              <div class="lyrics-line">'Cuz my heart is burning, burning, burning <span class="fanchant-highlight">(cheering!)</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ACT 5 -->
+    <section class="act-section" id="act5">
+      <div class="act-header" data-act="ACT 5">
+        <h2>ACT 5 — Not Confirmed</h2>
+        <p>Possible additions — subject to change!</p>
+      </div>
+      <div class="songs-grid">
+
+        <!-- After Moon -->
+        <div class="song-card" id="after-moon">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">34</div>
+            <div class="song-info">
+              <div class="song-title">AFTER MOON</div>
+              <div class="song-meta"><span class="tag tag-unconfirmed">Unconfirmed</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line korean">두근대는 그때 기억이</div>
+              <div class="lyrics-line korean">이제는 아련해지고</div>
+              <div class="lyrics-line korean">추억이 달처럼 벅차올라서</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">하늘의 해와 달처럼</div>
+              <div class="lyrics-line korean">우린 만날 수 없지만</div>
+              <div class="lyrics-line">You and I, you and I, you and I</div>
+              <div class="lyrics-line korean">함께란걸 잊지마요</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">밤이 지나가도 하늘 위에 보이는 듯한</div>
+              <div class="lyrics-line korean">낮에 떠 있는 저 달처럼</div>
+              <div class="lyrics-line">You and I, you and I, you and I</div>
+              <div class="lyrics-line korean">언제나 곁에 있을게</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- You In My Heart -->
+        <div class="song-card" id="you-in-my-heart">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">35</div>
+            <div class="song-info">
+              <div class="song-title">YOU IN MY HEART</div>
+              <div class="song-meta"><span class="tag tag-unconfirmed">Unconfirmed</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line korean">잠이 오지 않는 오늘 밤에</div>
+              <div class="lyrics-line korean">나 우두커니 앉아</div>
+              <div class="lyrics-line korean">반짝이는 저 하늘 보며</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">내 눈을 바라봐</div>
+              <div class="lyrics-line korean">네게만 다 보여줄게</div>
+              <div class="lyrics-line korean">두 눈에 비친 세상을</div>
+              <div class="lyrics-line korean">예쁜 네 마음에 담을 수 있게 영원히</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">저 반짝이는 별이 돼줄게</div>
+              <div class="lyrics-line korean">어디서든 널 비추는</div>
+              <div class="lyrics-line korean">언제나 널 밝혀주는</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Me+You -->
+        <div class="song-card" id="me-plus-you">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">36</div>
+            <div class="song-info">
+              <div class="song-title">ME+YOU</div>
+              <div class="song-meta"><span class="tag tag-unconfirmed">Unconfirmed</span><span class="tag tag-fanchant">Fanchant</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="fanchant-legend">🟢 Green highlights = your cue to chant!</div>
+            <div class="lyrics-container">
+              <div class="lyrics-line">All I need is you <span class="fanchant-highlight">(Twice!)</span>, just you <span class="fanchant-highlight">(Twice!)</span></div>
+              <div class="lyrics-line">For everything we've been through</div>
+              <div class="lyrics-line">I'm grateful that you're my best friends until the end</div>
+              <div class="lyrics-line">I'll stick by your side like glue</div>
+              <div class="lyrics-line">It's true — Nothing's ever gonna come between us</div>
+              <div class="lyrics-line">Ain't no way, we can't lose</div>
+              <div class="lyrics-line">Always Me + You</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Likey -->
+        <div class="song-card" id="likey">
+          <div class="song-card-header" onclick="toggleCard(this)">
+            <div class="song-number">37</div>
+            <div class="song-info">
+              <div class="song-title">LIKEY</div>
+              <div class="song-meta"><span class="tag tag-unconfirmed">Unconfirmed</span></div>
+            </div>
+            <div class="song-toggle">+</div>
+          </div>
+          <div class="song-body">
+            <div class="lyrics-container">
+              <div class="lyrics-line korean">설렌다 Me likey</div>
+              <div class="lyrics-line">Me likey likey likey</div>
+              <div class="lyrics-line">Me likey likey likey</div>
+              <div class="lyrics-line korean">두근 두근 두근 (Heart heart)</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">자꾸 드러내고 싶지 자꾸만</div>
+              <div class="lyrics-line korean">사소한 것 하나까지 전부다</div>
+              <div class="lyrics-line korean">작은 화면 속에 내가 제일 예뻐 보이고파</div>
+              <div class="section-divider"></div>
+              <div class="lyrics-line korean">BB크림 파파파</div>
+              <div class="lyrics-line korean">립스틱을 맘맘마</div>
+              <div class="lyrics-line korean">카메라에 담아볼까 예쁘게</div>
+              <div class="lyrics-line korean">이거 보면 웃어 줘</div>
+              <div class="lyrics-line korean">그리고 꼭 눌러 줘</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</div>
+    </section>
+
+  </main>
+</div>
+
+<button class="fab" onclick="toggleSidebar()">♪</button>
+
+<script>
+  // ── STAR GENERATOR ──
+  const starsEl = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 3 + 1;
+    s.style.cssText = `
+      left: ${Math.random()*100}%;
+      top: ${Math.random()*100}%;
+      width: ${size}px;
+      height: ${size}px;
+      --dur: ${Math.random()*4+2}s;
+      --del: ${Math.random()*4}s;
+    `;
+    starsEl.appendChild(s);
+  }
+
+  // ── SCROLL PROGRESS ──
+  window.addEventListener('scroll', () => {
+    const total = document.body.scrollHeight - window.innerHeight;
+    const pct = (window.scrollY / total) * 100;
+    document.getElementById('progressBar').style.width = pct + '%';
+  });
+
+  // ── CARD TOGGLE ──
+  function toggleCard(header) {
+    const card = header.closest('.song-card');
+    card.classList.toggle('open');
+  }
+
+  // ── SIDEBAR ──
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    sidebar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  }
+
+  // ── ACTIVE NAV HIGHLIGHT ──
+  const navItems = document.querySelectorAll('.nav-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        navItems.forEach(n => {
+          n.classList.toggle('active', n.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.song-card').forEach(c => observer.observe(c));
+
+  // ── SEARCH / FILTER ──
+  function filterSongs(query) {
+    const q = query.toLowerCase().trim();
+    const cards = document.querySelectorAll('.song-card');
+    const actSections = document.querySelectorAll('.act-section');
+
+    cards.forEach(card => {
+      const title = card.querySelector('.song-title').textContent.toLowerCase();
+      const lyrics = card.querySelector('.song-body')?.textContent.toLowerCase() || '';
+      const match = !q || title.includes(q) || lyrics.includes(q);
+      card.classList.toggle('hidden', !match);
+    });
+
+    // hide empty acts
+    actSections.forEach(section => {
+      const visibleCards = section.querySelectorAll('.song-card:not(.hidden)');
+      section.classList.toggle('hidden', visibleCards.length === 0);
+    });
+  }
+
+  // ── CLOSE SIDEBAR ON NAV CLICK (mobile) ──
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth < 900) {
+        document.getElementById('sidebar').classList.remove('open');
+        document.getElementById('sidebarOverlay').classList.remove('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
